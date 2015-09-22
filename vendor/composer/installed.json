@@ -2807,92 +2807,6 @@
         ]
     },
     {
-        "name": "league/flysystem",
-        "version": "1.0.13",
-        "version_normalized": "1.0.13.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/thephpleague/flysystem.git",
-            "reference": "76caed01a57527599b55919f0746104f288b3d56"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/76caed01a57527599b55919f0746104f288b3d56",
-            "reference": "76caed01a57527599b55919f0746104f288b3d56",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0"
-        },
-        "conflict": {
-            "league/flysystem-sftp": "<1.0.6"
-        },
-        "require-dev": {
-            "ext-fileinfo": "*",
-            "mockery/mockery": "~0.9",
-            "phpspec/phpspec": "^2.2",
-            "phpspec/prophecy-phpunit": "~1.0",
-            "phpunit/phpunit": "~4.1"
-        },
-        "suggest": {
-            "ext-fileinfo": "Required for MimeType",
-            "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
-            "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
-            "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
-            "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
-            "league/flysystem-copy": "Allows you to use Copy.com storage",
-            "league/flysystem-dropbox": "Allows you to use Dropbox storage",
-            "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
-            "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
-            "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
-            "league/flysystem-webdav": "Allows you to use WebDAV storage",
-            "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter"
-        },
-        "time": "2015-09-20 13:05:34",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.1-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "League\\Flysystem\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Frank de Jonge",
-                "email": "info@frenky.net"
-            }
-        ],
-        "description": "Filesystem abstraction: Many filesystems, one API.",
-        "keywords": [
-            "Cloud Files",
-            "WebDAV",
-            "abstraction",
-            "aws",
-            "cloud",
-            "copy.com",
-            "dropbox",
-            "file systems",
-            "files",
-            "filesystem",
-            "filesystems",
-            "ftp",
-            "rackspace",
-            "remote",
-            "s3",
-            "sftp",
-            "storage"
-        ]
-    },
-    {
         "name": "nikic/php-parser",
         "version": "v1.4.1",
         "version_normalized": "1.4.1.0",
@@ -3220,167 +3134,6 @@
         ]
     },
     {
-        "name": "components/font-awesome",
-        "version": "4.4.0",
-        "version_normalized": "4.4.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/components/font-awesome.git",
-            "reference": "7dffacc72e566e5db6272244effc06f64fe9f185"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/components/font-awesome/zipball/7dffacc72e566e5db6272244effc06f64fe9f185",
-            "reference": "7dffacc72e566e5db6272244effc06f64fe9f185",
-            "shasum": ""
-        },
-        "time": "2015-07-30 02:38:45",
-        "type": "component",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "4.4.x-dev"
-            },
-            "component": {
-                "styles": [
-                    "css/font-awesome.css"
-                ],
-                "files": [
-                    "css/font-awesome.min.css",
-                    "fonts/*"
-                ]
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT",
-            "OFL-1.1"
-        ],
-        "description": "The iconic font designed for use with Twitter Bootstrap."
-    },
-    {
-        "name": "components/jquery",
-        "version": "2.1.4",
-        "version_normalized": "2.1.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/components/jquery.git",
-            "reference": "7b1d1104656a092423fbfba13c5920e9bbba290c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/components/jquery/zipball/7b1d1104656a092423fbfba13c5920e9bbba290c",
-            "reference": "7b1d1104656a092423fbfba13c5920e9bbba290c",
-            "shasum": ""
-        },
-        "time": "2015-05-08 05:04:47",
-        "type": "component",
-        "extra": {
-            "component": {
-                "scripts": [
-                    "jquery.js"
-                ],
-                "files": [
-                    "jquery.min.js",
-                    "jquery.min.map",
-                    "jquery-migrate.js",
-                    "jquery-migrate.min.js"
-                ]
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "John Resig",
-                "email": "jeresig@gmail.com"
-            }
-        ],
-        "description": "jQuery JavaScript Library",
-        "homepage": "http://jquery.com"
-    },
-    {
-        "name": "drmonty/datatables-plugins",
-        "version": "1.10.8",
-        "version_normalized": "1.10.8.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/drmonty/datatables-plugins.git",
-            "reference": "784b7c1141b34888b21cfc3ee2aad42ac693331e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/drmonty/datatables-plugins/zipball/784b7c1141b34888b21cfc3ee2aad42ac693331e",
-            "reference": "784b7c1141b34888b21cfc3ee2aad42ac693331e",
-            "shasum": ""
-        },
-        "require": {
-            "components/jquery": ">=1.7"
-        },
-        "time": "2015-08-20 10:26:23",
-        "type": "component",
-        "extra": {
-            "component": {
-                "scripts": [
-                    "api/*.js",
-                    "features/*/*.js",
-                    "filtering/*/*.js",
-                    "integration/bootstrap/*/*.js",
-                    "integration/foundation/*.js",
-                    "integration/jqueryui/*.js",
-                    "pagination/*.js",
-                    "pagination/jPaginator/*.js",
-                    "sorting/*.js",
-                    "sorting/custom-data-source/*.js",
-                    "type-detection/*.js"
-                ],
-                "files": [
-                    "api/*.js",
-                    "dataRender/*.js",
-                    "features/*/*",
-                    "filtering/*/*.js",
-                    "i18n/*.lang",
-                    "integration/bootstrap/*/*.js",
-                    "integration/bootstrap/*/*.css",
-                    "integration/bootstrap/*/*.png",
-                    "integration/font-awesome/*.css",
-                    "integration/foundation/*.js",
-                    "integration/foundation/*.css",
-                    "integration/foundation/images/*.png",
-                    "integration/jqueryui/*.js",
-                    "integration/jqueryui/*.css",
-                    "pagination/*.js",
-                    "pagination/jPaginator/*.js",
-                    "sorting/*.js",
-                    "sorting/custom-data-source/*.js",
-                    "type-detection/*.js"
-                ],
-                "shim": {
-                    "deps": [
-                        "jquery"
-                    ]
-                }
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "description": "Plug-ins for DataTables",
-        "homepage": "http://www.datatables.net/",
-        "keywords": [
-            "datatable",
-            "datatables",
-            "filter",
-            "grid",
-            "internationalisable",
-            "page",
-            "sort",
-            "table"
-        ]
-    },
-    {
         "name": "phpunit/phpunit",
         "version": "4.8.9",
         "version_normalized": "4.8.9.0",
@@ -3452,6 +3205,161 @@
             "phpunit",
             "testing",
             "xunit"
+        ]
+    },
+    {
+        "name": "league/flysystem",
+        "version": "1.0.14",
+        "version_normalized": "1.0.14.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/flysystem.git",
+            "reference": "202c7775d959f377e2e302d93e7127c47604438a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/202c7775d959f377e2e302d93e7127c47604438a",
+            "reference": "202c7775d959f377e2e302d93e7127c47604438a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "conflict": {
+            "league/flysystem-sftp": "<1.0.6"
+        },
+        "require-dev": {
+            "ext-fileinfo": "*",
+            "mockery/mockery": "~0.9",
+            "phpspec/phpspec": "^2.2",
+            "phpspec/prophecy-phpunit": "~1.0",
+            "phpunit/phpunit": "~4.1"
+        },
+        "suggest": {
+            "ext-fileinfo": "Required for MimeType",
+            "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
+            "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
+            "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
+            "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
+            "league/flysystem-copy": "Allows you to use Copy.com storage",
+            "league/flysystem-dropbox": "Allows you to use Dropbox storage",
+            "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
+            "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
+            "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
+            "league/flysystem-webdav": "Allows you to use WebDAV storage",
+            "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter"
+        },
+        "time": "2015-09-22 19:18:28",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Flysystem\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Frank de Jonge",
+                "email": "info@frenky.net"
+            }
+        ],
+        "description": "Filesystem abstraction: Many filesystems, one API.",
+        "keywords": [
+            "Cloud Files",
+            "WebDAV",
+            "abstraction",
+            "aws",
+            "cloud",
+            "copy.com",
+            "dropbox",
+            "file systems",
+            "files",
+            "filesystem",
+            "filesystems",
+            "ftp",
+            "rackspace",
+            "remote",
+            "s3",
+            "sftp",
+            "storage"
+        ]
+    },
+    {
+        "name": "zizaco/entrust",
+        "version": "dev-laravel-5",
+        "version_normalized": "dev-laravel-5",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Zizaco/entrust.git",
+            "reference": "3a768eb52300ec4efe9d6a6685b9bf0db6a50ffd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Zizaco/entrust/zipball/3a768eb52300ec4efe9d6a6685b9bf0db6a50ffd",
+            "reference": "3a768eb52300ec4efe9d6a6685b9bf0db6a50ffd",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "~5.0",
+            "illuminate/support": "~5.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "illuminate/database": "~5.0",
+            "mockery/mockery": "dev-master",
+            "phpunit/phpunit": "~4.1",
+            "sami/sami": "dev-master"
+        },
+        "time": "2015-07-09 16:32:53",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/commands"
+            ],
+            "psr-4": {
+                "Zizaco\\Entrust\\": "src/Entrust/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andrew Elkins",
+                "homepage": "http://andrewelkins.com"
+            },
+            {
+                "name": "Zizaco Zizuini",
+                "email": "zizaco@gmail.com"
+            },
+            {
+                "name": "Ben Batschelet",
+                "homepage": "http://github.com/bbatsche"
+            },
+            {
+                "name": "Michele Angioni",
+                "email": "michele.angioni@gmail.com"
+            }
+        ],
+        "description": "This package provides a flexible way to add Role-based Permissions to Laravel",
+        "keywords": [
+            "acl",
+            "auth",
+            "illuminate",
+            "laravel",
+            "permission",
+            "roles"
         ]
     }
 ]
