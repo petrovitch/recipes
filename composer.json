@@ -9,8 +9,7 @@
         "laravel/framework": "5.1.*",
         "laravelcollective/html": "5.1.*",
         "guzzlehttp/guzzle": "~5.3|~6.0",
-        "components/font-awesome": "^4.4",
-        "drmonty/datatables-plugins": "^1.10"
+        "zizaco/entrust": "dev-laravel-5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

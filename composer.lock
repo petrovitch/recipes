@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "034ce763d44f6e7eb4e0708980c7c758",
+    "hash": "7f7d1baf3dfe2e5306908a3e6e93fabf",
+    "content-hash": "6ce0dcd76614ce2ba8f3366296e8d03f",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -59,85 +60,6 @@
                 "preload"
             ],
             "time": "2015-06-28 21:39:13"
-        },
-        {
-            "name": "components/font-awesome",
-            "version": "4.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/font-awesome.git",
-                "reference": "7dffacc72e566e5db6272244effc06f64fe9f185"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/font-awesome/zipball/7dffacc72e566e5db6272244effc06f64fe9f185",
-                "reference": "7dffacc72e566e5db6272244effc06f64fe9f185",
-                "shasum": ""
-            },
-            "type": "component",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.4.x-dev"
-                },
-                "component": {
-                    "styles": [
-                        "css/font-awesome.css"
-                    ],
-                    "files": [
-                        "css/font-awesome.min.css",
-                        "fonts/*"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT",
-                "OFL-1.1"
-            ],
-            "description": "The iconic font designed for use with Twitter Bootstrap.",
-            "time": "2015-07-30 02:38:45"
-        },
-        {
-            "name": "components/jquery",
-            "version": "2.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/jquery.git",
-                "reference": "7b1d1104656a092423fbfba13c5920e9bbba290c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/jquery/zipball/7b1d1104656a092423fbfba13c5920e9bbba290c",
-                "reference": "7b1d1104656a092423fbfba13c5920e9bbba290c",
-                "shasum": ""
-            },
-            "type": "component",
-            "extra": {
-                "component": {
-                    "scripts": [
-                        "jquery.js"
-                    ],
-                    "files": [
-                        "jquery.min.js",
-                        "jquery.min.map",
-                        "jquery-migrate.js",
-                        "jquery-migrate.min.js"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "John Resig",
-                    "email": "jeresig@gmail.com"
-                }
-            ],
-            "description": "jQuery JavaScript Library",
-            "homepage": "http://jquery.com",
-            "time": "2015-05-08 05:04:47"
         },
         {
             "name": "danielstjules/stringy",
@@ -294,82 +216,6 @@
                 "string"
             ],
             "time": "2014-12-20 21:24:13"
-        },
-        {
-            "name": "drmonty/datatables-plugins",
-            "version": "1.10.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drmonty/datatables-plugins.git",
-                "reference": "784b7c1141b34888b21cfc3ee2aad42ac693331e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drmonty/datatables-plugins/zipball/784b7c1141b34888b21cfc3ee2aad42ac693331e",
-                "reference": "784b7c1141b34888b21cfc3ee2aad42ac693331e",
-                "shasum": ""
-            },
-            "require": {
-                "components/jquery": ">=1.7"
-            },
-            "type": "component",
-            "extra": {
-                "component": {
-                    "scripts": [
-                        "api/*.js",
-                        "features/*/*.js",
-                        "filtering/*/*.js",
-                        "integration/bootstrap/*/*.js",
-                        "integration/foundation/*.js",
-                        "integration/jqueryui/*.js",
-                        "pagination/*.js",
-                        "pagination/jPaginator/*.js",
-                        "sorting/*.js",
-                        "sorting/custom-data-source/*.js",
-                        "type-detection/*.js"
-                    ],
-                    "files": [
-                        "api/*.js",
-                        "dataRender/*.js",
-                        "features/*/*",
-                        "filtering/*/*.js",
-                        "i18n/*.lang",
-                        "integration/bootstrap/*/*.js",
-                        "integration/bootstrap/*/*.css",
-                        "integration/bootstrap/*/*.png",
-                        "integration/font-awesome/*.css",
-                        "integration/foundation/*.js",
-                        "integration/foundation/*.css",
-                        "integration/foundation/images/*.png",
-                        "integration/jqueryui/*.js",
-                        "integration/jqueryui/*.css",
-                        "pagination/*.js",
-                        "pagination/jPaginator/*.js",
-                        "sorting/*.js",
-                        "sorting/custom-data-source/*.js",
-                        "type-detection/*.js"
-                    ],
-                    "shim": {
-                        "deps": [
-                            "jquery"
-                        ]
-                    }
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Plug-ins for DataTables",
-            "homepage": "http://www.datatables.net/",
-            "keywords": [
-                "datatable",
-                "datatables",
-                "filter",
-                "grid",
-                "internationalisable",
-                "page",
-                "sort",
-                "table"
-            ],
-            "time": "2015-08-20 10:26:23"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -867,16 +713,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.13",
+            "version": "1.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "76caed01a57527599b55919f0746104f288b3d56"
+                "reference": "202c7775d959f377e2e302d93e7127c47604438a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/76caed01a57527599b55919f0746104f288b3d56",
-                "reference": "76caed01a57527599b55919f0746104f288b3d56",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/202c7775d959f377e2e302d93e7127c47604438a",
+                "reference": "202c7775d959f377e2e302d93e7127c47604438a",
                 "shasum": ""
             },
             "require": {
@@ -947,7 +793,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-09-20 13:05:34"
+            "time": "2015-09-22 19:18:28"
         },
         {
             "name": "monolog/monolog",
@@ -2116,6 +1962,73 @@
                 "environment"
             ],
             "time": "2015-05-30 15:59:26"
+        },
+        {
+            "name": "zizaco/entrust",
+            "version": "dev-laravel-5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Zizaco/entrust.git",
+                "reference": "3a768eb52300ec4efe9d6a6685b9bf0db6a50ffd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Zizaco/entrust/zipball/3a768eb52300ec4efe9d6a6685b9bf0db6a50ffd",
+                "reference": "3a768eb52300ec4efe9d6a6685b9bf0db6a50ffd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/database": "~5.0",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "~4.1",
+                "sami/sami": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/commands"
+                ],
+                "psr-4": {
+                    "Zizaco\\Entrust\\": "src/Entrust/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrew Elkins",
+                    "homepage": "http://andrewelkins.com"
+                },
+                {
+                    "name": "Zizaco Zizuini",
+                    "email": "zizaco@gmail.com"
+                },
+                {
+                    "name": "Ben Batschelet",
+                    "homepage": "http://github.com/bbatsche"
+                },
+                {
+                    "name": "Michele Angioni",
+                    "email": "michele.angioni@gmail.com"
+                }
+            ],
+            "description": "This package provides a flexible way to add Role-based Permissions to Laravel",
+            "keywords": [
+                "acl",
+                "auth",
+                "illuminate",
+                "laravel",
+                "permission",
+                "roles"
+            ],
+            "time": "2015-07-09 16:32:53"
         }
     ],
     "packages-dev": [
@@ -3346,7 +3259,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "zizaco/entrust": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
