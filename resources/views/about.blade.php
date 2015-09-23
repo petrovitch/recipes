@@ -10,12 +10,12 @@
                 <h6>by Nathan Wu</h6>
                 <h6>support@learninglaravel.net</h6>
                 <ul>
-                    <li><a href="http://learninglaravel.net/laravel5/building-a-blog-application">Learning Laravel-5
+                    <li><a href="http://learninglaravel.net/laravel5/building-a-blog-application target=_blank">Learning Laravel-5
                             Online</a></li>
-                    <li><a href="https://laracasts.com/series/laravel-5-fundamentals/">Laracasts: Laravel
+                    <li><a href="https://laracasts.com/series/laravel-5-fundamentals/ target=_blank">Laracasts: Laravel
                             Fundamentals</a></li>
-                    <li><a href="http://laravel.com/docs/5.1">Laravel Documentation</a></li>
-                    <li><a href="http://laravel.io/forum">Laravel Forum</a></li>
+                    <li><a href="http://laravel.com/docs/5.1 target=_blank">Laravel Documentation</a></li>
+                    <li><a href="http://laravel.io/forum target=_blank">Laravel Forum</a></li>
                 </ul>
                 @if(Auth::user())
                     <p>
