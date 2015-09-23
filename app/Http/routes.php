@@ -16,33 +16,30 @@
 //});
 
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'), function () {
-    Route::get('users', 'UsersController@index');
-//    Route::get('users', ['as' => 'admin.user.index', 'uses' => 'UsersController@index']);
-//    Route::get('users/{id?}/edit', 'UsersController@edit');
-//    Route::post('users/{id?}/edit', 'UsersController@update');
-//    Route::get('roles', 'RolesController@index');
-//    Route::get('roles/create', 'RolesController@create');
-//    Route::post('roles/create', 'RolesController@store');
+//    Route::get('users', 'UsersController@index');
+    Route::get('users', ['as' => 'admin.user.index', 'uses' => 'UsersController@index']);
+    Route::get('users/{id?}/edit', 'UsersController@edit');
+    Route::post('users/{id?}/edit', 'UsersController@update');
+    Route::get('roles', 'RolesController@index');
+    Route::get('roles/create', 'RolesController@create');
+    Route::post('roles/create', 'RolesController@store');
 });
 
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
-Route::get('/contact', 'TicketsController@create');
 Route::get('/home', 'PagesController@home');
-Route::get('/master', 'PagesController@master');
+Route::get('/welcome', 'PagesController@welcome');
+
+Route::get('/contact', 'TicketsController@create');
+Route::post('/contact', 'TicketsController@store');
+
 Route::get('/ticket/{slug?}', 'TicketsController@show');
 Route::get('/ticket/{slug?}/delete', 'TicketsController@destroy');
 Route::get('/ticket/{slug?}/edit', 'TicketsController@edit');
 Route::get('/tickets', 'TicketsController@index');
-Route::get('/users/login', 'Auth\AuthController@getLogin');
-Route::get('/users/logout', 'Auth\AuthController@getLogout');
-Route::get('/users/register', 'Auth\AuthController@getRegister');
-Route::get('/welcome', 'PagesController@welcome');
-Route::post('/comment', 'CommentsController@newComment');
-Route::post('/contact', 'TicketsController@store');
 Route::post('/ticket/{slug?}/edit', 'TicketsController@update');
-Route::post('/users/login', 'Auth\AuthController@postLogin');
-Route::post('/users/register', 'Auth\AuthController@postRegister');
+
+Route::post('/comment', 'CommentsController@newComment');
 
 Route::get('sendemail', function () {
     $data = array(
@@ -57,6 +54,11 @@ Route::get('sendemail', function () {
     return "Your email has been sent successfully";
 });
 
+Route::get('/users/login', 'Auth\AuthController@getLogin');
+Route::post('/users/login', 'Auth\AuthController@postLogin');
+Route::get('/users/logout', 'Auth\AuthController@getLogout');
+Route::get('/users/register', 'Auth\AuthController@getRegister');
+Route::post('/users/register', 'Auth\AuthController@postRegister');
 
 /*
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'), function () {
