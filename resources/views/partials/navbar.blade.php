@@ -28,6 +28,9 @@
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @if (Auth::check())
+                            @if(Auth::user()->hasRole('manager'))
+                                <li><a href="/admin">Admin</a></li>
+                            @endif
                             <li><a href="users/logout">Logout</a></li>
                         @else
                             <li><a href="/users/register">Register</a></li>
