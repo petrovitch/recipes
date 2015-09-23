@@ -15,8 +15,14 @@
 //    return view('welcome');
 //});
 
-Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'), function(){
+Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'), function () {
     Route::get('users', 'UsersController@index');
+//    Route::get('users', ['as' => 'admin.user.index', 'uses' => 'UsersController@index']);
+//    Route::get('users/{id?}/edit', 'UsersController@edit');
+//    Route::post('users/{id?}/edit', 'UsersController@update');
+//    Route::get('roles', 'RolesController@index');
+//    Route::get('roles/create', 'RolesController@create');
+//    Route::post('roles/create', 'RolesController@store');
 });
 
 Route::get('/', 'PagesController@home');
@@ -35,15 +41,15 @@ Route::get('/welcome', 'PagesController@welcome');
 Route::post('/comment', 'CommentsController@newComment');
 Route::post('/contact', 'TicketsController@store');
 Route::post('/ticket/{slug?}/edit', 'TicketsController@update');
-Route::post('/users/login', 'Auth\AuthController@getLogin');
+Route::post('/users/login', 'Auth\AuthController@postLogin');
 Route::post('/users/register', 'Auth\AuthController@postRegister');
 
-Route::get('sendemail', function(){
+Route::get('sendemail', function () {
     $data = array(
         'name' => "Learning Laravel",
     );
 
-    Mail::send('emails.welcome', $data, function ($message){
+    Mail::send('emails.welcome', $data, function ($message) {
         $message->from(env('EMAIL_ADDRESS'), 'Learning Laravel');
         $message->to('kennthompson@gmail.com')->subject('Learning Laravel test email');
     });
