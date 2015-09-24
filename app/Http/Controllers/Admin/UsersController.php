@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Role;
+use App\Http\Requests;
 use App\Http\Requests\UserEditFormRequest;
+use App\Role;
+use App\User;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
+use TCPDF;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
@@ -100,4 +103,56 @@ class UsersController extends Controller
     {
         //
     }
+
+    ////////////////////////////////////////////////////////////////////////
+
+    public function getExcel()
+    {
+//        $users = User::all();
+        $data = DB::select(DB::raw("SELECT * FROM users"));
+        $data = json_encode($data); // encode/decode unnecessary
+        $this->data2excel('Excel', 'Sheet1', json_decode($data, true));
+    }
+
+    public function getPdf()
+    {
+        $users = User::all();
+        $view = view('backend.users.index')->with('users', $users);
+        $contents = $view->render();
+        $this->html2pdf($contents);
+    }
+
+    public function data2excel($excel, $sheet, $data)
+    {
+        $this->excel = $excel;
+        $this->sheet = $sheet;
+        $this->data = $data;
+        Excel::create($this->excel, function ($excel) {
+            $excel->sheet('Sheetname', function ($sheet) {
+                $sheet->appendRow(array_keys($this->data[0])); // column names
+                foreach ($this->data as $field) {
+                    $sheet->appendRow($field);
+                }
+            });
+        })->export('xlsx');
+    }
+
+    public function html2pdf($html)
+    {
+        $font_size = 8;
+        $pdf = new TCPDF();
+        $pdf->SetPrintHeader(false);
+        $pdf->SetPrintFooter(false);
+        $pdf->SetFont('times', '', $font_size, '', 'default', true);
+        $pdf->AddPage("L");
+        $pdf->writeHTML($html);
+        $filename = '/report.pdf';
+        $pdf->Output($filename, 'I');
+    }
+
+    public function print_json($data)
+    {
+        echo "<pre>" . json_encode($data, JSON_PRETTY_PRINT) . "</pre>";
+    }
+
 }

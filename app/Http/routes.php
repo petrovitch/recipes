@@ -22,6 +22,9 @@ Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 
     Route::get('users/{id?}/edit', 'UsersController@edit');
     Route::post('users/{id?}/edit','UsersController@update');
 
+    Route::get('/users/excel', 'UsersController@getExcel');
+    Route::get('/users/pdf', 'UsersController@getPdf');
+
     Route::get('roles', 'RolesController@index');
     Route::get('roles/create', 'RolesController@create');
     Route::post('roles/create', 'RolesController@store');
@@ -74,3 +77,4 @@ Route::post('/users/login', 'Auth\AuthController@postLogin');
 Route::get('/users/logout', 'Auth\AuthController@getLogout');
 Route::get('/users/register', 'Auth\AuthController@getRegister');
 Route::post('/users/register', 'Auth\AuthController@postRegister');
+
