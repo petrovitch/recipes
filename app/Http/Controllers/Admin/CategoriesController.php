@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Role;
-use App\Http\Requests\UserEditFormRequest;
-use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\CategoryFormRequest;
 
-class UsersController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +18,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('backend.users.index', compact('users'));
+        $categories = Category::all();
+        return view('backend.categories.index', compact('categories'));
     }
 
     /**
@@ -31,7 +29,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.categories.create');
     }
 
     /**
@@ -39,9 +37,15 @@ class UsersController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(CategoryFormRequest $request)
     {
-        //
+        $category = new Category(array(
+            'name' => $request->get('name'),
+        ));
+
+        $category->save();
+
+        return redirect('/admin/categories/create')->with('status', 'A new category has been created!');
     }
 
     /**
@@ -63,10 +67,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::whereId($id)->firstOrFail();
-        $roles = Role::all();
-        $selectedRoles = $user->roles->lists('id')->toArray();;
-        return view('backend.users.edit', compact('user', 'roles', 'selectedRoles'));
+        //
     }
 
     /**
@@ -75,19 +76,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id, UserEditFormRequest $request)
+    public function update($id)
     {
-        $user = User::whereId($id)->firstOrFail();
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
-        $password = $request->get('password');
-        if($password != "") {
-            $user->password = Hash::make($password);
-        }
-        $user->save();
-        $user->saveRoles($request->get('role'));
-
-        return redirect(action('Admin\UsersController@edit', $user->id))->with('status', 'The user has been updated!');
+        //
     }
 
     /**

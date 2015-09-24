@@ -1,17 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Role;
-use App\Http\Requests\UserEditFormRequest;
-use Illuminate\Support\Facades\Hash;
+use App\Post;
 
-class UsersController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,8 +17,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('backend.users.index', compact('users'));
+        $posts = Post::all();
+        return view('blog.index', compact('posts'));
     }
 
     /**
@@ -50,9 +47,11 @@ class UsersController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $post = Post::whereSlug($slug)->firstOrFail();
+        $comments = $post->comments()->get();
+        return view('blog.show', compact('post', 'comments'));
     }
 
     /**
@@ -63,10 +62,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::whereId($id)->firstOrFail();
-        $roles = Role::all();
-        $selectedRoles = $user->roles->lists('id')->toArray();;
-        return view('backend.users.edit', compact('user', 'roles', 'selectedRoles'));
+        //
     }
 
     /**
@@ -75,19 +71,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id, UserEditFormRequest $request)
+    public function update($id)
     {
-        $user = User::whereId($id)->firstOrFail();
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
-        $password = $request->get('password');
-        if($password != "") {
-            $user->password = Hash::make($password);
-        }
-        $user->save();
-        $user->saveRoles($request->get('role'));
-
-        return redirect(action('Admin\UsersController@edit', $user->id))->with('status', 'The user has been updated!');
+        //
     }
 
     /**

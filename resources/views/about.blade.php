@@ -21,7 +21,7 @@
                     <p>
                         User:<br>
                         <strong>{{ Auth::user()->name }}</strong><br>
-                        {{ Auth::user()->email }}
+                        {{ Auth::user()->email }} <br>
                     </p>
                 @endif
             </div>
