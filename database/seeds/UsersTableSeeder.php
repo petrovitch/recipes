@@ -4,27 +4,36 @@ use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Faker\Factory as Faker;
 
-class UsersTableSeeder extends Seeder {
+class UserTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
     public function run()
     {
-        DB::table('users')->delete();
-
-        $users = [
+        DB::table('users')->insert([
             [
                 'name' => 'Kenn E. Thompson',
                 'email' => 'kennthompson@gmail.com',
-                'password' => 'abc123',
+                'password' => bcrypt('abc123'),
+                'created_at'       => new DateTime,
+                'updated_at'       => new DateTime,
             ],
-            [
-                'name' => 'Jane Thompson',
-                'email' => 'jane_thompson@hotmail.com',
-                'password' => 'abc123',
-            ]
-        ];
+        ]);
 
-        foreach ($users as $user) {
-            User::create($user);
+        $faker = Faker::create();
+        foreach (range(1,10) as $index) {
+            DB::table('users')->insert([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => bcrypt('secret'),
+                'created_at' => dateTime($max = 'now'),
+                'updated_at' => dateTime($max = 'now'),
+            ]);
         }
     }
 }

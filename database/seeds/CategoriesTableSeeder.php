@@ -1,9 +1,10 @@
 <?php
 
-use App\User;
+use App\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Faker\Factory as Faker;
 
 class CategoriesTableSeeder extends Seeder {
     public function run()
@@ -12,11 +13,15 @@ class CategoriesTableSeeder extends Seeder {
 
         $categories = [
             [
-                'name' => 'News'
+                'name' => 'News',
+                'created_at'       => new DateTime,
+                'updated_at'       => new DateTime,
             ],
             [
-                'name' => 'Laravel'
-            ]
+                'name' => 'Laravel',
+                'created_at'       => new DateTime,
+                'updated_at'       => new DateTime,
+            ],
         ];
 
         foreach ($categories as $category) {

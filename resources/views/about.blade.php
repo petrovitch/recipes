@@ -16,6 +16,8 @@
                             Fundamentals</a></li>
                     <li><a href="http://laravel.com/docs/5.1 target=_blank">Laravel Documentation</a></li>
                     <li><a href="http://laravel.io/forum target=_blank">Laravel Forum</a></li>
+                    <li><a href="http://laraveldaily.com/ target=_blank">Laravel Daily</a></li>
+                    <li><a href="https://github.com/fzaninotto/Faker#formatters target=_blank">Faker</a></li>
                 </ul>
                 @if(Auth::user())
                     <p>

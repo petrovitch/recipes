@@ -1,9 +1,10 @@
 <?php
 
-use App\User;
+use App\Post;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Faker\Factory as Faker;
 
 class PostsTableSeeder extends Seeder {
     public function run()
@@ -17,7 +18,9 @@ class PostsTableSeeder extends Seeder {
                 'slug' => null,
                 'status' => 1,
                 'user_id' => 1,
-            ]
+                'created_at'       => new DateTime,
+                'updated_at'       => new DateTime,
+            ],
         ];
 
         foreach ($posts as $post) {
