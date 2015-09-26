@@ -106,7 +106,7 @@ class UsersController extends Controller
 
     ////////////////////////////////////////////////////////////////////////
 
-    public function getExcel()
+    public function excel()
     {
 //        $users = User::all();
         $data = DB::select(DB::raw("SELECT * FROM users"));
@@ -114,10 +114,18 @@ class UsersController extends Controller
         $this->data2excel('Excel', 'Sheet1', json_decode($data, true));
     }
 
-    public function getPdf()
+    public function screen2pdf()
     {
         $users = User::all();
         $view = view('backend.users.index')->with('users', $users);
+        $contents = $view->render();
+        $this->html2pdf($contents);
+    }
+
+    public function report2pdf()
+    {
+        $users = User::all();
+        $view = view('reports.users')->with('users', $users);
         $contents = $view->render();
         $this->html2pdf($contents);
     }

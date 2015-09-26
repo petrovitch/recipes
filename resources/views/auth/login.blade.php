@@ -1,48 +1,55 @@
 @extends('master')
 @section('name', 'Login')
+
 @section('content')
     <div class="container col-md-6 col-md-offset-3">
         <div class="well well bs-component">
-            <form class="form-horizontal" method="post">
-                <fieldset>
-                    <legend>Login</legend>
 
-                    <label for="email" class="text-left control-label">Email</label>
-                    <div class="form-group">
-                        <div class="col-lg-10">
-                            <input type="email" class="form-control" id="name" placeholder="Email" name="email"
-                                   value="{{ old('email') }}">
-                        </div>
-                    </div>
-
-                    <label for="password" class="text-left control-label">Password</label>
-                    <div class="form-group">
-                        <div class="col-lg-10">
-                            <input type="password" class="form-control" id="password" name="password"
-                                   value="{{ old('password') }}">
-                        </div>
-                    </div>
-
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="remember"> Remember Me?
-                        </label>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-lg-10">
-                            <button type="submit" class="btn btn-primary">Login</button>
-                        </div>
-                    </div>
-                </fieldset>
+            <form class="form-horizontal" method="post" action="/users/login">
 
                 @foreach ($errors->all() as $error)
                     <p class="alert alert-danger">{{ $error }}</p>
                 @endforeach
 
-                {!! csrf_field() !!}
+                 {!! csrf_field() !!}
 
+                <fieldset>
+                    <legend>Login</legend>
+
+                    <div class="form-group">
+                        <label for="email" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-10">
+                            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="col-lg-2 control-label">Password</label>
+                        <div class="col-lg-10">
+                            <input type="password" class="form-control"  name="password">
+                        </div>
+                        <div class="col-lg-10 col-lg-offset-2">
+                        <a href="/password/email">Forgot Your Password? </a>
+                            </div>
+                    </div>
+
+                    {{--<div class="checkbox">--}}
+                        {{--<label>--}}
+                            {{--<input type="checkbox" name="remember" > Remember Me?--}}
+                        {{--</label>--}}
+                    {{--</div>--}}
+
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </fieldset>
             </form>
         </div>
     </div>
 @endsection
+
+
+
+

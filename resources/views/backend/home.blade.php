@@ -18,6 +18,7 @@
                             <h4 class="list-group-item-heading">Manage User</h4>
                             <a href="/admin/users" class="btn btn-default btn-raised">All Users</a>
                             <a href="/admin/users/excel" class="btn btn-info btn-raised">Excel</a>
+                            <a href="/admin/users/screen" target="_blank" class="btn btn-warning btn-raised">Screen</a>
                             <a href="/admin/users/pdf" target="_blank" class="btn btn-success btn-raised">PDF</a>
                         </div>
                     </div>
