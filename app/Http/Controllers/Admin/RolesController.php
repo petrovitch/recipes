@@ -18,7 +18,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        $roles = Role::all();
+//        $roles = Role::all();
+        $roles = Role::paginate(env('PAGINATION_MAX'));
         return view('backend.roles.index', compact('roles'));
     }
 

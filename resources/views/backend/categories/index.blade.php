@@ -13,7 +13,7 @@
                 </div>
             @endif
             @if ($categories->isEmpty())
-                <p> There is no category.</p>
+                <p> There are no categories.</p>
             @else
                 <table class="table">
                     <tbody>
@@ -27,6 +27,6 @@
             @endif
         </div>
     </div>
-
+    <center>{!! $categories->render() !!}</center>
 @endsection
 

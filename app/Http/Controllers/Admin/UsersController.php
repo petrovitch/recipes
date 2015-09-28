@@ -23,7 +23,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+//        $users = User::all();
+        $users = User::paginate(env('PAGINATION_MAX'));
         return view('backend.users.index', compact('users'));
     }
 

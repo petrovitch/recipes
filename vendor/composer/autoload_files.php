@@ -14,8 +14,8 @@ return array(
     $vendorDir . '/danielstjules/stringy/src/Create.php',
     $vendorDir . '/guzzlehttp/promises/src/functions_include.php',
     $vendorDir . '/guzzlehttp/psr7/src/functions_include.php',
-    $vendorDir . '/laravelcollective/html/src/helpers.php',
     $vendorDir . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
     $vendorDir . '/laravel/framework/src/Illuminate/Support/helpers.php',
+    $vendorDir . '/laravelcollective/html/src/helpers.php',
     $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
 );

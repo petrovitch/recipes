@@ -41,6 +41,6 @@
             @endif
         </div>
     </div>
-
+    <center>{!! $users->render() !!}</center>
 @endsection
 

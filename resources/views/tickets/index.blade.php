@@ -35,4 +35,5 @@
             @endif
         </div>
     </div>
+    <center>{!! $tickets->render() !!}</center>
 @endsection

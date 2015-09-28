@@ -43,6 +43,6 @@
             @endif
         </div>
     </div>
-
+    <center>{!! $posts->render() !!}</center>
 @endsection
 

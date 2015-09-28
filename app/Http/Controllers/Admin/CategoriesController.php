@@ -18,7 +18,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+//        $categories = Category::all();
+        $categories = Category::paginate(env('PAGINATION_MAX'));
         return view('backend.categories.index', compact('categories'));
     }
 

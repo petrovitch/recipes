@@ -18,7 +18,8 @@ class TicketsController extends Controller
      */
     public function index()
     {
-        $tickets = Ticket::all();
+//        $tickets = Ticket::all();
+        $tickets = Ticket::paginate(env('PAGINATION_MAX'));
         return view('tickets.index')->with('tickets', $tickets);
     }
 

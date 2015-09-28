@@ -21,7 +21,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+//        $posts = Post::all();
+        $posts = Post::paginate(env('PAGINATION_MAX'));
         return view('backend.posts.index', compact('posts'));
     }
 

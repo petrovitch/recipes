@@ -89,3 +89,4 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
+

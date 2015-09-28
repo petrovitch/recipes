@@ -10,9 +10,6 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('css/roboto.min.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/material.min.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/ripples.min.css') !!}">
-
-    {{--DataTables--}}
-
 </head>
 <body>
 @include('partials.navbar')
@@ -25,9 +22,6 @@
 {{--Material Design Theme--}}
 <script src="{!! asset('js/ripples.min.js') !!}"></script>
 <script src="{!! asset('js/material.min.js') !!}"></script>
-
-{{--DataTables--}}
-
 
 {{--<script>--}}
     {{--$(document).ready(function(){--}}
