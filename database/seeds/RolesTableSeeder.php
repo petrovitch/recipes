@@ -9,7 +9,9 @@ use Faker\Factory as Faker;
 class RolesTableSeeder extends Seeder {
     public function run()
     {
-        DB::table('roles')->delete();
+        $faker = \Faker\Factory::create();
+
+        Roles::truncate();
 
         $roles = [
             [
@@ -29,7 +31,7 @@ class RolesTableSeeder extends Seeder {
         ];
 
         foreach ($roles as $role) {
-            User::create($role);
+            Roles::insert($role);
         }
     }
 }

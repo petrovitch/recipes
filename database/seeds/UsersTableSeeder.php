@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Faker\Factory as Faker;
 
-class UserTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,13 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        $faker = \Faker\Factory::create();
+
+        User::truncate();
+
+//        DB::table('users')->insert([
+
+        User::insert([
             [
                 'name' => 'Kenn E. Thompson',
                 'email' => 'kennthompson@gmail.com',
@@ -25,9 +31,8 @@ class UserTableSeeder extends Seeder
             ],
         ]);
 
-        $faker = Faker::create();
-        foreach (range(1,10) as $index) {
-            DB::table('users')->insert([
+        foreach (range(1,99) as $index) {
+            User::insert([
                 'name' => $faker->name,
                 'email' => $faker->email,
                 'password' => bcrypt('secret'),

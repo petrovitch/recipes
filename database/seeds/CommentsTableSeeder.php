@@ -6,12 +6,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Faker\Factory as Faker;
 
-class PostsTableSeeder extends Seeder {
+class CommentsTableSeeder extends Seeder {
     public function run()
     {
         $faker = \Faker\Factory::create();
 
-        DB::table('posts')->delete();
+        DB::table('comments')->delete();
 
     }
 }

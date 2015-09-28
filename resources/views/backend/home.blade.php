@@ -59,6 +59,17 @@
                         </div>
                     </div>
                     <div class="list-group-separator"></div>
+                    <div class="list-group-item">
+                        <div class="row-action-primary">
+                            <i class="mdi-av-my-library-books"></i>
+                        </div>
+                        <div class="row-content">
+                            <div class="action-secondary"><i class="mdi-material-info"></i></div>
+                            <h4 class="list-group-item-heading">Logs</h4>
+                            <a href="/logs" class="btn btn-default btn-raised">Logs</a>
+                        </div>
+                    </div>
+                    <div class="list-group-separator"></div>
 
                 </div>
 
@@ -68,5 +79,4 @@
     </div>
 
 @endsection
-
 

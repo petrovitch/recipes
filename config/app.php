@@ -147,7 +147,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         'Zizaco\Entrust\EntrustServiceProvider',
         'Maatwebsite\Excel\ExcelServiceProvider',
-
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
     ],
 
     /*

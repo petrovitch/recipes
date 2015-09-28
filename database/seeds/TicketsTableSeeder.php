@@ -9,22 +9,20 @@ use Faker\Factory as Faker;
 class TicketsTableSeeder extends Seeder {
     public function run()
     {
-        DB::table('tickets')->delete();
+        $faker = \Faker\Factory::create();
 
-        $tickets = [
-            [
-                'title' => 'Sample Title',
-                'content' => 'This is sample content.',
-                'slug' => '55fefbe16d170',
-                'status' => 0,
-                'user_id' => 1,
-                'created_at'       => new DateTime,
-                'updated_at'       => new DateTime,
-            ],
-        ];
+        Tickets::truncate();
 
-        foreach ($tickets as $ticket) {
-            User::create($ticket);
+        foreach (range(1,100) as $index) {
+            Tickets::insert([
+                'title' => $faker->unique()->sentence(3),
+                'content' => $faker->sentence(10),
+                'slug' => $faker->unique()->shuffle('0123456789abc'),
+                'status' => $faker->boolean(50),
+                'user_id' => $faker->numberBetween(1,100),
+                'created_at' => new DateTime,
+                'updated_at' => new DateTime,
+            ]);
         }
     }
 }
