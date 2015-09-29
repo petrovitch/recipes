@@ -18,8 +18,8 @@
                             <h4 class="list-group-item-heading">Manage Users</h4>
                             <a href="/admin/users" class="btn btn-default btn-raised">All Users</a>
                             <a href="/admin/users/excel" class="btn btn-info btn-raised">Excel</a>
-                            <a href="/admin/users/screen" target="_blank" class="btn btn-warning btn-raised">Screen</a>
                             <a href="/admin/users/pdf" target="_blank" class="btn btn-success btn-raised">PDF</a>
+                            <a href="/admin/users/screen" target="_blank" class="btn btn-active btn-raised">Screen</a>
                         </div>
                     </div>
                     <div class="list-group-separator"></div>
@@ -66,8 +66,8 @@
                         <div class="row-content">
                             <div class="action-secondary"><i class="mdi-material-info"></i></div>
                             <h4 class="list-group-item-heading">View Logs</h4>
-                            <a href="/logs" class="btn btn-default btn-raised">Errors & Warnings</a>
-                            <a href="/audit" class="btn btn-default btn-raised">Audit Trail</a>
+                            <a href="/logs" class="btn btn-warning btn-raised">Errors & Warnings</a>
+                            <a href="/audits" class="btn btn-info btn-raised">Audit Trail</a>
                         </div>
                     </div>
                     <div class="list-group-separator"></div>

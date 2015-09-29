@@ -89,6 +89,6 @@ Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-//Route::get('audit', 'LogsController@index');
+Route::get('audits', 'AuditTrailsController@index');
 
 

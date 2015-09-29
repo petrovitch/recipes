@@ -2,7 +2,7 @@
 @section('title', 'Audit Trail')
 @section('content')
 
-    <div class="container col-md-8 col-md-offset-2">
+    <div class="container col-md-10 col-md-offset-1">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2> Audit Trail </h2>
@@ -12,7 +12,7 @@
                     {{ session('status') }}
                 </div>
             @endif
-            @if ($users->isEmpty())
+            @if ($audits->isEmpty())
                 <p> There are no logs.</p>
             @else
                 <table class="table table-bordered table-striped">
@@ -21,6 +21,7 @@
                         <th>ID</th>
                         <th>User ID</th>
                         <th>Owner Type</th>
+                        <th>Owner ID</th>
                         <th>Old Value</th>
                         <th>New Value</th>
                         <th>Type</th>
@@ -29,15 +30,16 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($logs as $log)
+                    @foreach($audits as $audit)
                         <tr>
-                            <td>{!! $log->id !!}</td>
-                            <td>{!! $log->user_id !!} </td>
-                            <td>{!! $log->owner_type !!}</td>
-                            <td>{!! $log->old_value !!}</td>
-                            <td>{!! $log->new_value !!}</td>
-                            <td>{!! $log->type !!}</td>
-                            <td>{!! $log->created_at !!}</td>
+                            <td>{!! $audit->id !!}</td>
+                            <td>{!! $audit->user_id !!} </td>
+                            <td>{!! $audit->owner_type !!}</td>
+                            <td>{!! $audit->owner_id !!}</td>
+                            <td>{!! chunk_split($audit->old_value, 30, "<br>") !!}</td>
+                            <td>{!! chunk_split($audit->new_value, 30, "<br>") !!}</td>
+                            <td>{!! $audit->type !!}</td>
+                            <td>{!! $audit->created_at !!}</td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -45,6 +47,6 @@
             @endif
         </div>
     </div>
-    <center>{!! $logs->render() !!}</center>
+    <center>{!! $audits->render() !!}</center>
 @endsection
 

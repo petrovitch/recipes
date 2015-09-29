@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddPostTypeToCommentsTable' => $baseDir . '/database/migrations/2015_09_24_163955_add_post_type_to_comments_table.php',
+    'App\\AuditTrail' => $baseDir . '/app/AuditTrail.php',
     'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Commands\\Inspire' => $baseDir . '/app/Console/Commands/Inspire.php',
@@ -18,6 +19,7 @@ return array(
     'App\\Http\\Controllers\\Admin\\PostsController' => $baseDir . '/app/Http/Controllers/Admin/PostsController.php',
     'App\\Http\\Controllers\\Admin\\RolesController' => $baseDir . '/app/Http/Controllers/Admin/RolesController.php',
     'App\\Http\\Controllers\\Admin\\UsersController' => $baseDir . '/app/Http/Controllers/Admin/UsersController.php',
+    'App\\Http\\Controllers\\AuditTrailsController' => $baseDir . '/app/Http/Controllers/AuditTrailsController.php',
     'App\\Http\\Controllers\\Auth\\AuthController' => $baseDir . '/app/Http/Controllers/Auth/AuthController.php',
     'App\\Http\\Controllers\\Auth\\PasswordController' => $baseDir . '/app/Http/Controllers/Auth/PasswordController.php',
     'App\\Http\\Controllers\\BlogController' => $baseDir . '/app/Http/Controllers/BlogController.php',
