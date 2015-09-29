@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Zizaco\Entrust\EntrustRole;
+use OwenIt\Auditing\Auditing;
 
 class Role extends EntrustRole
 {

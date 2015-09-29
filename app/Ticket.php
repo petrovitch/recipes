@@ -3,8 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Auditing;
 
-class Ticket extends Model
+class Ticket extends Auditing
 {
     protected $fillable = ['title', 'content', 'slug', 'status', 'user_id'];
 

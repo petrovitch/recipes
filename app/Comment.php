@@ -3,8 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Auditing;
 
-class Comment extends Model
+class Comment extends Auditing
 {
     protected $guarded = ['id'];
 

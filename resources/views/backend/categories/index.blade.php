@@ -15,7 +15,7 @@
             @if ($categories->isEmpty())
                 <p> There are no categories.</p>
             @else
-                <table class="table">
+                <table class="table table-bordered table-striped">
                     <tbody>
                     @foreach($categories as $category)
                         <tr>

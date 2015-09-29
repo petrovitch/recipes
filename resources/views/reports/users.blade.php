@@ -1,21 +1,19 @@
 @extends('reports.master')
 @section('content')
-    <table class="table table-striped" style="background-color:white">
+    <table class="table table-condensed table-striped" style="background-color:#fefefe">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Joined at</th>
+            <th style="font-weight:bold;text-decoration:underline;">ID</th>
+            <th style="font-weight:bold;text-decoration:underline;">Name</th>
+            <th style="font-weight:bold;text-decoration:underline;">Email</th>
+            <th style="font-weight:bold;text-decoration:underline;">Joined at</th>
         </tr>
         </thead>
         <tbody>
         @foreach($users as $user)
             <tr>
                 <td>{!! $user->id !!}</td>
-                <td>
-                    <a href="{!! action('Admin\UsersController@edit', $user->id) !!}">{!! $user->name !!} </a>
-                </td>
+                <td>{!! $user->name !!} </td>
                 <td>{!! $user->email !!}</td>
                 <td>{!! $user->created_at !!}</td>
             </tr>

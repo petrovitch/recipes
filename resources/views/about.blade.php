@@ -25,6 +25,11 @@
                         User:<br>
                         <strong>{{ Auth::user()->name }}</strong><br>
                         {{ Auth::user()->email }} <br>
+                        @if(Auth::user()->hasRole('admin'))
+                            Administrator
+                        @elseif(Auth::user()->hasRole('member'))
+                            Member
+                        @endif
                     </p>
                 @endif
             </div>

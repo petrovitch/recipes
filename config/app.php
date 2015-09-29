@@ -148,6 +148,12 @@ return [
         'Zizaco\Entrust\EntrustServiceProvider',
         'Maatwebsite\Excel\ExcelServiceProvider',
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+
+        /*
+         * Laravel auditing - Keep historical records of changes in the bank
+         */
+        OwenIt\Auditing\AuditingServiceProvider::class,
+
     ],
 
     /*

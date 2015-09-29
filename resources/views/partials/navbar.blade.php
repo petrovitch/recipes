@@ -25,7 +25,7 @@
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @if (Auth::check())
-                            @if(Auth::user()->hasRole('manager'))
+                            @if(Auth::user()->hasRole('admin'))
                                 <li><a href="/admin">Admin</a></li>
                             @endif
                             <li><a href="users/logout">Logout</a></li>

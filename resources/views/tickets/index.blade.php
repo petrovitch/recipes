@@ -9,7 +9,7 @@
             @if ($tickets->isEmpty())
                 <p>There is no ticket.</p>
             @else
-                <table class="table">
+                <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
                         <td>ID</td>

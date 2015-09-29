@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "830934ab836679afec34a16bd0cc3ae9",
-    "content-hash": "5ad617b6447449ad7eb1bfb1f9a152a3",
+    "hash": "acf158ded82f6ffcf0506c333363d1d9",
+    "content-hash": "7ce0b69feeb5ffe1cdbb4f8d6461df7e",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1073,6 +1073,51 @@
                 "php"
             ],
             "time": "2015-09-19 14:15:08"
+        },
+        {
+            "name": "owen-it/laravel-auditing",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/owen-it/laravel-auditing.git",
+                "reference": "c74b6372b179953d679274fad419b7afc5f1290a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/owen-it/laravel-auditing/zipball/c74b6372b179953d679274fad419b7afc5f1290a",
+                "reference": "c74b6372b179953d679274fad419b7afc5f1290a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0|~5.1",
+                "php": ">=5.3.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "OwenIt\\Auditing\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antério",
+                    "email": "anteriovieira@gmail.com"
+                }
+            ],
+            "description": "Keep a change history for your models using laravel version 5.1.",
+            "homepage": "https://github.com/owen-it/laravel-auditing",
+            "keywords": [
+                "auditing",
+                "laravel",
+                "log",
+                "observe",
+                "register"
+            ],
+            "time": "2015-09-24 05:29:57"
         },
         {
             "name": "phpoffice/phpexcel",

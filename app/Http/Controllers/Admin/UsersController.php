@@ -91,7 +91,7 @@ class UsersController extends Controller
         $user->save();
         $user->saveRoles($request->get('role'));
 
-        return redirect(action('Admin\UsersController@edit', $user->id))->with('status', 'The user has been updated!');
+        return redirect(action('Admin\UsersController@index', $user->id))->with('status', 'The user has been updated!');
     }
 
     /**

@@ -15,7 +15,7 @@
                         </div>
                         <div class="row-content">
                             <div class="action-secondary"><i class="mdi-social-info"></i></div>
-                            <h4 class="list-group-item-heading">Manage User</h4>
+                            <h4 class="list-group-item-heading">Manage Users</h4>
                             <a href="/admin/users" class="btn btn-default btn-raised">All Users</a>
                             <a href="/admin/users/excel" class="btn btn-info btn-raised">Excel</a>
                             <a href="/admin/users/screen" target="_blank" class="btn btn-warning btn-raised">Screen</a>
@@ -65,16 +65,14 @@
                         </div>
                         <div class="row-content">
                             <div class="action-secondary"><i class="mdi-material-info"></i></div>
-                            <h4 class="list-group-item-heading">Logs</h4>
-                            <a href="/logs" class="btn btn-default btn-raised">Logs</a>
+                            <h4 class="list-group-item-heading">View Logs</h4>
+                            <a href="/logs" class="btn btn-default btn-raised">Errors & Warnings</a>
+                            <a href="/audit" class="btn btn-default btn-raised">Audit Trail</a>
                         </div>
                     </div>
                     <div class="list-group-separator"></div>
-
                 </div>
-
             </div>
-
         </div>
     </div>
 
