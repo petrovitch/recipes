@@ -6701,5 +6701,8 @@ label,
 .checkbox label {
   font-weight: 300;
 }
-
+.report-headings {
+    font-weight: bold;
+    background-color: silver;
+}
 /*# sourceMappingURL=app.css.map */

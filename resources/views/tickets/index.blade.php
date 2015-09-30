@@ -9,19 +9,19 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <td>ID</td>
-                        <td>Title</td>
-                        <td>Status</td>
+                        <td class="text-center report-headings">ID</td>
+                        <td class="text-center report-headings">Title</td>
+                        <td class="text-center report-headings">Status</td>
                     </tr>
                     </thead>
                     <tbody>
                         @foreach($tickets as $ticket)
                             <tr>
-                                <td>{!! $ticket->id !!}</td>
-                                <td>
+                                <td class="text-right">{!! $ticket->id !!}</td>
+                                <td class="text-left">
                                     <a href="{!! action('TicketsController@show', $ticket->slug) !!}">{!! $ticket->title !!}</a>
                                 </td>
-                                <td>{!! $ticket->status ? 'Pending' : 'Answered' !!}</td>
+                                <td class="text-left">{!! $ticket->status ? 'Pending' : 'Answered' !!}</td>
                             </tr>
                         @endforeach
                     </tbody>

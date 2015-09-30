@@ -61,7 +61,8 @@ class GlcoasController extends Controller
      */
     public function show($id)
     {
-        //
+        $glcoa = Glcoa::whereId($id)->firstOrFail();
+        return view('accounting.glcoa.show')->with('glcoa', $glcoa);
     }
 
     /**
@@ -101,6 +102,14 @@ class GlcoasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Glcoa::find($id)->delete();
+        $glcoas = Glcoa::orderBy('acct')->paginate(env('PAGINATION_MAX'));
+        return view('accounting.glcoa.index')->with('glcoas', $glcoas);
+    }
+
+    public function checkInit()
+    {
+        $results = DB::select( DB::raw("SELECT SUM(init) AS balance FROM glcoas") );
+        return view('accounting.glcoa.init')->with('results', $results);
     }
 }

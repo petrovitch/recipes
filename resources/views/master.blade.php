@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('css/roboto.min.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/material.min.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/ripples.min.css') !!}">
+
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/toastr.css') !!}">
+
 </head>
 <body>
 @include('partials.navbar')
@@ -22,6 +25,8 @@
 {{--Material Design Theme--}}
 <script src="{!! asset('js/ripples.min.js') !!}"></script>
 <script src="{!! asset('js/material.min.js') !!}"></script>
+
+<script src="{!! asset('js/toastr.js') !!}"></script>
 
 {{--<script>--}}
     {{--$(document).ready(function(){--}}

@@ -93,8 +93,12 @@ Route::get('audits', 'AuditTrailsController@index');
 
 //Accounting
 Route::get('glcoas', 'GlcoasController@index');
+Route::get('glcoa/init', 'GlcoasController@checkInit');
 Route::get('glcoa/create', 'GlcoasController@create');
 Route::post('glcoa/create', 'GlcoasController@store');
 Route::get('glcoa/{id?}/edit', 'GlcoasController@edit');
 Route::post('glcoa/{id?}/edit', 'GlcoasController@update');
+Route::get('glcoa/{id?}/show', 'GlcoasController@show');
+Route::get('glcoa/{id?}/delete', 'GlcoasController@destroy');
+
 
