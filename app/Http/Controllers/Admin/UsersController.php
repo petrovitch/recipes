@@ -9,10 +9,10 @@ use App\Role;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 use TCPDF;
-use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {

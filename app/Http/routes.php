@@ -91,4 +91,10 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 Route::get('audits', 'AuditTrailsController@index');
 
+//Accounting
+Route::get('glcoas', 'GlcoasController@index');
+Route::get('glcoa/create', 'GlcoasController@create');
+Route::post('glcoa/create', 'GlcoasController@store');
+Route::get('glcoa/{id?}/edit', 'GlcoasController@edit');
+Route::post('glcoa/{id?}/edit', 'GlcoasController@update');
 
