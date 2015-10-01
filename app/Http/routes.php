@@ -101,4 +101,12 @@ Route::post('glcoa/{id?}/edit', 'GlcoasController@update');
 Route::get('glcoa/{id?}/show', 'GlcoasController@show');
 Route::get('glcoa/{id?}/delete', 'GlcoasController@destroy');
 
+Route::get('gltrns', 'GltrnsController@index');
+Route::get('gltrn/create', 'GltrnsController@create');
+Route::post('gltrn/create', 'GltrnsController@store');
+Route::get('gltrn/{id?}/edit', 'GltrnsController@edit');
+Route::post('gltrn/{id?}/edit', 'GltrnsController@update');
+Route::get('gltrn/{id?}/show', 'GltrnsController@show');
+Route::get('gltrn/{id?}/delete', 'GltrnsController@destroy');
+
 
