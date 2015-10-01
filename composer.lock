@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "acf158ded82f6ffcf0506c333363d1d9",
-    "content-hash": "7ce0b69feeb5ffe1cdbb4f8d6461df7e",
+    "hash": "9206f5d94124fac3dbe6e1a96a752ce3",
+    "content-hash": "f6a37264967e0feab6e1cd672ea8bdfb",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1073,6 +1073,55 @@
                 "php"
             ],
             "time": "2015-09-19 14:15:08"
+        },
+        {
+            "name": "nilsenj/toastr-5.1-laravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nilsenj/toastr-5.1-laravel.git",
+                "reference": "43297b9f964eefdef1b2cd6ec6a57c2ab0372416"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nilsenj/toastr-5.1-laravel/zipball/43297b9f964eefdef1b2cd6ec6a57c2ab0372416",
+                "reference": "43297b9f964eefdef1b2cd6ec6a57c2ab0372416",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": ">=5.0.0",
+                "illuminate/support": ">=5.0.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "nilsenj\\Toastr\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamal Nasser",
+                    "email": "kamal@kamalnasser.net"
+                },
+                {
+                    "name": "Ivan Nikolenko",
+                    "email": "ni_cole@i.ua"
+                }
+            ],
+            "description": "toastr.js for Laravel 5.1 easy notification like growl for example",
+            "homepage": "https://github.com/nilsenj/toastr-5.1-laravel",
+            "keywords": [
+                "laravel",
+                "notification",
+                "php",
+                "toastr"
+            ],
+            "time": "2015-08-05 22:10:41"
         },
         {
             "name": "owen-it/laravel-auditing",
@@ -3585,7 +3634,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "zizaco/entrust": 20
+        "zizaco/entrust": 20,
+        "nilsenj/toastr-5.1-laravel": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

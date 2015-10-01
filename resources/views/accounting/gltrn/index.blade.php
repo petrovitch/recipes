@@ -7,7 +7,7 @@
             @if ($gltrns->isEmpty())
                 <p> There are no transaction.</p>
             @else
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-condensed table-striped">
                     <thead>
                     <tr>
                         <th class="text-center report-headings">Acct</th>
@@ -31,9 +31,9 @@
                             <td class="text-right">{!! number_format($gltrn->amount,2) !!}</td>
                             <td class="text-center">{!! $gltrn->created_at !!}</td>
                             <td class="text-center">
-                                <a href="{!! action('GltrnsController@edit', $gltrn->id) !!}" class="btn btn-xs btn-success btn-raised" role="button"> Edit </a>
-                                <a href="{!! action('GltrnsController@show', $gltrn->id) !!}" class="btn btn-xs btn-info btn-raised" role="button"> Show </a>
-                                <a href="{!! action('GltrnsController@destroy', $gltrn->id) !!}" class="btn btn-xs btn-warning btn-raised" role="button"> Delete </a>
+                                <a href="{!! action('GltrnsController@show', $gltrn->id) !!}" title="Show"><span class="glyphicon glyphicon-list"></span></a>
+                                <a href="{!! action('GltrnsController@edit', $gltrn->id) !!}" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="{!! action('GltrnsController@destroy', $gltrn->id) !!}" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>
                             </td>
                         </tr>
                     @endforeach
@@ -48,7 +48,7 @@
         </div>
         <div class="text-center">{!! $gltrns->render() !!}</div>
         <div class="text-left">
-            <a href="/gltrn/create" class="btn btn-primary btn-raised" role="button">New</a> &nbsp;
+            <a href="/gltrn/create" class="btn btn-sm btn-primary btn-raised" role="button">Add</a> &nbsp;
         </div>
     </div>
 

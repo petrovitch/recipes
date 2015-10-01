@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Glcoa;
+use App\Gltrn;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\GlcoaEditFormRequest;
@@ -112,4 +113,5 @@ class GlcoasController extends Controller
         $results = DB::select( DB::raw("SELECT SUM(init) AS balance FROM glcoas") );
         return view('accounting.glcoa.init')->with('results', $results);
     }
+
 }

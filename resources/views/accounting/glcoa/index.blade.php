@@ -7,7 +7,7 @@
             @if ($glcoas->isEmpty())
                 <p> There are no accounts.</p>
             @else
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-condensed table-striped">
                     <thead>
                     <tr>
                         <th class="text-center report-headings">Acct</th>
@@ -27,9 +27,9 @@
                             <td class="text-right">{!! number_format($glcoa->init,2) !!}</td>
                             <td class="text-center">{!! $glcoa->created_at !!}</td>
                             <td class="text-center">
-                                <a href="{!! action('GlcoasController@edit', $glcoa->id) !!}" class="btn btn-xs btn-success btn-raised" role="button"> Edit </a>
-                                <a href="{!! action('GlcoasController@show', $glcoa->id) !!}" class="btn btn-xs btn-info btn-raised" role="button"> Show </a>
-                                <a href="{!! action('GlcoasController@destroy', $glcoa->id) !!}" class="btn btn-xs btn-warning btn-raised" role="button"> Delete </a>
+                                <a href="{!! action('GlcoasController@show', $glcoa->id) !!}" title="Show"><span class="glyphicon glyphicon-list"></span></a>
+                                <a href="{!! action('GlcoasController@edit', $glcoa->id) !!}" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
+                                <a href="{!! action('GlcoasController@destroy', $glcoa->id) !!}" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>
                             </td>
                         </tr>
                     @endforeach
@@ -44,8 +44,8 @@
         </div>
         <div class="text-center">{!! $glcoas->render() !!}</div>
         <div class="text-left">
-            <a href="/glcoa/create" class="btn btn-primary btn-raised" role="button">New</a> &nbsp;
-            <a href="/glcoa/init" class="btn btn-active btn-raised" role="button">Check Opening Balance</a>
+            <a href="/glcoa/create" class="btn btn-sm btn-primary btn-raised" role="button">Add</a> &nbsp;
+            <a href="/glcoa/init" class="btn btn-sm btn-active btn-raised" role="button">Check</a>
         </div>
     </div>
 

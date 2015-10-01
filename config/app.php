@@ -149,6 +149,7 @@ return [
         'Maatwebsite\Excel\ExcelServiceProvider',
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         OwenIt\Auditing\AuditingServiceProvider::class,
+        'nilsenj\Toastr\ToastrServiceProvider',
     ],
 
     /*
@@ -199,8 +200,9 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
-        'Entrust' => 'Zizaco\Entrust\EntrustFacade',
-        'Excel' => 'Maatwebsite\Excel\Facades\Excel',
+        'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
+        'Excel'     => 'Maatwebsite\Excel\Facades\Excel',
+        'Toastr'    => 'nilsenj\Toastr\Facades\Toastr',
     ],
 
 ];

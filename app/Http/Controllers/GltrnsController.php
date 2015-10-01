@@ -111,4 +111,5 @@ class GltrnsController extends Controller
         $gltrns = Gltrn::orderBy('acct')->paginate(env('PAGINATION_MAX'));
         return view('accounting.gltrn.index')->with('gltrns', $gltrns);
     }
+
 }

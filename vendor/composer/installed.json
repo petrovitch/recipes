@@ -3698,5 +3698,56 @@
             "framework",
             "laravel"
         ]
+    },
+    {
+        "name": "nilsenj/toastr-5.1-laravel",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/nilsenj/toastr-5.1-laravel.git",
+            "reference": "43297b9f964eefdef1b2cd6ec6a57c2ab0372416"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/nilsenj/toastr-5.1-laravel/zipball/43297b9f964eefdef1b2cd6ec6a57c2ab0372416",
+            "reference": "43297b9f964eefdef1b2cd6ec6a57c2ab0372416",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/session": ">=5.0.0",
+            "illuminate/support": ">=5.0.0",
+            "php": ">=5.4.0"
+        },
+        "time": "2015-08-05 22:10:41",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "nilsenj\\Toastr\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kamal Nasser",
+                "email": "kamal@kamalnasser.net"
+            },
+            {
+                "name": "Ivan Nikolenko",
+                "email": "ni_cole@i.ua"
+            }
+        ],
+        "description": "toastr.js for Laravel 5.1 easy notification like growl for example",
+        "homepage": "https://github.com/nilsenj/toastr-5.1-laravel",
+        "keywords": [
+            "laravel",
+            "notification",
+            "php",
+            "toastr"
+        ]
     }
 ]
