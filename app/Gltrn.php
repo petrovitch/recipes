@@ -11,4 +11,9 @@ class Gltrn extends Auditing
 
     protected $fillable = ['acct', 'description', 'date', 'document', 'amount'];
 
+    public function glcoa()
+    {
+        return $this->belongsTo('App\Glcoa', 'acct', 'acct')->withTimestamps();
+    }
+
 }

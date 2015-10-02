@@ -48,12 +48,14 @@
 <div class="container">
     <div class="content">
         <a href="/" title="Home"><span class="glyphicon glyphicon glyphicon-home"></span></a> &nbsp;
-        <a href="/glcoas" title="General Ledger Chart of Accounts"><span class="glyphicon glyphicon glyphicon glyphicon-th-list"></span></a> &nbsp;
+        <a href="/glcoas" title="General Ledger Trial Balance"><span class="glyphicon glyphicon glyphicon glyphicon-th-list"></span></a> &nbsp;
         <a href="/gltrns" title="General Ledger"><span class="glyphicon glyphicon glyphicon glyphicon-th-large"></span></a> &nbsp;
+        <a href="/glcoa/detail" title="General Ledger Detailed Statement"><span class="glyphicon glyphicon glyphicon glyphicon-th"></span></a> &nbsp;
         <a href="/blog" title="Blog"><span class="glyphicon glyphicon glyphicon glyphicon-list-alt"></span></a> &nbsp;
         <a href="/contact" title="Contact"><span class="glyphicon glyphicon glyphicon glyphicon-pencil"></span></a> &nbsp;
         <a href="/about" title="About"><span style=color:{{Session::get('about')}} class="glyphicon glyphicon glyphicon glyphicon-info-sign"></span></a> &nbsp;
         <a href="/tickets" title="Tickets"><span class="glyphicon glyphicon glyphicon glyphicon-list"></span></a> &nbsp;
+        {{--<a href="/queries" title="Database Queries"><span class="glyphicon glyphicon glyphicon glyphicon-queen"></span></a> &nbsp;--}}
         <a href="/logs" title="Logs"><span class="glyphicon glyphicon glyphicon glyphicon-book"></span></a> &nbsp;
         &nbsp;
     </div>

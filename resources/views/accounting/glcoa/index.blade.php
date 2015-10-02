@@ -2,30 +2,44 @@
 @section('title', 'General Ledger Chart of Accounts')
 @section('content')
 
-    <div class="container col-md-10 col-md-offset-1">
+    <div class="container col-md-12 col-md-offset">
         <div class="panel panel-default">
             @if ($glcoas->isEmpty())
                 <p> There are no accounts.</p>
             @else
-                <table class="table table-bordered table-condensed table-striped">
+                <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
                         <th class="text-center report-headings">Acct</th>
                         <th class="text-center report-headings">Title</th>
                         <th class="text-center report-headings">Opening</th>
-                        <th class="text-center report-headings">Created at</th>
+                        <th class="text-center report-headings">Change</th>
+                        <th class="text-center report-headings">Balance</th>
+                        <th class="text-center report-headings" title="Number of transactions">Count</th>
+                        <th class="text-center report-headings">Created</th>
+                        <th class="text-center report-headings">Modified</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($glcoas as $glcoa)
+                        <?php
+                            $results = DB::select( DB::raw("SELECT SUM(amount) AS total, COUNT(amount) AS count FROM gltrns WHERE acct = " . $glcoa->acct) );
+                            $count = $results[0]->count;
+                            $change = $results[0]->total;
+                            $balance = $glcoa->init + $change;
+                        ?>
                         <tr>
                             <td class="text-center">
                                 <a href="{!! action('GlcoasController@edit', $glcoa->id) !!}">{!! $glcoa->acct !!} </a>
                             </td>
                             <td class="text-left">{!! $glcoa->title !!}</td>
                             <td class="text-right">{!! number_format($glcoa->init,2) !!}</td>
+                            <td class="text-right">{!! number_format($change,2) !!}</td>
+                            <td class="text-right">{!! number_format($balance,2) !!}</td>
+                            <td class="text-right">{!! number_format($count,0) !!}</td>
                             <td class="text-center">{!! $glcoa->created_at !!}</td>
+                            <td class="text-center">{!! $glcoa->updated_at !!}</td>
                             <td class="text-center">
                                 <a href="{!! action('GlcoasController@show', $glcoa->id) !!}" title="Show"><span class="glyphicon glyphicon-list"></span></a>
                                 <a href="{!! action('GlcoasController@edit', $glcoa->id) !!}" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -44,10 +58,8 @@
         </div>
         <div class="text-center">{!! $glcoas->render() !!}</div>
         <div class="text-left">
-            <a href="/glcoa/create" class="btn btn-sm btn-primary btn-raised" role="button">Add</a> &nbsp;
-            <a href="/glcoa/init" class="btn btn-sm btn-active btn-raised" role="button">Check</a>
+            <a href="/glcoa/create" class="btn btn-md btn-primary btn-raised" role="button">Add</a> &nbsp;
         </div>
     </div>
-
 @endsection
 

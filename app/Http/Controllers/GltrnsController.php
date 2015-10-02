@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Glcoa;
 use App\Gltrn;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 use TCPDF;
-
+use Toastr;
 
 class GltrnsController extends Controller
 {
@@ -23,6 +24,12 @@ class GltrnsController extends Controller
      */
     public function index()
     {
+        $results = DB::select( DB::raw("SELECT SUM(amount) AS balance FROM gltrns") );
+        $balance = $results[0]->balance;
+        if ($balance != 0){
+            Toastr::warning('Your journal is out of balance by $' . number_format($balance,2), 'Validation' );
+        }
+
         $gltrns = Gltrn::orderBy('acct')->paginate(env('PAGINATION_MAX'));
         return view('accounting.gltrn.index')->with('gltrns', $gltrns);
     }
@@ -48,6 +55,7 @@ class GltrnsController extends Controller
         $gltrn = new Gltrn(array(
             'acct' => $request->get('acct'),
             'description' => $request->get('description'),
+            'crj' => $request->get('crj'),
             'date' => $request->get('date'),
             'document' => $request->get('document'),
             'amount' => $request->get('amount'),
@@ -77,7 +85,9 @@ class GltrnsController extends Controller
     public function edit($id)
     {
         $gltrn = Gltrn::whereId($id)->firstOrFail();
-        return view('accounting.gltrn.edit')->with('gltrn', $gltrn);
+        $results = DB::table('glcoas')->where('acct', $gltrn->acct)->get();
+        $title = $results[0]->title;
+        return view('accounting.gltrn.edit')->with(['gltrn' => $gltrn, 'title' => $title]);
     }
 
     /**
@@ -92,6 +102,7 @@ class GltrnsController extends Controller
         $gltrn = Gltrn::whereId($id)->firstOrFail();
         $gltrn->acct = $request->get('acct');
         $gltrn->description = $request->get('description');
+        $gltrn->crj = $request->get('crj');
         $gltrn->date = $request->get('date');
         $gltrn->document = $request->get('document');
         $gltrn->amount = $request->get('amount');

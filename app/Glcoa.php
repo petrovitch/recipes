@@ -11,4 +11,9 @@ class Glcoa extends Auditing
 
     protected $fillable = ['acct', 'title', 'init'];
 
+    public function gltrns()
+    {
+        return $this->hasMany('App\Gltrn', 'acct', 'acct')->withTimestamps();
+    }
+
 }

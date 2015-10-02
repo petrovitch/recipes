@@ -13,9 +13,43 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 use TCPDF;
+use Toastr;
 
 class GlcoasController extends Controller
 {
+
+    /**
+     * Are the ledger chart of accounts opening totals in debit/credit balance?
+     * Return the balance.
+     *
+     * @return mixed
+     */
+    public function checkLedger()
+    {
+        $results = DB::select(DB::raw("SELECT SUM(init) AS balance FROM glcoas"));
+        $balance = $results[0]->balance;
+        if ($balance != 0) {
+            Toastr::warning('Your ledger is out of balance by $' . number_format($balance, 2), 'Validation');
+        }
+        return $balance;
+    }
+
+    /**
+     * Is the journal in debit/credit balance?
+     * Return the balance.
+     *
+     * @return mixed
+     */
+    public function checkJournal()
+    {
+        $results = DB::select(DB::raw("SELECT SUM(amount) AS balance FROM gltrns"));
+        $balance = $results[0]->balance;
+        if ($balance != 0) {
+            Toastr::warning('Your journal is out of balance by $' . number_format($balance, 2), 'Validation');
+        }
+        return $balance;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -23,8 +57,11 @@ class GlcoasController extends Controller
      */
     public function index()
     {
+        $balance = SELF::checkJournal();
+        $balance = SELF::checkLedger();
+
         $glcoas = Glcoa::orderBy('acct')->paginate(env('PAGINATION_MAX'));
-        return view('accounting.glcoa.index')->with('glcoas', $glcoas);
+        return view('accounting.glcoa.index')->with(['glcoas' => $glcoas, 'balance' => $balance]);
     }
 
     /**
@@ -62,8 +99,12 @@ class GlcoasController extends Controller
      */
     public function show($id)
     {
+        $balance = SELF::checkJournal();
+        $balance = SELF::checkLedger();
+
         $glcoa = Glcoa::whereId($id)->firstOrFail();
-        return view('accounting.glcoa.show')->with('glcoa', $glcoa);
+        $gltrns = DB::table('gltrns')->where('acct', $glcoa->acct)->get();
+        return view('accounting.glcoa.show')->with(['glcoa' => $glcoa, 'gltrns' => $gltrns]);
     }
 
     /**
@@ -108,10 +149,18 @@ class GlcoasController extends Controller
         return view('accounting.glcoa.index')->with('glcoas', $glcoas);
     }
 
-    public function checkInit()
+    /**
+     * Detailed Statement
+     *
+     * @return $this
+     */
+    public function detail()
     {
-        $results = DB::select( DB::raw("SELECT SUM(init) AS balance FROM glcoas") );
-        return view('accounting.glcoa.init')->with('results', $results);
+        $balance = SELF::checkJournal();
+        $balance = SELF::checkLedger();
+
+        $glcoas = Glcoa::orderBy('acct')->paginate(env('PAGINATION_MAX'));
+        return view('accounting.glcoa.detail')->with('glcoas', $glcoas);
     }
 
 }

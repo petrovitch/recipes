@@ -27,6 +27,14 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="crj" class="col-lg-2 control-label">CRJ</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="crj" placeholder="CRJ" name="crj"
+                                   value="{{ $gltrn->crj }}" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label for="date" class="col-lg-2 control-label">Date</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="date" placeholder="Date" name="date"

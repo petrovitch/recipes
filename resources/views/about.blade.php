@@ -20,6 +20,7 @@
                     <li><a href="http://laraveldaily.com/ target=_blank">Laravel Daily</a></li>
                     <li><a href="https://github.com/fzaninotto/Faker#formatters target=_blank">Faker</a></li>
                     <li><a href="https://s3.amazonaws.com/kantan-dresssed-demos/demos/ives/blue_preview/007_icons@fa-lightbulb-o%252F004_mdi_icons.html target=_blank">MDI Icons</a></li>
+                    <li><a href="https://github.com/nilsenj/toastr-5.1-laravel target=_blank">Toastr</a></li>
                 </ul>
                 @if(Auth::user())
                     <p>

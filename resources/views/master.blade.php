@@ -12,9 +12,8 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('css/ripples.min.css') !!}">
 
     <link rel="stylesheet" type="text/css" href="{!! asset('css/toastr.css') !!}">
-
-</head>
 <body>
+
 @include('partials.navbar')
 
 @yield('content')
@@ -33,6 +32,9 @@
         {{--$.material.init();--}}
     {{--});--}}
 {{--</script>--}}
+
+{!! Toastr::render() !!}
+{!! Toastr::clear() !!}
 
 </body>
 </html>
