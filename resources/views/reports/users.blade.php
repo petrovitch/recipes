@@ -1,6 +1,6 @@
 @extends('reports.master')
 @section('content')
-    <table class="table table-condensed table-striped" style="background-color:#fefefe">
+    <table class="table" style="background-color:white">
         <thead>
         <tr>
             <th style="font-weight:bold;text-decoration:underline;">ID</th>

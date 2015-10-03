@@ -7,13 +7,13 @@
             <table class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th>Query</th>
+                    <th>Database Queries</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($queries as $query)
+                @foreach($lines as $line)
                     <tr>
-                        <td>{!! $query["query"] !!}</td>
+                        <td>{!! $line !!}</td>
                     </tr>
                 @endforeach
                 </tbody>

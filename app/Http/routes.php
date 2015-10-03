@@ -91,6 +91,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 Route::get('audits', 'AuditTrailsController@index');
 Route::get('queries', 'PagesController@queries');
+Route::get('slowQueries', 'PagesController@slowQueries');
 
 //Accounting
 Route::get('glcoas', 'GlcoasController@index');
@@ -102,6 +103,8 @@ Route::post('glcoa/{id?}/edit', 'GlcoasController@update');
 Route::get('glcoa/{id?}/show', 'GlcoasController@show');
 Route::get('glcoa/{id?}/delete', 'GlcoasController@destroy');
 Route::get('glcoa/detail', 'GlcoasController@detail');
+Route::get('glcoa/excel', 'GlcoasController@glcoaExcel');
+Route::get('glcoa/pdf', 'GlcoasController@glcoaPdf');
 
 Route::get('gltrns', 'GltrnsController@index');
 Route::get('gltrn/create', 'GltrnsController@create');
@@ -112,4 +115,4 @@ Route::get('gltrn/{id?}/show', 'GltrnsController@show');
 Route::get('gltrn/{id?}/delete', 'GltrnsController@destroy');
 
 // Enable Database Log Query
-DB::connection()->enableQueryLog();
+//DB::connection()->enableQueryLog();

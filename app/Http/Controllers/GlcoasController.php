@@ -163,4 +163,47 @@ class GlcoasController extends Controller
         return view('accounting.glcoa.detail')->with('glcoas', $glcoas);
     }
 
+    public function glcoaExcel()
+    {
+        $data = DB::select(DB::raw("SELECT * FROM glcoas"));
+        $data = json_encode($data);
+        SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
+    }
+
+    public function glcoaPdf()
+    {
+        $users = Glcoa::all();
+        $view = view('reports.glcoas')->with('glcoas', $users);
+        $contents = $view->render();
+        SELF::html2pdf($contents);
+    }
+
+    public function data2excel($excel, $sheet, $data)
+    {
+        $this->excel = $excel;
+        $this->sheet = $sheet;
+        $this->data = $data;
+        Excel::create($this->excel, function ($excel) {
+            $excel->sheet('Sheetname', function ($sheet) {
+                $sheet->appendRow(array_keys($this->data[0])); // column names
+                foreach ($this->data as $field) {
+                    $sheet->appendRow($field);
+                }
+            });
+        })->export('xlsx');
+    }
+
+    public function html2pdf($html)
+    {
+        $font_size = 8;
+        $pdf = new TCPDF();
+        $pdf->SetPrintHeader(false);
+        $pdf->SetPrintFooter(false);
+        $pdf->SetFont('times', '', $font_size, '', 'default', true);
+        $pdf->AddPage("L");
+        $pdf->writeHTML($html);
+        $filename = '/report.pdf';
+        $pdf->Output($filename, 'I');
+    }
+
 }

@@ -56,10 +56,17 @@
                     </div>
                 @endif
         </div>
+
         <div class="text-center">{!! $glcoas->render() !!}</div>
-        <div class="text-left">
-            <a href="/glcoa/create" class="btn btn-md btn-primary btn-raised" role="button">Add</a> &nbsp;
+
+        <div class="text-right">
+            <a href="{!! action('GlcoasController@glcoaExcel', $glcoa->id) !!}" title="Export to Excel"><span class="glyphicon glyphicon-download-alt"></span> Excel </a> &nbsp;
+            <a href="{!! action('GlcoasController@glcoaPdf', $glcoa->id) !!}" title="Export to PDF"><span class="glyphicon glyphicon-th"></span> PDF </a> &nbsp;
+            <span style="float:left">
+                <a href="/glcoa/create" class="btn btn-sm btn-primary btn-raised" role="button">Add</a> &nbsp;
+            </span>
         </div>
+
     </div>
 @endsection
 

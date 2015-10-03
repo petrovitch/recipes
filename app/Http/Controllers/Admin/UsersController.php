@@ -112,7 +112,7 @@ class UsersController extends Controller
 //        $users = User::all();
         $data = DB::select(DB::raw("SELECT * FROM users"));
         $data = json_encode($data); // encode/decode unnecessary
-        $this->data2excel('Excel', 'Sheet1', json_decode($data, true));
+        SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
     }
 
     public function screen2pdf()
@@ -120,7 +120,7 @@ class UsersController extends Controller
         $users = User::all();
         $view = view('backend.users.index')->with('users', $users);
         $contents = $view->render();
-        $this->html2pdf($contents);
+        SELF::html2pdf($contents);
     }
 
     public function report2pdf()
@@ -128,7 +128,7 @@ class UsersController extends Controller
         $users = User::all();
         $view = view('reports.users')->with('users', $users);
         $contents = $view->render();
-        $this->html2pdf($contents);
+        SELF::html2pdf($contents);
     }
 
     public function data2excel($excel, $sheet, $data)
