@@ -24,8 +24,9 @@ class GltrnsController extends Controller
      */
     public function index()
     {
-        $results = DB::select( DB::raw("SELECT SUM(amount) AS balance FROM gltrns") );
-        $balance = $results[0]->balance;
+//        $results = DB::select( DB::raw("SELECT SUM(amount) AS balance FROM gltrns") );
+//        $balance = $results[0]->balance;
+        $balance = Gltrn::sum('amount');
         if ($balance != 0){
             Toastr::warning('Your journal is out of balance by $' . number_format($balance,2), 'Validation' );
         }
@@ -84,10 +85,9 @@ class GltrnsController extends Controller
      */
     public function edit($id)
     {
+        $glcoas = Glcoa::orderBy('acct')->get();
         $gltrn = Gltrn::whereId($id)->firstOrFail();
-        $results = DB::table('glcoas')->where('acct', $gltrn->acct)->get();
-        $title = $results[0]->title;
-        return view('accounting.gltrn.edit')->with(['gltrn' => $gltrn, 'title' => $title]);
+        return view('accounting.gltrn.edit')->with(['gltrn' => $gltrn, 'glcoas' => $glcoas]);
     }
 
     /**

@@ -66,8 +66,10 @@
                         <div class="row-content">
                             <div class="action-secondary"><i class="mdi-material-info"></i></div>
                             <h4 class="list-group-item-heading">View Logs</h4>
-                            <a href="/logs" class="btn btn-warning btn-raised">Errors & Warnings</a>
-                            <a href="/audits" class="btn btn-info btn-raised">Audit Trail</a>
+                            <a href="/logs" class="btn btn-warning btn-raised btn-lg" target="_blank">Errors & Warnings</a>
+                            <a href="/audits" class="btn btn-info btn-raised btn-lg" target="_blank">Audit Trail</a>
+                            <a href="/queries" class="btn btn-success btn-raised btn-lg" target="_blank">All Queries</a>
+                            <a href="/slowQueries" class="btn btn-danger btn-raised btn-lg" target="_blank">Slow Queries</a>
                         </div>
                     </div>
                     <div class="list-group-separator"></div>

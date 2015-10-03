@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9206f5d94124fac3dbe6e1a96a752ce3",
-    "content-hash": "f6a37264967e0feab6e1cd672ea8bdfb",
+    "hash": "8b410a55a74aec4f432e0022b2c71d27",
+    "content-hash": "a9695ad11ceb146d8c11b3f6406d6802",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -60,6 +60,50 @@
                 "preload"
             ],
             "time": "2015-06-28 21:39:13"
+        },
+        {
+            "name": "creativeorange/gravatar",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/creativeorange/gravatar.git",
+                "reference": "5f4c144e942c6a0d99197c723f6cb4d237be40e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/creativeorange/gravatar/zipball/5f4c144e942c6a0d99197c723f6cb4d237be40e7",
+                "reference": "5f4c144e942c6a0d99197c723f6cb4d237be40e7",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.0.*|5.1.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Creativeorange\\Gravatar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jaco Tijssen",
+                    "email": "jaco@creativeorange.nl",
+                    "homepage": "https://www.creativeorange.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel 5.0 & 5.1 gravatar package for retrieving gravatar image URLs or checking the existance of an image.",
+            "keywords": [
+                "avatar",
+                "gravatar",
+                "laravel"
+            ],
+            "time": "2015-08-25 11:21:47"
         },
         {
             "name": "danielstjules/stringy",
@@ -1080,12 +1124,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nilsenj/toastr-5.1-laravel.git",
-                "reference": "43297b9f964eefdef1b2cd6ec6a57c2ab0372416"
+                "reference": "d365c405e37705fff60094c7c9efaa11783bde0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nilsenj/toastr-5.1-laravel/zipball/43297b9f964eefdef1b2cd6ec6a57c2ab0372416",
-                "reference": "43297b9f964eefdef1b2cd6ec6a57c2ab0372416",
+                "url": "https://api.github.com/repos/nilsenj/toastr-5.1-laravel/zipball/d365c405e37705fff60094c7c9efaa11783bde0f",
+                "reference": "d365c405e37705fff60094c7c9efaa11783bde0f",
                 "shasum": ""
             },
             "require": {
@@ -1121,7 +1165,7 @@
                 "php",
                 "toastr"
             ],
-            "time": "2015-08-05 22:10:41"
+            "time": "2015-10-02 14:24:33"
         },
         {
             "name": "owen-it/laravel-auditing",
@@ -3156,16 +3200,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.3.7",
+            "version": "2.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "5e2645ad49d196e020b85598d7c97e482725786a"
+                "reference": "ac8e7a3db35738d56ee9a76e78a4e03d97628983"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/5e2645ad49d196e020b85598d7c97e482725786a",
-                "reference": "5e2645ad49d196e020b85598d7c97e482725786a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/ac8e7a3db35738d56ee9a76e78a4e03d97628983",
+                "reference": "ac8e7a3db35738d56ee9a76e78a4e03d97628983",
                 "shasum": ""
             },
             "require": {
@@ -3208,7 +3252,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-08-19 09:14:08"
+            "time": "2015-10-02 06:51:40"
         },
         {
             "name": "sebastian/comparator",

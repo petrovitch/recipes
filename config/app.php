@@ -150,6 +150,7 @@ return [
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         OwenIt\Auditing\AuditingServiceProvider::class,
         'nilsenj\Toastr\ToastrServiceProvider',
+        'Creativeorange\Gravatar\GravatarServiceProvider',
     ],
 
     /*
@@ -203,6 +204,7 @@ return [
         'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
         'Excel'     => 'Maatwebsite\Excel\Facades\Excel',
         'Toastr'    => 'nilsenj\Toastr\Facades\Toastr',
+        'Gravatar' => 'Creativeorange\Gravatar\Facades\Gravatar',
     ],
 
 ];

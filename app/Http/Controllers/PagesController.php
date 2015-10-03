@@ -2,21 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use Auth;
+use Gravatar;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Toastr;
-use Auth;
 
 class PagesController extends Controller
 {
     public function about()
     {
+        /**
+         * Is user logged-in?
+         */
         if (!Auth::user()){
             Toastr::info('Please login.');
         }
-        return view('about');
+
+        /**
+         * Does gravatar exist?
+         */
+        if (Auth::user()) {
+            if (Gravatar::exists(Auth::user()->email)) {
+                Toastr::success('Gravatar exists.');
+                $gravatar = Gravatar::get(Auth::user()->email);
+            } else {
+                Toastr::danger('Gravatar does not exist.');
+                $gravatar = "http://www.gravatar.com/avatar/?d=identicon";
+            }
+        }
+
+        /**
+         * View About Page
+         */
+        return view('about')->with('gravatar', $gravatar);
     }
 
     public function contact()

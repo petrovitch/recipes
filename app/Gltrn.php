@@ -13,7 +13,15 @@ class Gltrn extends Auditing
 
     public function glcoa()
     {
-        return $this->belongsTo('App\Glcoa', 'acct', 'acct')->withTimestamps();
+        return $this->belongsTo('App\Glcoa', 'acct', 'acct');
     }
 
+    private function getDateValue() {
+        return date('m/d/Y', strtotime($this->attributes['date']));
+    }
+
+    private function setDateValue($value) {
+        $arr = explode('/', $value);
+        $this->attributes['date'] = $arr[2].'-'.$arr[0].'-'.$arr[1];
+    }
 }

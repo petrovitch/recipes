@@ -31,7 +31,6 @@
                     </tr>
                     <?php $total = $glcoa->init ?>
                     <?php $gltrns = DB::table('gltrns')->where('acct', $glcoa->acct)->get() ?>
-
                     @foreach($gltrns as $gltrn)
                         <?php
                         if ($gltrn->amount >= 0){

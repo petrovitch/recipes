@@ -15,7 +15,8 @@
         "nesbot/carbon": "^1.20",
         "rap2hpoutre/laravel-log-viewer": "^0.4.2",
         "owen-it/laravel-auditing": "^2.0",
-        "nilsenj/toastr-5.1-laravel": "dev-master"
+        "nilsenj/toastr-5.1-laravel": "dev-master",
+        "creativeorange/gravatar": "~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

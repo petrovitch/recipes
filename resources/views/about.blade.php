@@ -14,17 +14,17 @@
                             Online</a></li>
                     <li><a href="https://laracasts.com/series/laravel-5-fundamentals/ target=_blank">Laracasts: Laravel
                             Fundamentals</a></li>
-                    <li><a href="http://laravel.com/docs/5.1 target=_blank">Laravel Documentation</a></li>
-                    <li><a href="http://laravel.com/docs/5.1/validation#rule-digits target=_blank">Laravel Validation Rules</a></li>
-                    <li><a href="http://laravel.io/forum target=_blank">Laravel Forum</a></li>
-                    <li><a href="http://laraveldaily.com/ target=_blank">Laravel Daily</a></li>
-                    <li><a href="https://github.com/fzaninotto/Faker#formatters target=_blank">Faker</a></li>
-                    <li><a href="https://s3.amazonaws.com/kantan-dresssed-demos/demos/ives/blue_preview/007_icons@fa-lightbulb-o%252F004_mdi_icons.html target=_blank">MDI Icons</a></li>
-                    <li><a href="https://github.com/nilsenj/toastr-5.1-laravel target=_blank">Toastr</a></li>
+                    <li><a href="http://laravel.com/docs/5.1" target="_blank">Laravel Documentation</a></li>
+                    <li><a href="http://laravel.com/docs/5.1/validation#rule-digits" target="_blank">Laravel Validation Rules</a></li>
+                    <li><a href="http://laravel.io/forum" target="_blank">Laravel Forum</a></li>
+                    <li><a href="http://laraveldaily.com/" target="_blank">Laravel Daily</a></li>
+                    <li><a href="https://github.com/fzaninotto/Faker#formatters" target="_blank">Faker</a></li>
+                    <li><a href="https://s3.amazonaws.com/kantan-dresssed-demos/demos/ives/blue_preview/007_icons@fa-lightbulb-o%252F004_mdi_icons.html" target="_blank">MDI Icons</a></li>
+                    <li><a href="https://github.com/nilsenj/toastr-5.1-laravel" target="_blank">Toastr</a></li>
                 </ul>
                 @if(Auth::user())
                     <p>
-                        User:<br>
+                        <img src={{ $gravatar }}><br>
                         <strong>{{ Auth::user()->name }}</strong><br>
                         {{ Auth::user()->email }} <br>
                         @if(Auth::user()->hasRole('admin'))

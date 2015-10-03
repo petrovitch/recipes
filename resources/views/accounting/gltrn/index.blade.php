@@ -32,14 +32,12 @@
                                 $debit = 0;
                                 $credit = abs($gltrn->amount);
                             }
-                            $results = DB::table('glcoas')->where('acct', $gltrn->acct)->get();
-                            $title = $results[0]->title;
                         ?>
                         <tr>
                             <td class="text-center">
                                 <a href="{!! action('GltrnsController@edit', $gltrn->id) !!}" title="Edit">{!! $gltrn->acct !!} </a>
                             </td>
-                            <td class="text-left">{!! $title !!}</td>
+                            <td class="text-left">{!! $gltrn->glcoa->title !!}</td>
                             <td class="text-left">{!! $gltrn->description !!}</td>
                             <td class="text-left">{!! $gltrn->crj !!}</td>
                             <td class="text-left">{!! $gltrn->date !!}</td>

@@ -13,7 +13,7 @@ class Glcoa extends Auditing
 
     public function gltrns()
     {
-        return $this->hasMany('App\Gltrn', 'acct', 'acct')->withTimestamps();
+        return $this->hasMany('App\Gltrn', 'acct', 'acct');
     }
 
 }

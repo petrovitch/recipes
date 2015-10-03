@@ -55,8 +55,6 @@
         <a href="/contact" title="Contact"><span class="glyphicon glyphicon glyphicon glyphicon-pencil"></span></a> &nbsp;
         <a href="/about" title="About"><span style=color:{{Session::get('about')}} class="glyphicon glyphicon glyphicon glyphicon-info-sign"></span></a> &nbsp;
         <a href="/tickets" title="Tickets"><span class="glyphicon glyphicon glyphicon glyphicon-list"></span></a> &nbsp;
-        <a href="/queries" title="Database Queries"><span class="glyphicon glyphicon glyphicon glyphicon-king"></span></a> &nbsp;
-        <a href="/slowQueries" title="Slow Database Queries"><span class="glyphicon glyphicon glyphicon glyphicon-queen"></span></a> &nbsp;
         <a href="/logs" title="Logs"><span class="glyphicon glyphicon glyphicon glyphicon-book"></span></a> &nbsp;
         &nbsp;
     </div>

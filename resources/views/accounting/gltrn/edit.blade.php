@@ -2,7 +2,6 @@
 @section('name', 'Edit Transaction')
 
 @section('content')
-    <?php $glcoas = DB::select(DB::raw("SELECT * FROM glcoas"));?>
     <div class="container col-md-6 col-md-offset-3">
         <div class="well well bs-component">
 
@@ -10,17 +9,10 @@
                 {!! csrf_field() !!}
                 <fieldset>
                     <legend>Edit Transaction</legend>
-
-                    <script>
-                        $('.selectpicker').selectpicker({
-                            style: 'btn-info',
-                            size: 4
-                        });
-                    </script>
                     <div class="form-group">
                         <label for="acct" class="col-lg-2 control-label">Acct</label>
                         <select class="selectpicker btn" id="acct" name="acct">
-                            <option value={{$gltrn->acct}}>{{$gltrn->acct}} {{$title}}</option>
+                            <option value={{$gltrn->acct}}>{{$gltrn->acct}} {{$gltrn->glcoa->title}}</option>
                             @foreach ($glcoas as $glcoa)
                                 <option value={{$glcoa->acct}}>{{$glcoa->acct}} {{$glcoa->title}}</option>
                             @endforeach
@@ -50,7 +42,7 @@
                         <label for="date" class="col-lg-2 control-label">Date</label>
 
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="date" placeholder="Date" name="date"
+                            <input type="text" class="form-control" id="date" placeholder="mm/dd/yyyy" name="date"
                                    value="{{ $gltrn->date }}">
                         </div>
                     </div>
