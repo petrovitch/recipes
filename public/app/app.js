@@ -4,7 +4,7 @@ main.controller('ClockController', function ($scope, $timeout) {
     $scope.clock = {};
     var updateClock = function () {
         $scope.clock.now = new Date();
-        $timeout(function () {
+        $timeout(function(){
             updateClock();
         }, 1000);
     };
@@ -13,13 +13,9 @@ main.controller('ClockController', function ($scope, $timeout) {
 
 main.controller('AddingMachineController', function ($scope) {
     $scope.counter = 0;
-    $scope.add = function (value) {
-        $scope.counter += value;
-    };
-    $scope.subtract = function (value) {
-        $scope.counter -= value;
-    };
+    $scope.add = function(value) { $scope.counter += value; };
+    $scope.subtract = function(value) { $scope.counter -= value; };
 });
 
-main.controller('MyController', function ($scope, $Interpolate) {
+main.controller('MyController', function ($scope) {
 });

@@ -20,14 +20,31 @@
     </div>
 </div>
 
-<div ng-controller="MyController">
+<div ng-controller="AddingMachineController">
     <fieldset>
-        <legend> &nbsp; Example &nbsp; </legend>
-        <div class="container col-lg-10-offset01">
-            <div class="content">
+        <legend>Adding Machine</legend>
+        <div class="container col-lg-10-offset-1">
+            <div class="content col-lg-10">
+                <div class="input-group">
+                    <h4>Simple adding machine:</h4>
+                    <button ng-click="add(1)" class="btn btn-primary glyphicon glyphicon-plus"></button>
+                    <a ng-click="subtract(1)" class="btn btn-warning glyphicon glyphicon-minus"></a>
+                </div>
+                <h4>Current count: {{ counter }}</h4>
             </div>
         </div>
     </fieldset>
+</div>
+
+<div ng-controller="MyController">
+    <fieldset>
+        <legend>Example</legend>
+        <div class="container col-lg-10-4">
+            <div class="content col-lg-10-offset-4">
+                <div class="input-group">
+                </div>
+    </fieldset>
+</div>
 </div>
 
 <script src="../js/angular.js"></script>
