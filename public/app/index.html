@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <title>Simple app</title>
+    <link rel="stylesheet" type="text/css" href="../css/app.css">
+    <link rel="stylesheet" type="text/css" href="../css/roboto.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/material.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/toastr.css">
+</head>
+<body>
+
+<div ng-controller="ClockController">
+    <div class="container">
+        <div class="content">
+            <span style="float:right">
+                {{ clock.now | date:'MM/dd/yyyy HH:mm:ss'}}
+            </span>
+        </div>
+    </div>
+</div>
+
+<div ng-controller="MyController">
+    <fieldset>
+        <legend> &nbsp; Example &nbsp; </legend>
+        <div class="container col-lg-10-offset01">
+            <div class="content">
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+<script src="../js/angular.js"></script>
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/ripples.min.js"></script>
+<script src="../js/material.min.js"></script>
+<script src="../js/toastr.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
+
