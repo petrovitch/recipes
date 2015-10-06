@@ -28,6 +28,7 @@
                     <li><a href="http://phpword.readthedocs.org/en/latest/intro.html" target="_blank">PHP Word</a></li>
                     <li><a href="https://github.com/nilsenj/toastr-5.1-laravel" target="_blank">Toastr</a></li>
                     <li><a href="https://packagist.org/packages/anahkiasen/underscore-php" target="_blank">Underscore PHP</a></li>
+                    <li><a href="https://quickleft.com/blog/angularjs-unit-testing-for-real-though/" target="_blank">Unit Testing Angular</a></li>
                 </ul>
                 @if(Auth::user())
                     <p>

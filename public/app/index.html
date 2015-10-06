@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="main">
+<html ng-app="APP">
 <head>
     <title>Simple app</title>
     <link rel="stylesheet" type="text/css" href="../css/app.css">
@@ -20,31 +20,18 @@
     </div>
 </div>
 
-<div ng-controller="AddingMachineController">
-    <fieldset>
-        <legend>Adding Machine</legend>
-        <div class="container col-lg-10-offset-1">
-            <div class="content col-lg-10">
-                <div class="input-group">
-                    <h4>Simple adding machine:</h4>
-                    <button ng-click="add(1)" class="btn btn-primary glyphicon glyphicon-plus"></button>
-                    <a ng-click="subtract(1)" class="btn btn-warning glyphicon glyphicon-minus"></a>
-                </div>
-                <h4>Current count: {{ counter }}</h4>
-            </div>
-        </div>
-    </fieldset>
-</div>
 
 <div ng-controller="MyController">
     <fieldset>
         <legend>Example</legend>
-        <div class="container col-lg-10-4">
-            <div class="content col-lg-10-offset-4">
+        <div class="container col-lg-8">
+            <div class="content col-lg-8-offset-1">
                 <div class="input-group">
+                    <google></google>
                 </div>
+            </div>
+        </div>
     </fieldset>
-</div>
 </div>
 
 <script src="../js/angular.js"></script>
@@ -55,6 +42,8 @@
 <script src="../js/toastr.js"></script>
 
 <script src="app.js"></script>
+<script src="filters/filters.js"></script>
+<script src="directives/google.directive.js"></script>
 
 </body>
 </html>
