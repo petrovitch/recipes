@@ -20,14 +20,16 @@
     </div>
 </div>
 
+<input type="text" name="name" ng-model="name" placeholder="Name"><br>
+<input type="text" name="email" ng-model="email" placeholder="Email"><br>
+<button href="#" class="button" ng-model="button" ng-disabled="!name || !email")>Submit</button>
 
 <div ng-controller="MyController">
     <fieldset>
-        <legend>Example</legend>
+        <legend></legend>
         <div class="container col-lg-8">
             <div class="content col-lg-8-offset-1">
                 <div class="input-group">
-                    <google></google>
                 </div>
             </div>
         </div>

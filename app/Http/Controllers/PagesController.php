@@ -28,16 +28,15 @@ class PagesController extends Controller
             if (Gravatar::exists(Auth::user()->email)) {
                 Toastr::success('Gravatar exists.');
                 $gravatar = Gravatar::get(Auth::user()->email);
+                return view('about')->with('gravatar', $gravatar);
             } else {
                 Toastr::danger('Gravatar does not exist.');
-                $gravatar = "http://www.gravatar.com/avatar/?d=identicon";
+                $gravatar = "";
+                return view('about');
             }
         }
 
-        /**
-         * View About Page
-         */
-        return view('about')->with('gravatar', $gravatar);
+        return view('about');
     }
 
     public function contact()

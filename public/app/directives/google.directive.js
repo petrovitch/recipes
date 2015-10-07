@@ -8,8 +8,8 @@
 
     function GoogleDirective() {
         return {
-            restrict: 'E',
-            template: '<a class="btn btn-primary" type="button" href="http://google.com" target="_blank">Google</a>'
+            restrict: 'EA',
+            template: '<a href="http://google.com" target="_blank" class="btn btn-info">Google</a>'
         };
     }
 })();
