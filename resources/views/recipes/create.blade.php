@@ -46,6 +46,13 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="microwave" class="col-lg-2 control-label">Microwave</label>
+                        <div class="col-lg-10">
+                            <input type="checkbox" class="form-control" id="microwave" name="microwave">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                             <button type="reset" class="btn btn-default">Cancel</button>
                             <button type="submit" class="btn btn-primary">Submit</button>

@@ -9,5 +9,5 @@ class Recipe extends Auditing
 {
     protected $table = 'recipes';
 
-    protected $fillable = ['category', 'name', 'author', 'recipe', 'instructions'];
+    protected $fillable = ['category', 'name', 'author', 'recipe', 'instructions', 'microwave'];
 }

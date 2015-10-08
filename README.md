@@ -12,3 +12,15 @@ This project is just a tool for testing.
 * php artisan migrate
 * composer dump-autoload
 * composer update
+
+## Cloning a template
+
+~~~
+Delete last commit from local and remote repository
+git reset --hard HEAD^
+git push -f
+
+Change remote repository
+	git remote -v
+	git remote set-url origin https://github.com/petrovitch/ark.git
+~~~

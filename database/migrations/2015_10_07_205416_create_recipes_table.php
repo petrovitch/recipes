@@ -19,6 +19,7 @@ class CreateRecipesTable extends Migration
             $table->string('author');
             $table->string('recipe');
             $table->string('instructions');
+            $table->integer('microwavce');
             $table->timestamps();
         });
     }

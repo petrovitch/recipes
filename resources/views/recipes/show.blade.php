@@ -20,6 +20,9 @@
                         <p style="font-size:11px;font-weight:bold;">
                         <pre>{{ $recipe->instructions }}</pre>
                         </p>
+                        @if($recipe->microwave)
+                        <p>Microwave</p>
+                        @endif
                         <p style="color:#333333">{{ $recipe->author }}</p>
                     </div>
                 </div>

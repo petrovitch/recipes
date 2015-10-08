@@ -24,8 +24,44 @@ class RecipesController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::orderBy('id', 'desc')->paginate(env('RECIPE_PAGINATION_MAX'));
+        $recipes = Recipe::orderBy('category')->orderBy('name')->paginate(env('RECIPE_PAGINATION_MAX'));
         return view('recipes.index')->with('recipes', $recipes);
+    }
+
+    public function search($token = 'rice')
+    {
+        $recipes = Recipe::where('recipe', 'LIKE', '%' . $token . '%')
+            ->orWhere('instructions', 'LIKE', '%' . $token . '%')
+            ->orderBy('category')
+            ->orderBy('name')
+            ->paginate(env('RECIPE_PAGINATION_MAX'));
+        return view('recipes.index')->with('recipes', $recipes);
+    }
+
+    public function words()
+    {
+        $recipes = Recipe::All();
+        $words = '';
+        foreach ($recipes as $recipe){
+            if (preg_match_all('/([a-zA-Z]+)/', $recipe->recipe, $match)){
+                for ($i = 0; $i < count($match); $i++){
+                    if (strlen($match[$i][1]) > 2) {
+                        $words .= strtolower($match[$i][1]) . ' ';
+                    }
+                }
+            }
+            if (preg_match_all('/([a-zA-Z]+)/', $recipe->instructions, $match)){
+                for ($i = 0; $i < count($match); $i++){
+                    if (strlen($match[$i][1]) > 2) {
+                        $words .= strtolower($match[$i][1]) . ' ';
+                    }
+                }
+            }
+        }
+        $words = array_count_values(str_word_count($words, 1));
+        arsort($words);
+        $words = array_diff($words, $bad);
+        return view('recipes.words')->with('words', $words);
     }
 
     /**
@@ -52,6 +88,7 @@ class RecipesController extends Controller
             'author' => $request->get('author'),
             'recipe' => $request->get('recipe'),
             'instructions' => $request->get('instructions'),
+            'microwave' => $request->get('microwave'),
         ));
         $recipe->save();
         Toastr::success('Recipe created.');
@@ -97,6 +134,7 @@ class RecipesController extends Controller
         $recipe->author = trim($request->get('author'));
         $recipe->recipe = trim($request->get('recipe'));
         $recipe->instructions = trim($request->get('instructions'));
+        $recipe->microwave = $request->get('microwave');
         $recipe->save();
         Toastr::success('Recipe updated.');
         return redirect(action('RecipesController@index', $recipe->id));
@@ -139,6 +177,12 @@ class RecipesController extends Controller
         $view = view('reports.recipes')->with('recipes', $recipes);
         $contents = $view->render();
         SELF::html2pdf($contents);
+    }
+
+    public function recipesHtml($offset = 0, $limit = 1)
+    {
+        $recipes = DB::select(DB::raw("SELECT * FROM recipes ORDER BY category, name LIMIT $offset, $limit"));
+        return view('reports.recipes')->with('recipes', $recipes);
     }
 
     public function data2excel($excel, $sheet, $data)

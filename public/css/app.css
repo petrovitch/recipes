@@ -6703,7 +6703,8 @@ label,
 }
 .report-headings {
     font-weight: bold;
-    background-color: silver;
+    background-color: #009587;
+    color: #ffffff;
 }
 /*# sourceMappingURL=app.css.map */
 

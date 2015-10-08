@@ -37,14 +37,25 @@
                     <div class="form-group">
                         <label for="recipe" class="col-lg-2 control-label">Recipe</label>
                         <div class="col-lg-10">
-                            <textarea rows="8" class="form-control" id="recipe" placeholder="Recipe" name="recipe">{{ $recipe->recipe }}</textarea>
+                            <textarea rows="4" class="form-control" id="recipe" placeholder="Recipe" name="recipe">{{ $recipe->recipe }}</textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="instructions" class="col-lg-2 control-label">Instructions</label>
                         <div class="col-lg-10">
-                            <textarea rows="8" class="form-control" id="instructions" placeholder="Instructions" name="instructions">{{ $recipe->instructions }}</textarea>
+                            <textarea rows="4" class="form-control" id="instructions" placeholder="Instructions" name="instructions">{{ $recipe->instructions }}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="microwave" class="col-lg-2 control-label">Microwave</label>
+                        <div class="col-lg-10">
+                            @if($recipe->microwave)
+                            <input type="checkbox" class="form-control" id="microwave" name="author" checked>
+                                @else
+                                <input type="checkbox" class="form-control" id="microwave" name="author">
+                            @endif
                         </div>
                     </div>
 

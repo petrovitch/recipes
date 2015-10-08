@@ -48,7 +48,6 @@
 <div class="container">
     <div class="content">
         <a href="/" title="Home"><span class="glyphicon glyphicon glyphicon-home"></span></a> &nbsp;
-        <a href="/recipes" title="Recipes"><span class="glyphicon glyphicon glyphicon-grain"></span></a> &nbsp;
         <a href="/glcoas" title="General Ledger Trial Balance"><span class="glyphicon glyphicon glyphicon glyphicon-th-list"></span></a> &nbsp;
         <a href="/gltrns" title="General Ledger"><span class="glyphicon glyphicon glyphicon glyphicon-th-large"></span></a> &nbsp;
         <a href="/glcoa/detail" title="General Ledger Detailed Statement"><span class="glyphicon glyphicon glyphicon glyphicon-th"></span></a> &nbsp;
@@ -56,6 +55,8 @@
         <a href="/contact" title="Contact"><span class="glyphicon glyphicon glyphicon glyphicon-pencil"></span></a> &nbsp;
         <a href="/about" title="About"><span style=color:{{Session::get('about')}} class="glyphicon glyphicon glyphicon glyphicon-info-sign"></span></a> &nbsp;
         <a href="/tickets" title="Tickets"><span class="glyphicon glyphicon glyphicon glyphicon-list"></span></a> &nbsp;
+        <a href="/recipes" title="Recipes"><span class="glyphicon glyphicon glyphicon-grain"></span></a> &nbsp;
+        <a href="/recipes/words" title="Word Frequency in Recipes"><span class="glyphicon glyphicon glyphicon-tag"></span></a> &nbsp;
         <a href="/logs" title="Logs"><span class="glyphicon glyphicon glyphicon glyphicon-book"></span></a> &nbsp;
         &nbsp;
     </div>
