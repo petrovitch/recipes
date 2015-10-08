@@ -48,6 +48,7 @@
 <div class="container">
     <div class="content">
         <a href="/" title="Home"><span class="glyphicon glyphicon glyphicon-home"></span></a> &nbsp;
+        <a href="/recipes" title="Recipes"><span class="glyphicon glyphicon glyphicon-grain"></span></a> &nbsp;
         <a href="/glcoas" title="General Ledger Trial Balance"><span class="glyphicon glyphicon glyphicon glyphicon-th-list"></span></a> &nbsp;
         <a href="/gltrns" title="General Ledger"><span class="glyphicon glyphicon glyphicon glyphicon-th-large"></span></a> &nbsp;
         <a href="/glcoa/detail" title="General Ledger Detailed Statement"><span class="glyphicon glyphicon glyphicon glyphicon-th"></span></a> &nbsp;

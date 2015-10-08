@@ -24,6 +24,8 @@
                                     @elseif(Auth::user()->hasRole('member'))
                                         Member
                                     @endif
+                                    <br>
+                                    <a href="https://leanpub.com/user_dashboard/library" target="_blank">Learn Pub Library</a></li>
                                 </p>
                             @endif
                         </td>
@@ -68,8 +70,13 @@
                         <td width="50%">
                             <h3>AngularJS</h3>
                             <ul>
-                                <li><a href="http://www.blog.local/app/tests/index.html/" target="_blank">Angular Tests
+                                <li><a href="http://www.blog.local/app/index.html/" target="_blank">AngularJS Server
+                                    </a></li>
+                                <li><a href="http://www.blog.local/app/tests/index.html/" target="_blank">AngularJS
+                                        Tests
                                         (Local)</a></li>
+                                <li><a href="http://code.tutsplus.com/tutorials/testing-your-javascript-with-jasmine--net-21229" target="_blank">Jasmine Testing Tutorial</a></li>
+                                <li><a href="https://github.com/aditzel/spring-security-csrf-token-interceptor" target="_blank">CSRF Token Interceptor</a></li>
                             </ul>
                         </td>
                     </tr>

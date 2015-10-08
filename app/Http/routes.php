@@ -114,5 +114,19 @@ Route::post('gltrn/{id?}/edit', 'GltrnsController@update');
 Route::get('gltrn/{id?}/show', 'GltrnsController@show');
 Route::get('gltrn/{id?}/delete', 'GltrnsController@destroy');
 
+//Recipes
+Route::get('recipes', 'RecipesController@index');
+Route::get('recipe/create', 'RecipesController@create');
+Route::post('recipe/create', 'RecipesController@store');
+Route::get('recipe/{id?}/edit', 'RecipesController@edit');
+Route::post('recipe/{id?}/edit', 'RecipesController@update');
+Route::get('recipe/{id?}/show', 'RecipesController@show');
+Route::get('recipe/{id?}/delete', 'RecipesController@destroy');
+Route::get('recipes/excel', 'RecipesController@recipesExcel');
+Route::get('recipe/{id?}/pdf', 'RecipesController@recipePdf');
+Route::get('recipes/pdf', 'RecipesController@recipesPdf');
+
+
+
 // Enable Database Log Query
 //DB::connection()->enableQueryLog();
