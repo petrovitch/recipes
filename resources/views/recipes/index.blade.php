@@ -1,12 +1,11 @@
 @extends('master')
 @section('title', 'Recipes')
 @section('content')
-    {!! csrf_field() !!}
-
     <form name="search" action="recipes/search" method="post">
-    <span style="display:inline-block;float:left;position: absolute;top: 65px;right: 5px;">
-        &nbsp; <input placeholder="Filter..." type="text" name="token"">
-    </span>
+        <span style="display:inline-block;float:left;position: absolute;top: 65px;right: 5px;">
+            <input type="text" name="token" placeholder="Filter...">
+        </span>
+        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
     </form>
 
     <div class="container col-md-8 col-md-offset-2">
@@ -55,8 +54,8 @@
 
         <div class="text-right">
             <a href="{!! action('RecipesController@recipesExcel') !!}" title="Export to Excel"><span class="glyphicon glyphicon-download-alt"></span> Excel </a> &nbsp;
-            <a href="{!! action('RecipesController@recipesPdf') !!}" title="Export to PDF"><span class="glyphicon glyphicon-th"></span> PDF </a> &nbsp;
-            <a href="{!! action('RecipesController@recipesHtml') !!}" title="Export to HTML"><span class="glyphicon glyphicon-list-alt"></span> HTML </a> &nbsp;
+            <a href="{!! action('RecipesController@recipesPdf', ['offset' => 0, 'limit' => 3]) !!}" title="Export to PDF"><span class="glyphicon glyphicon-th"></span> PDF </a> &nbsp;
+            <a href="{!! action('RecipesController@recipesHtml', ['offset' => 0, 'limit' => 500]) !!}" title="Export to HTML"><span class="glyphicon glyphicon-list-alt"></span> HTML </a> &nbsp;
             <span style="float:left">
                 <a href="/recipe/create" class="btn btn-sm btn-primary btn-raised" role="button">Add</a> &nbsp;
             </span>

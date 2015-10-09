@@ -30,7 +30,9 @@ class RecipesController extends Controller
 
     public function search($token = 'rice')
     {
-        $recipes = Recipe::where('recipe', 'LIKE', '%' . $token . '%')
+        $recipes = Recipe::where('name', 'LIKE', '%' . $token . '%')
+            ->orWhere('category', 'LIKE', '%' . $token . '%')
+            ->orWhere('recipe', 'LIKE', '%' . $token . '%')
             ->orWhere('instructions', 'LIKE', '%' . $token . '%')
             ->orderBy('category')
             ->orderBy('name')
@@ -164,16 +166,14 @@ class RecipesController extends Controller
     public function recipePdf($id)
     {
         $recipe = Recipe::whereId($id)->firstOrFail();
-        $view = view('reports.recipe')->with('recipe', $recipe);
+        $view = view('reports.recipe')->with('vm', $recipe);
         $contents = $view->render();
         SELF::html2pdf($contents);
     }
 
-    public function recipesPdf()
+    public function recipesPdf($offset = 0, $limit = 1)
     {
-        // php timeout 60 seconds with all records (changed 30 to 60)
-        $recipes = recipe::all();
-        // $recipes = DB::select(DB::raw("SELECT * FROM recipes LIMIT 25"));
+        $recipes = DB::select(DB::raw("SELECT * FROM recipes ORDER BY category, name LIMIT $offset, $limit"));
         $view = view('reports.recipes')->with('recipes', $recipes);
         $contents = $view->render();
         SELF::html2pdf($contents);

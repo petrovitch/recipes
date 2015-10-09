@@ -116,7 +116,6 @@ Route::get('gltrn/{id?}/delete', 'GltrnsController@destroy');
 
 //Recipes
 Route::get('recipes', 'RecipesController@index');
-Route::get('recipes/search', 'RecipesController@search');
 Route::get('recipe/create', 'RecipesController@create');
 Route::post('recipe/create', 'RecipesController@store');
 Route::get('recipe/{id?}/edit', 'RecipesController@edit');
@@ -125,9 +124,11 @@ Route::get('recipe/{id?}/show', 'RecipesController@show');
 Route::get('recipe/{id?}/delete', 'RecipesController@destroy');
 Route::get('recipes/excel', 'RecipesController@recipesExcel');
 Route::get('recipe/{id?}/pdf', 'RecipesController@recipePdf');
-Route::get('recipes/pdf', 'RecipesController@recipesPdf');
-Route::get('recipes/html', 'RecipesController@recipesHtml');
+Route::get('recipes/pdf/{offset}/{limit}', 'RecipesController@recipesPdf');
+Route::get('recipes/html/{offset}/{limit}', 'RecipesController@recipesHtml');
 Route::get('recipes/words', 'RecipesController@words');
+
+Route::get('recipes/search', 'RecipesController@search');
 
 
 

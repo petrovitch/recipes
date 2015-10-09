@@ -2,21 +2,25 @@
 @section('name', 'Show Recipe')
 
 @section('content')
-    <h5>
-        {{ $recipe->name }}
-    </h5>
-    <hr/>
-    <p style="font-size:11px;font-weight:bold;">
-        <i>{{ $recipe->category }}</i>
-    </p>
-    <div>
-        <p style="font-size:11px;font-weight:bold;">
-        <pre> {{ $recipe->recipe }} </pre>
-        </p>
-        <p style="font-size:11px;font-weight:bold;">
-        <pre> {{ $recipe->instructions }} </pre>
-        </p>
-        <p> {{ $recipe->author }}</p>
+    <div class="col-md-6 col-md-offset-1">
+        <table class="table table-bordered">
+            <tr style="background-color:#dfdfdf">
+                <td><h4>{{ $vm->name }}</h4></td>
+            </tr>
+            <tr style="background-color:#efefef">
+                <td>{!! nl2br($vm->recipe) !!}</td>
+            </tr>
+            @if($vm->instructions)
+                <tr style="background-color:#efefef">
+                    <td><br><br>{!! wordwrap($vm->instructions) !!}</td>
+                </tr>
+            @endif
+            @if($vm->author)
+                <tr style="background-color:#efefef">
+                    <td><br><br><i>{{ $vm->author }}</i></td>
+                </tr>
+            @endif
+        </table>
     </div>
 @endsection
 

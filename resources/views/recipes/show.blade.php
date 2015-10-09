@@ -16,14 +16,21 @@
                 </div>
                 <div>
                     <div class="alert">
-                        <p style="font-size:11px;font-weight:bold;"><pre>{{ $recipe->recipe }}</pre></p>
-                        <p style="font-size:11px;font-weight:bold;">
-                        <pre>{{ $recipe->instructions }}</pre>
+                        <p style="color:black;font-size:11px;font-weight:bold;">
+                            {!! nl2br($recipe->recipe) !!}
                         </p>
+                        @if($recipe->instructions)
+                        <p style="color:black;font-size:11px;font-weight:bold;">
+                            <br>{!! wordwrap($recipe->instructions) !!}
+                        </p>
+                        @endif
                         @if($recipe->microwave)
                         <p>Microwave</p>
                         @endif
-                        <p style="color:#333333">{{ $recipe->author }}</p>
+                        @if($recipe->author)
+                        <p style="color:#333333">
+                            <br>{!! $recipe->author !!}</p>
+                        @endif
                     </div>
                 </div>
             </div>

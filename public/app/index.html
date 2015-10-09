@@ -20,9 +20,16 @@
     </div>
 </div>
 
-<input type="text" name="name" ng-model="name" placeholder="Name"><br>
-<input type="text" name="email" ng-model="email" placeholder="Email"><br>
-<button href="#" class="button" ng-model="button" ng-disabled="!name || !email")>Submit</button>
+
+
+<h2>Form 2</h2>
+<form name="form2">
+    <div class="form-group"
+         ng-class="{'has-error': form2.email.$invalid && form2.email.$dirty}">
+        <input type="email" class="form-control" name="email"
+               ng-model="user.email" required>
+    </div>
+</form>
 
 <div ng-controller="MyController">
     <fieldset>

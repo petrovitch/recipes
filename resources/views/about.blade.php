@@ -65,6 +65,7 @@
                                 </li>
                                 <li><a href="https://packagist.org/packages/anahkiasen/underscore-php" target="_blank">Underscore
                                         PHP</a></li>
+                                <li><a href="http://bootswatch.com/" target="_blank">Free Bootstrap Themes</a></li>
                             </ul>
                         </td>
                         <td width="50%">
