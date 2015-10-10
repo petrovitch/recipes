@@ -56,7 +56,9 @@
         <a href="/about" title="About"><span style=color:{{Session::get('about')}} class="glyphicon glyphicon glyphicon glyphicon-info-sign"></span></a> &nbsp;
         <a href="/tickets" title="Tickets"><span class="glyphicon glyphicon glyphicon glyphicon-list"></span></a> &nbsp;
         <a href="/recipes" title="Recipes"><span class="glyphicon glyphicon glyphicon-grain"></span></a> &nbsp;
-        <a href="/recipes/words" title="Word Frequency in Recipes"><span class="glyphicon glyphicon glyphicon-tag"></span></a> &nbsp;
+        <a href="/counties" title="Counties"><span class="glyphicon glyphicon glyphicon glyphicon-pawn"></span></a> &nbsp;
+        <a href="/states" title="States"><span class="glyphicon glyphicon glyphicon glyphicon-knight"></span></a> &nbsp;
+        <a href="/zipcodes" title="Zipcodes"><span class="glyphicon glyphicon glyphicon glyphicon-bishop"></span></a> &nbsp;
         <a href="/logs" title="Logs"><span class="glyphicon glyphicon glyphicon glyphicon-book"></span></a> &nbsp;
         &nbsp;
     </div>

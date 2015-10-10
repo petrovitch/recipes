@@ -40,32 +40,6 @@ class RecipesController extends Controller
         return view('recipes.index')->with('recipes', $recipes);
     }
 
-    public function words()
-    {
-        $recipes = Recipe::All();
-        $words = '';
-        foreach ($recipes as $recipe){
-            if (preg_match_all('/([a-zA-Z]+)/', $recipe->recipe, $match)){
-                for ($i = 0; $i < count($match); $i++){
-                    if (strlen($match[$i][1]) > 2) {
-                        $words .= strtolower($match[$i][1]) . ' ';
-                    }
-                }
-            }
-            if (preg_match_all('/([a-zA-Z]+)/', $recipe->instructions, $match)){
-                for ($i = 0; $i < count($match); $i++){
-                    if (strlen($match[$i][1]) > 2) {
-                        $words .= strtolower($match[$i][1]) . ' ';
-                    }
-                }
-            }
-        }
-        $words = array_count_values(str_word_count($words, 1));
-        arsort($words);
-        $words = array_diff($words, $bad);
-        return view('recipes.words')->with('words', $words);
-    }
-
     /**
      * Show the form for creating a new resource.
      *

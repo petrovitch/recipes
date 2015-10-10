@@ -120,17 +120,40 @@ Route::get('recipe/create', 'RecipesController@create');
 Route::post('recipe/create', 'RecipesController@store');
 Route::get('recipe/{id?}/edit', 'RecipesController@edit');
 Route::post('recipe/{id?}/edit', 'RecipesController@update');
-Route::get('recipe/{id?}/show', 'RecipesController@show');
 Route::get('recipe/{id?}/delete', 'RecipesController@destroy');
-Route::get('recipes/excel', 'RecipesController@recipesExcel');
 Route::get('recipe/{id?}/pdf', 'RecipesController@recipePdf');
-Route::get('recipes/pdf/{offset}/{limit}', 'RecipesController@recipesPdf');
+Route::get('recipe/{id?}/show', 'RecipesController@show');
+Route::get('recipes/excel', 'RecipesController@recipesExcel');
 Route::get('recipes/html/{offset}/{limit}', 'RecipesController@recipesHtml');
-Route::get('recipes/words', 'RecipesController@words');
-
+Route::get('recipes/pdf/{offset}/{limit}', 'RecipesController@recipesPdf');
 Route::get('recipes/search', 'RecipesController@search');
 
+//Counties
+Route::get('counties', 'CountiesController@index');
+Route::get('county/create', 'CountiesController@create');
+Route::post('county/create', 'CountiesController@store');
+Route::get('county/{id?}/edit', 'CountiesController@edit');
+Route::post('county/{id?}/edit', 'CountiesController@update');
+Route::get('county/{id?}/show', 'CountiesController@show');
+Route::get('county/{id?}/delete', 'CountiesController@destroy');
+Route::get('county/excel', 'CountiesController@excel');
 
+//States
+Route::get('states', 'StatesController@index');
+Route::get('state/create', 'StatesController@create');
+Route::post('state/create', 'StatesController@store');
+Route::get('state/{id?}/edit', 'StatesController@edit');
+Route::post('state/{id?}/edit', 'StatesController@update');
+Route::get('state/{id?}/show', 'StatesController@show');
+Route::get('state/{id?}/delete', 'StatesController@destroy');
+Route::get('state/excel', 'StatesController@excel');
 
-// Enable Database Log Query
-//DB::connection()->enableQueryLog();
+//Zipcodes
+Route::get('zipcodes', 'ZipcodesController@index');
+Route::get('zipcode/create', 'ZipcodesController@create');
+Route::post('zipcode/create', 'ZipcodesController@store');
+Route::get('zipcode/{id?}/edit', 'ZipcodesController@edit');
+Route::post('zipcode/{id?}/edit', 'ZipcodesController@update');
+Route::get('zipcode/{id?}/show', 'ZipcodesController@show');
+Route::get('zipcode/{id?}/delete', 'ZipcodesController@destroy');
+Route::get('zipcode/excel', 'ZipcodesController@excel');
