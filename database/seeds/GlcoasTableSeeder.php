@@ -15,7 +15,7 @@ class GlcoasTableSeeder extends Seeder
 
         Glcoa::truncate();
 
-        foreach (range(0,500) as $index) {
+        foreach (range(0,10) as $index) {
             Glcoa::insert([
                 'acct' => $faker->numberBetween(10000000,99999999),
                 'title' => $faker->sentence(3),

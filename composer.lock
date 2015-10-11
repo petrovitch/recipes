@@ -954,16 +954,16 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "8657c9ae76fe95a9e7b936fa20eaa953de751347"
+                "reference": "145beff98389ca6ac0b6e037a6a5c5ca867c9f90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/8657c9ae76fe95a9e7b936fa20eaa953de751347",
-                "reference": "8657c9ae76fe95a9e7b936fa20eaa953de751347",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/145beff98389ca6ac0b6e037a6a5c5ca867c9f90",
+                "reference": "145beff98389ca6ac0b6e037a6a5c5ca867c9f90",
                 "shasum": ""
             },
             "require": {
@@ -1017,7 +1017,7 @@
                 "import",
                 "laravel"
             ],
-            "time": "2015-08-20 15:23:00"
+            "time": "2015-10-08 17:09:52"
         },
         {
             "name": "monolog/monolog",
@@ -1332,16 +1332,16 @@
         },
         {
             "name": "owen-it/laravel-auditing",
-            "version": "2.0.3",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/owen-it/laravel-auditing.git",
-                "reference": "c74b6372b179953d679274fad419b7afc5f1290a"
+                "reference": "386ff91ca094d93aba0d47010c35c2b4f428d428"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/owen-it/laravel-auditing/zipball/c74b6372b179953d679274fad419b7afc5f1290a",
-                "reference": "c74b6372b179953d679274fad419b7afc5f1290a",
+                "url": "https://api.github.com/repos/owen-it/laravel-auditing/zipball/386ff91ca094d93aba0d47010c35c2b4f428d428",
+                "reference": "386ff91ca094d93aba0d47010c35c2b4f428d428",
                 "shasum": ""
             },
             "require": {
@@ -1373,7 +1373,7 @@
                 "observe",
                 "register"
             ],
-            "time": "2015-09-24 05:29:57"
+            "time": "2015-10-09 19:44:36"
         },
         {
             "name": "patchwork/utf8",
@@ -3967,16 +3967,16 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "c7428acdb62ece0a45e6306f1ae85e1c05b09c01"
+                "reference": "23af31f402993cfd94e99cbc4b782e9a78eb0e97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/c7428acdb62ece0a45e6306f1ae85e1c05b09c01",
-                "reference": "c7428acdb62ece0a45e6306f1ae85e1c05b09c01",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/23af31f402993cfd94e99cbc4b782e9a78eb0e97",
+                "reference": "23af31f402993cfd94e99cbc4b782e9a78eb0e97",
                 "shasum": ""
             },
             "require": {
@@ -4014,7 +4014,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2014-10-06 09:23:50"
+            "time": "2015-06-21 15:11:22"
         },
         {
             "name": "sebastian/recursion-context",

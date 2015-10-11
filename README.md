@@ -12,6 +12,7 @@ This project is just a tool for testing.
 * php artisan migrate
 * composer dump-autoload
 * composer update
+* php artisan migrate:schema-mysql blog
 
 ## Cloning a template
 
