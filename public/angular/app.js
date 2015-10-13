@@ -1,5 +1,5 @@
 (function () {
     'use strict';
     angular
-        .module('APP', ['toastr']);
+        .module('APP', ['ngRoute', 'toastr']);
 })();
