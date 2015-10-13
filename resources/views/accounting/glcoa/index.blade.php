@@ -50,11 +50,11 @@
                     </tbody>
                 </table>
             @endif
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
+                {{--@if (session('status'))--}}
+                    {{--<div class="alert alert-success">--}}
+                        {{--{{ session('status') }}--}}
+                    {{--</div>--}}
+                {{--@endif--}}
         </div>
 
         <div class="text-center">{!! $glcoas->render() !!}</div>

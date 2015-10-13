@@ -24,11 +24,12 @@ class GltrnEditFormRequest extends Request
     public function rules()
     {
         return [
-            'acct'=> 'required|min:8|max:8',
-            'description'=> 'required|min:3',
-            'date'=> 'required',
-            'document'=> 'required',
-            'amount'=> 'required',
+            'acct' => 'required|min:8|max:8',
+            'description' => 'required|min:3',
+            'crj' => 'required',
+            'date' => 'required',
+            'document' => 'required',
+            'amount' => 'required',
         ];
     }
 }

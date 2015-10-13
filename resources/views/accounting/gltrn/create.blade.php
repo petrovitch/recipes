@@ -16,9 +16,9 @@
                         <label for="acct" class="col-lg-2 control-label">Acct</label>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <select class="form-control" id="acct">
+                                <select class="form-control" id="acct" name="acct">
                                     @foreach ($glcoas as $glcoa)
-                                        <option value={{$glcoa->acct}}>{{$glcoa->acct}}</option>
+                                        <option value="{{$glcoa->acct}}">{{$glcoa->acct}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -72,11 +72,12 @@
                     <p class="alert alert-danger">{{ $error }}</p>
                 @endforeach
 
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
+                {{--@if (session('status'))--}}
+                    {{--<div class="alert alert-success">--}}
+                        {{--{{ session('status') }}--}}
+                    {{--</div>--}}
+                {{--@endif--}}
+
             </form>
         </div>
     </div>

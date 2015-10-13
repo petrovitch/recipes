@@ -88,7 +88,8 @@ class GlcoasController extends Controller
             'init' => $request->get('init'),
         ));
         $glcoa->save();
-        return redirect('/glcoas')->with('status', 'Account has been created.');
+        Toastr::success('Account has been created.');
+        return redirect('/glcoas'); //->with('status', 'Account has been created.');
     }
 
     /**

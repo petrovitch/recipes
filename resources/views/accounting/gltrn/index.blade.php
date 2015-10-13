@@ -39,8 +39,8 @@
                             </td>
                             <td class="text-left">{!! $gltrn->glcoa->title !!}</td>
                             <td class="text-left">{!! $gltrn->description !!}</td>
-                            <td class="text-left">{!! $gltrn->crj !!}</td>
-                            <td class="text-left">{!! $gltrn->date !!}</td>
+                            <td class="text-center">{!! $gltrn->crj !!}</td>
+                            <td class="text-center">{!! $gltrn->date !!}</td>
                             <td class="text-left">{!! $gltrn->document !!}</td>
                             <td class="text-right">{!! number_format($debit,2) !!}</td>
                             <td class="text-right">{!! number_format($credit,2) !!}</td>
@@ -55,11 +55,13 @@
                     </tbody>
                 </table>
             @endif
-                @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
-                @endif
+
+                {{--@if (session('status'))--}}
+                    {{--<div class="alert alert-success">--}}
+                        {{--{{ session('status') }}--}}
+                    {{--</div>--}}
+                {{--@endif--}}
+
         </div>
         <div class="text-center">{!! $gltrns->render() !!}</div>
         <div class="text-left">

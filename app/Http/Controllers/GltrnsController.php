@@ -62,7 +62,8 @@ class GltrnsController extends Controller
             'amount' => $request->get('amount'),
         ));
         $gltrn->save();
-        return redirect('/gltrns')->with('status', 'Account has been created.');
+        Toastr::success('Transaction has been created.');
+        return redirect('/gltrns');
     }
 
     /**

@@ -15,7 +15,7 @@
         {{--Navbar Right--}}
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/about">About</a></li>
@@ -51,11 +51,18 @@
         <a href="/glcoas" title="General Ledger Trial Balance"><span class="glyphicon glyphicon glyphicon glyphicon-th-list"></span></a> &nbsp;
         <a href="/gltrns" title="General Ledger"><span class="glyphicon glyphicon glyphicon glyphicon-th-large"></span></a> &nbsp;
         <a href="/glcoa/detail" title="General Ledger Detailed Statement"><span class="glyphicon glyphicon glyphicon glyphicon-th"></span></a> &nbsp;
+        <a href="/vendors" title="Vendors"><span class="glyphicon glyphicon glyphicon glyphicon-briefcase"></span></a> &nbsp;
         <a href="/blog" title="Blog"><span class="glyphicon glyphicon glyphicon glyphicon-list-alt"></span></a> &nbsp;
         <a href="/contact" title="Contact"><span class="glyphicon glyphicon glyphicon glyphicon-pencil"></span></a> &nbsp;
         <a href="/about" title="About"><span style=color:{{Session::get('about')}} class="glyphicon glyphicon glyphicon glyphicon-info-sign"></span></a> &nbsp;
         <a href="/tickets" title="Tickets"><span class="glyphicon glyphicon glyphicon glyphicon-list"></span></a> &nbsp;
-        <a href="/recipes" title="Recipes"><span class="glyphicon glyphicon glyphicon-grain"></span></a> &nbsp;
+        <a href="/recipes" title="Recipes"><span class="glyphicon glyphicon glyphicon-bookmark"></span></a> &nbsp;
+        <a href="/customers" title="Customers"><span class="glyphicon glyphicon glyphicon-user"></span></a> &nbsp;
+        <a href="/trucks" title="Trucking Companies"><span class="glyphicon glyphicon glyphicon-road"></span></a> &nbsp;
+        <a href="/commodities" title="Commodities"><span class="glyphicon glyphicon glyphicon-grain"></span></a> &nbsp;
+        <a href="/inbounds" title="Inbound Tickets"><span class="glyphicon glyphicon glyphicon-forward"></span></a> &nbsp;
+        <a href="/outbounds" title="Outbound Tickets"><span class="glyphicon glyphicon glyphicon-backward"></span></a> &nbsp;
+        <a href="/dprs" title="Daily Position Records"><span class="glyphicon glyphicon glyphicon-pause"></span></a> &nbsp;
         <a href="/counties" title="Counties"><span class="glyphicon glyphicon glyphicon glyphicon-pawn"></span></a> &nbsp;
         <a href="/states" title="States"><span class="glyphicon glyphicon glyphicon glyphicon-knight"></span></a> &nbsp;
         <a href="/zipcodes" title="Zipcodes"><span class="glyphicon glyphicon glyphicon glyphicon-bishop"></span></a> &nbsp;

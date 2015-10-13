@@ -9,7 +9,7 @@ class Gltrn extends Auditing
 {
     protected $table = 'gltrns';
 
-    protected $fillable = ['acct', 'description', 'date', 'document', 'amount'];
+    protected $guarded = ['id'];
 
     public function glcoa()
     {

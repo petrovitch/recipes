@@ -52,7 +52,7 @@
         <div class="text-center">{!! $zipcodes->render() !!}</div>
 
         <div class="text-right">
-            <a href="{!! action('ZipcodesController@excel', $zipcode->id) !!}" title="Export to Excel"><span class="glyphicon glyphicon-download-alt"></span> Excel </a> &nbsp;
+            <a href="{!! action('ZipcodesController@excel') !!}" title="Export to Excel"><span class="glyphicon glyphicon-download-alt"></span> Excel </a> &nbsp;
             <span style="float:left">
                 <a href="/zipcode/create" class="btn btn-sm btn-primary btn-raised" role="button">Add</a> &nbsp;
             </span>

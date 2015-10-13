@@ -46,7 +46,7 @@
         <div class="text-center">{!! $counties->render() !!}</div>
 
         <div class="text-right">
-            <a href="{!! action('CountiesController@excel', $county->id) !!}" title="Export to Excel"><span class="glyphicon glyphicon-download-alt"></span> Excel </a> &nbsp;
+            <a href="{!! action('CountiesController@excel') !!}" title="Export to Excel"><span class="glyphicon glyphicon-download-alt"></span> Excel </a> &nbsp;
             <span style="float:left">
                 <a href="/county/create" class="btn btn-sm btn-primary btn-raised" role="button">Add</a> &nbsp;
             </span>

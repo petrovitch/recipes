@@ -16,7 +16,9 @@
 //});
 
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'), function () {
-    Route::get('/', 'PagesController@home');
+    Route::get('/', function(){
+        return Redirect::to('/index.html');
+    });
 
     Route::get('users', 'UsersController@index');
     Route::get('users/{id?}/edit', 'UsersController@edit');
@@ -157,3 +159,57 @@ Route::post('zipcode/{id?}/edit', 'ZipcodesController@update');
 Route::get('zipcode/{id?}/show', 'ZipcodesController@show');
 Route::get('zipcode/{id?}/delete', 'ZipcodesController@destroy');
 Route::get('zipcode/excel', 'ZipcodesController@excel');
+
+//Vendors
+Route::get('vendors', 'VendorsController@index');
+Route::get('vendor/create', 'VendorsController@create');
+Route::post('vendor/create', 'VendorsController@store');
+Route::get('vendor/{id?}/edit', 'VendorsController@edit');
+Route::post('vendor/{id?}/edit', 'VendorsController@update');
+Route::get('vendor/{id?}/show', 'VendorsController@show');
+Route::get('vendor/{id?}/delete', 'VendorsController@destroy');
+Route::get('vendor/excel', 'VendorsController@excel');
+
+//Customers
+Route::get('customers', 'CustomersController@index');
+Route::get('customer/create', 'CustomersController@create');
+Route::post('customer/create', 'CustomersController@store');
+Route::get('customer/{id?}/edit', 'CustomersController@edit');
+Route::post('customer/{id?}/edit', 'CustomersController@update');
+Route::get('customer/{id?}/show', 'CustomersController@show');
+Route::get('customer/{id?}/delete', 'CustomersController@destroy');
+Route::get('customer/excel', 'CustomersController@excel');
+
+//Trucks
+Route::get('trucks', 'TrucksController@index');
+Route::get('truck/create', 'TrucksController@create');
+Route::post('truck/create', 'TrucksController@store');
+Route::get('truck/{id?}/edit', 'TrucksController@edit');
+Route::post('truck/{id?}/edit', 'TrucksController@update');
+Route::get('truck/{id?}/show', 'TrucksController@show');
+Route::get('truck/{id?}/delete', 'TrucksController@destroy');
+Route::get('truck/excel', 'TrucksController@excel');
+
+//Commodities
+Route::get('commodities', 'CommoditiesController@index');
+Route::get('commodity/create', 'CommoditiesController@create');
+Route::post('commodity/create', 'CommoditiesController@store');
+Route::get('commodity/{id?}/edit', 'CommoditiesController@edit');
+Route::post('commodity/{id?}/edit', 'CommoditiesController@update');
+Route::get('commodity/{id?}/show', 'CommoditiesController@show');
+Route::get('commodity/{id?}/delete', 'CommoditiesController@destroy');
+Route::get('commodity/excel', 'CommoditiesController@excel');
+
+//Inbounds
+Route::get('inbounds', 'InboundsController@index');
+Route::get('inbound/create', 'InboundsController@create');
+Route::post('inbound/create', 'InboundsController@store');
+Route::get('inbound/{id?}/edit', 'InboundsController@edit');
+Route::post('inbound/{id?}/edit', 'InboundsController@update');
+Route::get('inbound/{id?}/show', 'InboundsController@show');
+Route::get('inbound/{id?}/delete', 'InboundsController@destroy');
+Route::get('inbound/excel', 'InboundsController@excel');
+
+//Outbounds
+
+//Dprs
