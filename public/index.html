@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="APP">
+<html ng-app="scotchApp">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,77 +18,31 @@
     <link rel="stylesheet" href="js/angular-loading-bar/loading-bar.css">
     <link rel="stylesheet" href="js/angular-xeditable/xeditable.css">
 </head>
-<body>
-<div ng-controller="UserController">
+
+<body ng-controller="mainController">
+<nav class="navbar navbar-reverse">
     <div class="container">
-
-        <nav class="navbar navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                            aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">AngularJS</a>
-                </div>
-                <div id="navbar" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="users">Users</a></li>
-                        <li><a href="app/comments">Comments</a></li>
-                        <li><a href="app/tags">Tags</a></li>
-                    </ul>
-                    <div class="navbar-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href="app/about">About</a></li>
-                            <li><a href="app/login">Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <br><br><br><br>
-
-        <div class="col-sm-8">
-            <fieldset>
-                <legend> User </legend>
-                <form class="form-horizontal">
-
-                    <div class="form-group">
-                        <label for="inputNameLabel" class="col-sm-2 control-label">Name</label>
-
-                        <div class="col-sm-8">
-                            <input ng-model="user.name" type="text" class="form-control" id="inputName"
-                                   placeholder="Name">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inputEmailLabel" class="col-sm-2 control-label">Email</label>
-
-                        <div class="col-sm-8">
-                            <input ng-model="user.email" type="email" class="form-control" id="inputEmail"
-                                   placeholder="Email">
-                        </div>
-                    </div>
-
-                </form>
-            </fieldset>
-
-            <div class="col-sm-offset-2">
-                <button class="btn btn-default raised" type="button" ng-click="getData()">Get Data</button>
-            </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Angular Routing Example</a>
         </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+            <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+        </ul>
     </div>
+</nav>
+<div id="main">
+    <!-- angular templating -->
+    <!-- this is where content will be injected -->
+    <div ng-view></div>
 </div>
+<footer class="text-center">
+    <p>View the tutorial on <a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Scotch.io</a></p>
 
-<!--<div ng-controller="ClocksController">-->
-<!--<span style="float:right">{{ clock.now | date:'MM/dd/yyyy HH:mm:ss'}} &nbsp;</span>-->
-<!--</div>-->
+    <p>View a tutorial on <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Animating Your Angular Single Page App</a></p>
+</footer>
+
 
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -112,10 +66,11 @@
 <script src="js/satellizer/satellizer.js"></script>
 <script src="js/sinon/index.js"></script>
 <script src="js/toastr.js"></script>
+
 <script src="angular/app.js"></script>
 <!--<script src="angular/constants.js"></script>-->
-<script src="angular/controllers/clocks.ctrl.js"></script>
-<script src="angular/controllers/users.ctrl.js"></script>
+<!--<script src="angular/controllers/clocks.ctrl.js"></script>-->
+<!--<script src="angular/controllers/users.ctrl.js"></script>-->
 <!--<script src="angular/routes/routes.js"></script>-->
 <!--<script src="angular/routes/ui-routes.js"></script>-->
 

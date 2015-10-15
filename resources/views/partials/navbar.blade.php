@@ -68,6 +68,7 @@
         <a href="/outbounds" title="Outbound Tickets"><span class="glyphicon glyphicon-backward"></span></a> &nbsp;
         <a href="/dprs" title="Daily Position Records"><span class="glyphicon glyphicon-pause"></span></a> &nbsp;
         <a href="/mccs" title="Memphis Chess Club Members"><span class="glyphicon glyphicon glyphicon-king"></span></a> &nbsp;
+        <a href="/quotes" title="Chess Quotes"><span class="glyphicon glyphicon glyphicon-queen"></span></a> &nbsp;
         <a href="/counties" title="Counties"><span class="glyphicons glyphicons-cogwheel"></span></a> &nbsp;
         <a href="/states" title="States"><span class="glyphicons glyphicons-cogwheels"></span></a> &nbsp;
         <a href="/zipcodes" title="Zipcodes"><span class="glyphicons glyphicons-send"></span></a> &nbsp;

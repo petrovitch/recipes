@@ -16,9 +16,10 @@
 //});
 
 Route::group(array('prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'manager'), function () {
-    Route::get('/', function(){
-        return Redirect::to('/index.html');
-    });
+    Route::get('/', 'PagesController@home');
+//    Route::get('/', function(){
+//        return Redirect::to('/index.php');
+//    });
 
     Route::get('users', 'UsersController@index');
     Route::get('users/{id?}/edit', 'UsersController@edit');
@@ -230,4 +231,24 @@ Route::get('mcc/{id?}/delete', 'MccsController@destroy');
 Route::get('mcc/excel', 'MccsController@excel');
 Route::get('mcc/{id?}/rating', 'MccsController@rating');
 Route::get('mcc/ratings', 'MccsController@ratings');
+
+//Quotes
+Route::get('quotes', 'QuotesController@index');
+Route::get('quote/create', 'QuotesController@create');
+Route::post('quote/create', 'QuotesController@store');
+Route::get('quote/{id?}/edit', 'QuotesController@edit');
+Route::post('quote/{id?}/edit', 'QuotesController@update');
+Route::get('quote/{id?}/show', 'QuotesController@show');
+Route::get('quote/{id?}/delete', 'QuotesController@destroy');
+Route::get('quote/excel', 'QuotesController@excel');
+
+//Articles
+//Route::get('articles', 'ArticlesController@index');
+//Route::get('article/create', 'ArticlesController@create');
+//Route::post('article/create', 'ArticlesController@store');
+//Route::get('article/{id?}/edit', 'ArticlesController@edit');
+//Route::post('article/{id?}/edit', 'ArticlesController@update');
+//Route::get('article/{id?}/show', 'ArticlesController@show');
+//Route::get('article/{id?}/delete', 'ArticlesController@destroy');
+//Route::get('article/excel', 'ArticlesController@excel');
 
