@@ -3,6 +3,11 @@
 <head>
     <title> @yield('title') </title>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/app.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/glyphicons.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/glyphicons.files.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/glyphicons.pro.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/glyphicons.social.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/glyphicons.bootstrap.css') !!}">
     {{--<link rel="stylesheet" type="text/css" href="{!! asset('css/bootstrap.min.css') !!}">--}}
     {{--<link rel="stylesheet" type="text/css" href="{!! asset('css/bootstrap-theme.min.css') !!}">--}}
 

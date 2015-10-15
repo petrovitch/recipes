@@ -20,7 +20,8 @@
         "tymon/jwt-auth": "^0.5.5",
         "league/fractal": "^0.12.0",
         "anahkiasen/underscore-php": "^2.0",
-        "phpoffice/phpword": "dev-master"
+        "phpoffice/phpword": "dev-master",
+        "kyslik/column-sortable": "~3.0.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

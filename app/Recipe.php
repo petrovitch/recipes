@@ -3,11 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 use OwenIt\Auditing\Auditing;
 
 class Recipe extends Auditing
 {
-    protected $table = 'recipes';
+    use Sortable;
 
-    protected $fillable = ['category', 'name', 'author', 'recipe', 'instructions', 'microwave'];
+    protected $table = 'recipes';
+    protected $guarded = ['id'];
 }

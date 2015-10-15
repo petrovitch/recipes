@@ -151,6 +151,7 @@ return [
         OwenIt\Auditing\AuditingServiceProvider::class,
         'nilsenj\Toastr\ToastrServiceProvider',
         'Creativeorange\Gravatar\GravatarServiceProvider',
+        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
     ],
 
     /*

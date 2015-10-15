@@ -23,13 +23,19 @@ class PagesController extends Controller
         }
 
         /**
+         * Which version of Laravel are you using?
+         */
+        $laravel = app();
+        $version = $laravel::VERSION;
+
+        /**
          * Does gravatar exist?
          */
         if (Auth::user()) {
             if (Gravatar::exists(Auth::user()->email)) {
                 Toastr::success('Gravatar exists.');
                 $gravatar = Gravatar::get(Auth::user()->email);
-                return view('about')->with('gravatar', $gravatar);
+                return view('about')->with(['gravatar' => $gravatar, 'version' => $version]);
             } else {
                 Toastr::danger('Gravatar does not exist.');
                 $gravatar = "";

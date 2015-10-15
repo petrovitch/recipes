@@ -116,7 +116,8 @@ class CustomersController extends Controller
 
     public function excel()
     {
-        $data = DB::select(DB::raw("SELECT * FROM customers"));
+        $table = with(new Customer)->getTable();
+        $data = DB::select(DB::raw("SELECT * FROM $table"));
         $data = json_encode($data);
         SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
     }

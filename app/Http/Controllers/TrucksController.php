@@ -16,33 +16,17 @@ use Toastr;
 
 class TrucksController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $trucks = Truck::orderBy('company')->paginate(env('TRUCK_PAGINATION_MAX'));
         return view('trucks.index')->with('trucks', $trucks);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('trucks.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $truck = new truck(array(
@@ -57,37 +41,18 @@ class TrucksController extends Controller
         return redirect('/trucks');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $truck = Truck::whereId($id)->firstOrFail();
         return view('trucks.show')->with('truck', $truck);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $truck = Truck::whereId($id)->firstOrFail();
         return view('trucks.edit')->with('truck', $truck);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $truck = Truck::whereId($id)->firstOrFail();
@@ -101,12 +66,6 @@ class TrucksController extends Controller
         return redirect(action('TrucksController@index', $truck->$truck));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Truck::find($id)->delete();
@@ -116,7 +75,8 @@ class TrucksController extends Controller
 
     public function excel()
     {
-        $data = DB::select(DB::raw("SELECT * FROM trucks"));
+        $table = with(new Truck)->getTable();
+        $data = DB::select(DB::raw("SELECT * FROM $table"));
         $data = json_encode($data);
         SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
     }

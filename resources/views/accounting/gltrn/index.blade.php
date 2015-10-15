@@ -40,7 +40,7 @@
                             <td class="text-left">{!! $gltrn->glcoa->title !!}</td>
                             <td class="text-left">{!! $gltrn->description !!}</td>
                             <td class="text-center">{!! $gltrn->crj !!}</td>
-                            <td class="text-center">{!! $gltrn->date !!}</td>
+                            <td class="text-center">{!! date('m/d/Y', strtotime($gltrn->date)) !!}</td>
                             <td class="text-left">{!! $gltrn->document !!}</td>
                             <td class="text-right">{!! number_format($debit,2) !!}</td>
                             <td class="text-right">{!! number_format($credit,2) !!}</td>

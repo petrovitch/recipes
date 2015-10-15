@@ -43,7 +43,7 @@
 
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="date" placeholder="mm/dd/yyyy" name="date"
-                                   value="{{ $gltrn->date }}">
+                                   value="{{ date('m/d/Y', strtotime($gltrn->date)) }}">
                         </div>
                     </div>
 

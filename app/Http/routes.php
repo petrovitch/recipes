@@ -118,6 +118,7 @@ Route::get('gltrn/{id?}/delete', 'GltrnsController@destroy');
 
 //Recipes
 Route::get('recipes', 'RecipesController@index');
+Route::get('recipes/menu', 'RecipesController@menu');
 Route::get('recipe/create', 'RecipesController@create');
 Route::post('recipe/create', 'RecipesController@store');
 Route::get('recipe/{id?}/edit', 'RecipesController@edit');
@@ -128,7 +129,8 @@ Route::get('recipe/{id?}/show', 'RecipesController@show');
 Route::get('recipes/excel', 'RecipesController@recipesExcel');
 Route::get('recipes/html/{offset}/{limit}', 'RecipesController@recipesHtml');
 Route::get('recipes/pdf/{offset}/{limit}', 'RecipesController@recipesPdf');
-Route::get('recipes/search', 'RecipesController@search');
+Route::post('recipes/search/', 'RecipesController@search');
+
 
 //Counties
 Route::get('counties', 'CountiesController@index');
@@ -139,6 +141,7 @@ Route::post('county/{id?}/edit', 'CountiesController@update');
 Route::get('county/{id?}/show', 'CountiesController@show');
 Route::get('county/{id?}/delete', 'CountiesController@destroy');
 Route::get('county/excel', 'CountiesController@excel');
+Route::post('counties/search/', 'CountiesController@search');
 
 //States
 Route::get('states', 'StatesController@index');
@@ -159,6 +162,7 @@ Route::post('zipcode/{id?}/edit', 'ZipcodesController@update');
 Route::get('zipcode/{id?}/show', 'ZipcodesController@show');
 Route::get('zipcode/{id?}/delete', 'ZipcodesController@destroy');
 Route::get('zipcode/excel', 'ZipcodesController@excel');
+Route::post('zipcodes/search/', 'ZipcodesController@search');
 
 //Vendors
 Route::get('vendors', 'VendorsController@index');
@@ -213,3 +217,17 @@ Route::get('inbound/excel', 'InboundsController@excel');
 //Outbounds
 
 //Dprs
+
+
+//Mccs
+Route::get('mccs', 'MccsController@index');
+Route::get('mcc/create', 'MccsController@create');
+Route::post('mcc/create', 'MccsController@store');
+Route::get('mcc/{id?}/edit', 'MccsController@edit');
+Route::post('mcc/{id?}/edit', 'MccsController@update');
+Route::get('mcc/{id?}/show', 'MccsController@show');
+Route::get('mcc/{id?}/delete', 'MccsController@destroy');
+Route::get('mcc/excel', 'MccsController@excel');
+Route::get('mcc/{id?}/rating', 'MccsController@rating');
+Route::get('mcc/ratings', 'MccsController@ratings');
+

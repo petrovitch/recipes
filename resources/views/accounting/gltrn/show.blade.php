@@ -38,7 +38,7 @@
                         <label for="date" class="col-lg-2 control-label">Date</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="date" placeholder="Date" name="date"
-                                   value="{{ $gltrn->date }}" disabled>
+                                   value="{{ date('m/d/Y', strtotime($gltrn->date)) }}" disabled>
                         </div>
                     </div>
 

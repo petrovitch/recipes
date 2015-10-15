@@ -1,6 +1,12 @@
 @extends('master')
 @section('title', 'General Ledger Chart of Accounts')
 @section('content')
+    <form name="search" action="/zipcodes/search" method="post" class="form-horizontal">
+        <span style="position: absolute;top: 65px;right: 5px;">
+            <input type="text" name="token" placeholder="Filter...">
+        </span>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    </form>
 
     <div class="container col-md-12 col-md-offset">
         <div class="panel panel-default">

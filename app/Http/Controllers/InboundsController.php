@@ -160,7 +160,8 @@ class InboundsController extends Controller
 
     public function excel()
     {
-        $data = DB::select(DB::raw("SELECT * FROM inbounds"));
+        $table = with(new Inbound)->getTable();
+        $data = DB::select(DB::raw("SELECT * FROM $table"));
         $data = json_encode($data);
         SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
     }

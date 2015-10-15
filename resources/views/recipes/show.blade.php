@@ -2,10 +2,10 @@
 @section('name', 'Show Recipe')
 
 @section('content')
-    <div class="container col-md-10 col-md-offset-1">
+    <div class="container col-md-8 col-md-offset-2">
         <div class="panel panel-default">
-            <div class="alert alert-primary" role="alert">
-                <div style="position:relative;">
+            <div class="alert alert-default" role="alert">
+                <div style="position:relative;color:black">
                     <h5><span class="glyphicon glyphicon-user"></span>
                         {{ $recipe->name }}
                     </h5>
@@ -19,14 +19,6 @@
                         <p style="color:black;font-size:11px;font-weight:bold;">
                             {!! nl2br($recipe->recipe) !!}
                         </p>
-                        @if($recipe->instructions)
-                        <p style="color:black;font-size:11px;font-weight:bold;">
-                            <br>{!! wordwrap($recipe->instructions) !!}
-                        </p>
-                        @endif
-                        @if($recipe->microwave)
-                        <p>Microwave</p>
-                        @endif
                         @if($recipe->author)
                         <p style="color:#333333">
                             <br>{!! $recipe->author !!}</p>

@@ -110,7 +110,8 @@ class StatesController extends Controller
     
     public function excel()
     {
-        $data = DB::select(DB::raw("SELECT * FROM states"));
+        $table = with(new State)->getTable();
+        $data = DB::select(DB::raw("SELECT * FROM $table"));
         $data = json_encode($data);
         SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
     }

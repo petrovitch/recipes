@@ -16,33 +16,31 @@ use Toastr;
 
 class ZipcodesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $zipcodes = Zipcode::orderBy('zipcode')->paginate(env('ZIPCODE_PAGINATION_MAX'));
         return view('zipcodes.index')->with('zipcodes', $zipcodes);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function search(Request $request)
+    {
+        $token = $request->get('token');
+        $zipcodes = Zipcode::where('zipcode', 'LIKE', '%' . $token . '%')
+            ->orWhere('city', 'LIKE', '%' . $token . '%')
+            ->orWhere('state', 'LIKE', '%' . $token . '%')
+            ->orWhere('state_name', 'LIKE', '%' . $token . '%')
+            ->orWhere('county', 'LIKE', '%' . $token . '%')
+            ->orWhere('country', 'LIKE', '%' . $token . '%')
+            ->orderBy('zipcode')
+            ->paginate(env('ZIPCODE_PAGINATION_MAX'));
+        return view('zipcodes.index')->with('zipcodes', $zipcodes);
+    }
+
     public function create()
     {
         return view('zipcodes.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $zipcode = new zipcode(array(
@@ -60,37 +58,18 @@ class ZipcodesController extends Controller
         return redirect('/zipcodes');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $zipcode = Zipcode::whereId($id)->firstOrFail();
         return view('zipcodes.show')->with('zipcode', $zipcode);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $zipcode = Zipcode::whereId($id)->firstOrFail();
         return view('zipcodes.edit')->with('zipcode', $zipcode);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $zipcode = Zipcode::whereId($id)->firstOrFail();
@@ -107,12 +86,6 @@ class ZipcodesController extends Controller
         return redirect(action('ZipcodesController@index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Zipcode::find($id)->delete();
@@ -122,7 +95,8 @@ class ZipcodesController extends Controller
     
     public function excel()
     {
-        $data = DB::select(DB::raw("SELECT * FROM zipcodes"));
+        $table = with(new Zipcode)->getTable();
+        $data = DB::select(DB::raw("SELECT * FROM $table"));
         $data = json_encode($data);
         SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
     }

@@ -57,7 +57,7 @@ class GltrnsController extends Controller
             'acct' => $request->get('acct'),
             'description' => $request->get('description'),
             'crj' => $request->get('crj'),
-            'date' => $request->get('date'),
+            'date' => date('Y-m-d', strtotime($request->get('date'))),
             'document' => $request->get('document'),
             'amount' => $request->get('amount'),
         ));
@@ -104,7 +104,7 @@ class GltrnsController extends Controller
         $gltrn->acct = $request->get('acct');
         $gltrn->description = $request->get('description');
         $gltrn->crj = $request->get('crj');
-        $gltrn->date = $request->get('date');
+        $gltrn->date = date('Y-m-d', strtotime($request->get('date')));
         $gltrn->document = $request->get('document');
         $gltrn->amount = $request->get('amount');
         $gltrn->save();

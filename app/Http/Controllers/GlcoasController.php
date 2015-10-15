@@ -166,7 +166,8 @@ class GlcoasController extends Controller
 
     public function glcoaExcel()
     {
-        $data = DB::select(DB::raw("SELECT * FROM glcoas"));
+        $table = with(new Glcoa)->getTable();
+        $data = DB::select(DB::raw("SELECT * FROM $table"));
         $data = json_encode($data);
         SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
     }

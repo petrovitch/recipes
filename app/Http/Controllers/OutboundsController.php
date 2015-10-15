@@ -122,7 +122,8 @@ class OutboundsController extends Controller
 
     public function excel()
     {
-        $data = DB::select(DB::raw("SELECT * FROM zipcodes"));
+        $table = with(new Zipcode)->getTable();
+        $data = DB::select(DB::raw("SELECT * FROM $table"));
         $data = json_encode($data);
         SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
     }
