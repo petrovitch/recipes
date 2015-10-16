@@ -231,6 +231,7 @@ Route::get('mcc/{id?}/delete', 'MccsController@destroy');
 Route::get('mcc/excel', 'MccsController@excel');
 Route::get('mcc/{id?}/rating', 'MccsController@rating');
 Route::get('mcc/ratings', 'MccsController@ratings');
+Route::post('mccs/search/', 'MccsController@search');
 
 //Quotes
 Route::get('quotes', 'QuotesController@index');
@@ -241,14 +242,18 @@ Route::post('quote/{id?}/edit', 'QuotesController@update');
 Route::get('quote/{id?}/show', 'QuotesController@show');
 Route::get('quote/{id?}/delete', 'QuotesController@destroy');
 Route::get('quote/excel', 'QuotesController@excel');
+Route::post('quotes/search/', 'QuotesController@search');
 
 //Articles
-//Route::get('articles', 'ArticlesController@index');
-//Route::get('article/create', 'ArticlesController@create');
-//Route::post('article/create', 'ArticlesController@store');
-//Route::get('article/{id?}/edit', 'ArticlesController@edit');
-//Route::post('article/{id?}/edit', 'ArticlesController@update');
-//Route::get('article/{id?}/show', 'ArticlesController@show');
-//Route::get('article/{id?}/delete', 'ArticlesController@destroy');
-//Route::get('article/excel', 'ArticlesController@excel');
+Route::get('articles', 'ArticlesController@index');
+Route::get('article/create', 'ArticlesController@create');
+Route::post('article/create', 'ArticlesController@store');
+Route::get('article/{id?}/edit', 'ArticlesController@edit');
+Route::post('article/{id?}/edit', 'ArticlesController@update');
+Route::get('article/{id?}/show', 'ArticlesController@show');
+Route::get('article/{id?}/delete', 'ArticlesController@destroy');
+Route::get('article/excel', 'ArticlesController@excel');
+Route::get('articles/import', 'ArticlesController@import');
+Route::post('articles/import', 'ArticlesController@imports');
+Route::post('articles/search/', 'ArticlesController@search');
 

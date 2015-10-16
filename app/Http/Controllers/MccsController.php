@@ -122,6 +122,15 @@ class MccsController extends Controller
         return view('mccs.index')->with('mccs', $mccs);
     }
 
+    public function search(Request $request)
+    {
+        $token = $request->get('token');
+        $mccs = Mcc::where('name', 'LIKE', '%' . $token . '%')
+            ->orderBy('name')
+            ->paginate(env('RECIPE_PAGINATION_MAX'));
+        return view('mccs.index')->with('mccs', $mccs);
+    }
+
     public function show($id)
     {
         $mcc = Mcc::whereId($id)->firstOrFail();

@@ -2,17 +2,17 @@
 @section('name', 'Show Article')
 
 @section('content')
-    <div class="container col-md-10 col-md-offset-1">
+    <div class="container col-md-6 col-md-offset-3">
         <div class="panel panel-default">
             <table class="table table-condensed table-bordered table-striped">
                 <thead>
                 <tr>
-                    <th class="text-center report-headings">Name</th>
+                    <th class="text-center report-headings">PGN</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td class="text-left">{!! $articlre->name !!}</td>
+                    <td class="text-left">{!! nl2br($article->pgn) !!}</td>
                 </tr>
                 </tbody>
             </table>

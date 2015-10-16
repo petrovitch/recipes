@@ -1,8 +1,14 @@
 @extends('master')
 @section('title', 'Chess Club Members')
 @section('content')
+    <form name="search" action="/mccs/search" method="post" class="form-horizontal">
+        <span style="position: absolute;top: 65px;right: 5px;">
+            <input type="text" name="token" placeholder="Filter...">
+        </span>
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    </form>
 
-    <div class="container col-md-6 col-md-offset-3">
+    <div class="container col-md-8 col-md-offset-2">
         <div class="panel panel-default">
             @if ($mccs->isEmpty())
                 <p> There are no members.</p>

@@ -24,7 +24,7 @@ class ArticleEditFormRequest extends Request
     public function rules()
     {
         return [
-            //
+            'pgn'=> 'required',
         ];
     }
 }

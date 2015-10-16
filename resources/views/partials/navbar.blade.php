@@ -19,23 +19,23 @@
         {{--Navbar Right--}}
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/home">Home</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/tickets">Tickets</a></li>
+                <li><a href="/home"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="/blog"><i class="fa fa-sticky-note-o"></i> Blog</a></li>
+                <li><a href="/contact"><i class="fa fa-coffee"></i> Contact</a></li>
+                <li><a href="/about"><i class="fa fa-shield"></i> About</a></li>
+                <li><a href="/tickets"><i class="fa fa-ticket"></i> Tickets</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-dropbox"></i> Dropdown
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @if (Auth::check())
                             @if(Auth::user()->hasRole('admin'))
-                                <li><a href="/admin">Admin</a></li>
+                                <li><a href="/admin"><i class="fa fa-adn"></i> Admin</a></li>
                             @endif
-                            <li><a href="users/logout">Logout</a></li>
+                            <li><a href="users/logout"><i class="fa fa-laptop"></i> Logout</a></li>
                         @else
-                            <li><a href="/users/register">Register</a></li>
-                            <li><a href="/users/login">Login</a></li>
+                            <li><a href="/users/register"><i class="fa fa-registered"></i> Register</a></li>
+                            <li><a href="/users/login"><i class="fa fa-user"></i> Login</a></li>
                         @endif
                     </ul>
                 </li>
@@ -67,8 +67,10 @@
         <a href="/inbounds" title="Inbound Tickets"><span class="glyphicon glyphicon-forward"></span></a> &nbsp;
         <a href="/outbounds" title="Outbound Tickets"><span class="glyphicon glyphicon-backward"></span></a> &nbsp;
         <a href="/dprs" title="Daily Position Records"><span class="glyphicon glyphicon-pause"></span></a> &nbsp;
-        <a href="/mccs" title="Memphis Chess Club Members"><span class="glyphicon glyphicon glyphicon-king"></span></a> &nbsp;
-        <a href="/quotes" title="Chess Quotes"><span class="glyphicon glyphicon glyphicon-queen"></span></a> &nbsp;
+        <a href="/mccs" title="Memphis Chess Club Members"><span class="glyphicon glyphicon-king"></span></a> &nbsp;
+        <a href="/articles" title="Chess Games"><span class="glyphicon glyphicon-queen"></span></a> &nbsp;
+        <a href="/articles/import" title="Imort Chess Games"><span class="glyphicon glyphicon-tower"></span></a> &nbsp;
+        <a href="/quotes" title="Chess Quotes"><span class="glyphicon glyphicon-pawn"></span></a> &nbsp;
         <a href="/counties" title="Counties"><span class="glyphicons glyphicons-cogwheel"></span></a> &nbsp;
         <a href="/states" title="States"><span class="glyphicons glyphicons-cogwheels"></span></a> &nbsp;
         <a href="/zipcodes" title="Zipcodes"><span class="glyphicons glyphicons-send"></span></a> &nbsp;

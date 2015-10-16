@@ -1,11 +1,11 @@
 <!doctype html>
-<html ng-app="scotchApp">
+<html ng-app="APP">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--<link rel="stylesheet" href="css/app.css"/>-->
+    <link rel="stylesheet" href="css/app.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/glyphicons-bootstrap.css"/>
     <link rel="stylesheet" href="css/glyphicons.css"/>
     <link rel="stylesheet" href="css/glyphicons.pro.css"/>
@@ -18,36 +18,60 @@
     <link rel="stylesheet" href="js/angular-loading-bar/loading-bar.css">
     <link rel="stylesheet" href="js/angular-xeditable/xeditable.css">
 </head>
+<body>
 
-<body ng-controller="mainController">
-<nav class="navbar navbar-reverse">
+<div ng-controller="mainController">
+    <nav class="navbar navbar-reverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Angular Routing Example</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/#home"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+                <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="main">
+        <div ng-view></div>
+    </div>
+</div>
+
+<nav class="navbar navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Angular Routing Example</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">AngularJS</a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-            <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
-            <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
-        </ul>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/#home"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="#users"><i class="fa fa-users"></i> Users</a></li>
+                <li><a href="#"><i class="fa fa-commenting-o"></i> Comments</a></li>
+                <li><a href="#"><i class="fa fa-tag"></i> Tags</a></li>
+            </ul>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+                    <li><a href="#login"><i class="fa fa-user"></i> Login</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 </nav>
-<div id="main">
-    <!-- angular templating -->
-    <!-- this is where content will be injected -->
-    <div ng-view></div>
-</div>
-<footer class="text-center">
-    <p>View the tutorial on <a href="http://scotch.io/tutorials/javascript/single-page-apps-with-angularjs-routing-and-templating">Scotch.io</a></p>
-
-    <p>View a tutorial on <a href="http://scotch.io/tutorials/javascript/animating-angularjs-apps-ngview">Animating Your Angular Single Page App</a></p>
-</footer>
-
 
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/angular.js"></script>
-<!--<script src="js/angular-route.js"></script>-->
+<script src="js/angular-route.js"></script>
 <script src="js/angular-animate/angular-animate.js"></script>
 <script src="js/ag-grid/angular-grid.js"></script>
 <script src="js/angular-hotkeys/hotkeys.min.js"></script>
@@ -71,8 +95,11 @@
 <!--<script src="angular/constants.js"></script>-->
 <!--<script src="angular/controllers/clocks.ctrl.js"></script>-->
 <!--<script src="angular/controllers/users.ctrl.js"></script>-->
-<!--<script src="angular/routes/routes.js"></script>-->
-<!--<script src="angular/routes/ui-routes.js"></script>-->
+
+<!--<script src="angular/script.js"></script>-->
+<script src="angular/controllers/main.ctrl.js"></script>
+<script src="angular/controllers/about.ctrl.js"></script>
+<script src="angular/controllers/contact.ctrl.js"></script>
 
 </body>
 </html>

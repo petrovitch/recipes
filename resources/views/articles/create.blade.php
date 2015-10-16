@@ -11,10 +11,18 @@
                     <legend>Create Articles</legend>
 
                     <div class="form-group">
-                        <label for="username" class="col-lg-2 control-label">User</label>
+                        <label for="pgn" class="col-lg-2 control-label">PGN</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="username"
-                                   placeholder="User" name="username">
+                            <input type="text" class="form-control" id="pgn"
+                                   placeholder="PGN" name="pgn">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fritz" class="col-lg-2 control-label">Analysis</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="fritz"
+                                   placeholder="Analysis" name="fritz">
                         </div>
                     </div>
 

@@ -37,6 +37,16 @@ class QuotesController extends Controller
         return view('quotes.create');
     }
 
+    public function search(Request $request)
+    {
+        $token = $request->get('token');
+        $quotes = Quote::where('quote', 'LIKE', '%' . $token . '%')
+            ->whereOr('author', 'LIKE', '%' . $token . '%')
+            ->orderBy('author')
+            ->paginate(env('RECIPE_PAGINATION_MAX'));
+        return view('quotes.index')->with('quotes', $quotes);
+    }
+
     public function store(Request $request)
     {
         $quote = new Quote(array(
