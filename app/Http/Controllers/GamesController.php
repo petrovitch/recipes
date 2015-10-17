@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
+use App\Game;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\GlcoaEditFormRequest;
@@ -14,47 +14,86 @@ use Maatwebsite\Excel\Facades\Excel;
 use TCPDF;
 use Toastr;
 
-class ArticlesController extends Controller
+class GamesController extends Controller
 {
     public function index()
     {
-        $articles = Article::orderBy('gameDate', 'desc')
+        $games = Game::orderBy('gameDate', 'desc')
             ->orderBy('white')
             ->orderBy('black')
-            ->paginate(env('ARTICLE_PAGINATION_MAX'));
-        return view('articles.index')->with('articles', $articles);
+            ->paginate(env('GAME_PAGINATION_MAX'));
+        return view('games.index')->with('games', $games);
+    }
+
+    public function search_form()
+    {
+        return view('games.search');
     }
 
     public function search(Request $request)
     {
         $token = $request->get('token');
-        $articles = Article::where('pgn', 'LIKE', '%' . $token . '%')
-            ->orderBy('gameDate', 'desc')
-            ->orderBy('white')
-            ->orderBy('black')
-            ->paginate(env('RECIPE_PAGINATION_MAX'));
-        return view('articles.index')->with('articles', $articles);
+        $player = $request->get('player');
+        $color = $request->get('color');
+        if (strlen($token) > 0){
+            $games = Game::where('pgn', 'LIKE', '%' . $token . '%')
+                ->orderBy('gameDate', 'desc')
+                ->orderBy('gameRound', 'desc')
+                ->orderBy('white')
+                ->orderBy('black')
+                ->paginate(env('RECIPE_PAGINATION_MAX'));
+        } elseif (strlen($player) > 0){
+            if (strlen($color) > 0){
+                if (strtolower($color) == 'white'){
+                    $games = Game::where('white', 'LIKE', '%' . $player . '%')
+                        ->orderBy('gameDate', 'desc')
+                        ->orderBy('gameRound', 'desc')
+                        ->orderBy('white')
+                        ->orderBy('black')
+                        ->paginate(env('RECIPE_PAGINATION_MAX'));
+                } else {
+                    $games = Game::where('black', 'LIKE', '%' . $player . '%')
+                        ->orderBy('gameDate', 'desc')
+                        ->orderBy('gameRound', 'desc')
+                        ->orderBy('white')
+                        ->orderBy('black')
+                        ->paginate(env('RECIPE_PAGINATION_MAX'));
+                }
+            } else {
+                $games = Game::where('pgn', 'LIKE', '%' . $player . '%')
+                    ->orderBy('gameDate', 'desc')
+                    ->orderBy('gameRound', 'desc')
+                    ->orderBy('white')
+                    ->orderBy('black')
+                    ->paginate(env('RECIPE_PAGINATION_MAX'));
+            }
+        }
+        return view('games.index')->with('games', $games);
     }
 
     public function create()
     {
-        return view('articles.create');
+        return view('games.create');
     }
 
     public function import()
     {
-        return view('articles.import');
+        return view('games.import');
     }
 
     public function imports(Request $request)
     {
-        function strip_slashes($var)
+        function deldup()
         {
-            $var = preg_replace('/\\\r\\\n/', '~~', $var);
-            $var = preg_replace('/[\\\]+/', '', $var);
-            $var = preg_replace('/~~/', '\\\r\\\n', $var);
-            $var = preg_replace('/\'/', '`', $var);
-            return $var;
+            $last_moves = '';
+            $games = Game::orderBy('moves')->get();
+            foreach ($games as $game) {
+                if ($last_moves == $game->moves) {
+                    Toastr::warning('Duplicate removed. ' . $last_moves);
+                    Game::find($game->id)->delete();
+                }
+                $last_moves = $game->moves;
+            }
         }
 
         function parseMoves($pgn)
@@ -113,19 +152,18 @@ class ArticlesController extends Controller
             return trim($moves);
         }
 
-        function deldup()
+        function strip_slashes($var)
         {
-            $last_moves = '';
-            $articles = Article::orderBy('moves')->get();
-            foreach ($articles as $article) {
-                if ($last_moves == $article->moves) {
-                    Toastr::warning('Duplicate removed. ' . $last_moves);
-                    Article::find($article->id)->delete();
-                }
-                $last_moves = $article->moves;
-            }
+            $var = preg_replace('/\\\r\\\n/', '~~', $var);
+            $var = preg_replace('/[\\\]+/', '', $var);
+            $var = preg_replace('/~~/', '\\\r\\\n', $var);
+            $var = preg_replace('/\'/', '`', $var);
+            return $var;
         }
 
+        /**
+         * Main imports
+         */
         $contents = $request['contents'];
         if (isset($contents)) {
             // Clean-up contents
@@ -224,7 +262,7 @@ class ArticlesController extends Controller
                 }
 
                 // Put game on table
-                $article = new Article(array(
+                $game = new Game(array(
                     'black' => $black,
                     'blackElo' => $blackElo,
                     'eco' => $eco,
@@ -242,56 +280,57 @@ class ArticlesController extends Controller
                     'year' => $year,
                 ));
 
-                $article->save();
+                $game->save();
             }
         }
         deldup();
-        return redirect('/articles');
+        return redirect('/games');
     }
 
     public function store(Request $request)
     {
-        $article = new Article(array(
+        $game = new Game(array(
             'pgn' => $request->get('pgn'),
             'fritz' => $request->get('fritz'),
         ));
-        $article->save();
-        Toastr::success('Article created.');
-        return redirect('/articles');
+        $game->save();
+        Toastr::success('Game created.');
+        return redirect('/games');
     }
 
     public function show($id)
     {
-        $article = Article::whereId($id)->firstOrFail();
-        return view('articles.show')->with('article', $article);
+        $game = Game::whereId($id)->firstOrFail();
+        file_put_contents('json/game.pgn', $game->pgn);
+        return view('games.show')->with('game', $game);
     }
 
     public function edit($id)
     {
-        $article = Article::whereId($id)->firstOrFail();
-        return view('articles.edit')->with('article', $article);
+        $game = Game::whereId($id)->firstOrFail();
+        return view('games.edit')->with('game', $game);
     }
 
     public function update(Request $request, $id)
     {
-        $article = Article::whereId($id)->firstOrFail();
-        $article->pgn = $request->get('pgn');
-        $article->fritz = $request->get('fritz');
-        $article->save();
-        Toastr::success('Article updated.');
-        return redirect(action('ArticlesController@index', $article->id));
+        $game = Game::whereId($id)->firstOrFail();
+        $game->pgn = $request->get('pgn');
+        $game->fritz = $request->get('fritz');
+        $game->save();
+        Toastr::success('Game updated.');
+        return redirect(action('GamesController@index', $game->id));
     }
 
     public function destroy($id)
     {
-        Article::find($id)->delete();
-        $articles = Article::orderBy('name')->paginate(env('ARTICLE_PAGINATION_MAX'));
-        return view('articles.index')->with('articles', $articles);
+        Game::find($id)->delete();
+        $games = Game::orderBy('name')->paginate(env('GAME_PAGINATION_MAX'));
+        return view('games.index')->with('games', $games);
     }
 
     public function excel()
     {
-        $table = with(new Article)->getTable();
+        $table = with(new Game)->getTable();
         $data = DB::select(DB::raw("SELECT * FROM $table"));
         $data = json_encode($data);
         SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));

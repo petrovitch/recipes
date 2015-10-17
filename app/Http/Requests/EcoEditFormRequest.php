@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class ArticleEditFormRequest extends Request
+class EcoEditFormRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class ArticleEditFormRequest extends Request
     public function rules()
     {
         return [
-            'pgn'=> 'required',
+            'eco'=> 'required',
         ];
     }
 }

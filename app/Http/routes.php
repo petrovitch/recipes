@@ -245,15 +245,30 @@ Route::get('quote/excel', 'QuotesController@excel');
 Route::post('quotes/search/', 'QuotesController@search');
 
 //Articles
-Route::get('articles', 'ArticlesController@index');
-Route::get('article/create', 'ArticlesController@create');
-Route::post('article/create', 'ArticlesController@store');
-Route::get('article/{id?}/edit', 'ArticlesController@edit');
-Route::post('article/{id?}/edit', 'ArticlesController@update');
-Route::get('article/{id?}/show', 'ArticlesController@show');
-Route::get('article/{id?}/delete', 'ArticlesController@destroy');
-Route::get('article/excel', 'ArticlesController@excel');
-Route::get('articles/import', 'ArticlesController@import');
-Route::post('articles/import', 'ArticlesController@imports');
-Route::post('articles/search/', 'ArticlesController@search');
+Route::get('games', 'GamesController@index');
+Route::get('game/create', 'GamesController@create');
+Route::post('game/create', 'GamesController@store');
+Route::get('game/{id?}/edit', 'GamesController@edit');
+Route::post('game/{id?}/edit', 'GamesController@update');
+Route::get('game/{id?}/show', 'GamesController@show');
+Route::get('game/{id?}/delete', 'GamesController@destroy');
+Route::get('game/excel', 'GamesController@excel');
+Route::get('games/import', 'GamesController@import');
+Route::post('games/import', 'GamesController@imports');
+Route::post('games/search/', 'GamesController@search');
+Route::get('games/search_form/', 'GamesController@search_form');
+Route::post('games/search_form/', 'GamesController@search');
 
+//ECO
+Route::get('ecos', 'EcosController@index');
+Route::get('eco/create', 'EcosController@create');
+Route::post('eco/create', 'EcosController@store');
+Route::get('eco/{id?}/edit', 'EcosController@edit');
+Route::post('eco/{id?}/edit', 'EcosController@update');
+Route::get('eco/{id?}/show', 'EcosController@show');
+Route::get('eco/{id?}/delete', 'EcosController@destroy');
+Route::get('eco/excel', 'EcosController@excel');
+Route::post('ecos/search/', 'EcosController@search');
+
+//AngularJS
+Route::get('/posts/last/{n?}', 'PostController@last');

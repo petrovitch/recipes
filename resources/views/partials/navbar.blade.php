@@ -68,8 +68,10 @@
         <a href="/outbounds" title="Outbound Tickets"><span class="glyphicon glyphicon-backward"></span></a> &nbsp;
         <a href="/dprs" title="Daily Position Records"><span class="glyphicon glyphicon-pause"></span></a> &nbsp;
         <a href="/mccs" title="Memphis Chess Club Members"><span class="glyphicon glyphicon-king"></span></a> &nbsp;
-        <a href="/articles" title="Chess Games"><span class="glyphicon glyphicon-queen"></span></a> &nbsp;
-        <a href="/articles/import" title="Imort Chess Games"><span class="glyphicon glyphicon-tower"></span></a> &nbsp;
+        <a href="/games" title="Chess Games"><span class="glyphicon glyphicon-queen"></span></a> &nbsp;
+        <a href="/games/import" title="Imort Chess Games"><span class="glyphicon glyphicon-tower"></span></a> &nbsp;
+        <a href="/games/search_form" title="Search"><span class="glyphicon glyphicon-bishop"></span></a> &nbsp;
+        <a href="/ecos/" title="ECO"><span class="glyphicon glyphicon-knight"></span></a> &nbsp;
         <a href="/quotes" title="Chess Quotes"><span class="glyphicon glyphicon-pawn"></span></a> &nbsp;
         <a href="/counties" title="Counties"><span class="glyphicons glyphicons-cogwheel"></span></a> &nbsp;
         <a href="/states" title="States"><span class="glyphicons glyphicons-cogwheels"></span></a> &nbsp;

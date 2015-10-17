@@ -1,5 +1,5 @@
 @extends('master')
-@section('name', 'Edit Article')
+@section('name', 'Create Games')
 
 @section('content')
     <div class="container col-md-6 col-md-offset-3">
@@ -8,14 +8,13 @@
             <form class="form-horizontal" method="post">
                 {!! csrf_field() !!}
                 <fieldset>
-                    <legend>Edit Article</legend>
+                    <legend>Create Games</legend>
 
                     <div class="form-group">
                         <label for="pgn" class="col-lg-2 control-label">PGN</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="pgn"
-                                   placeholder="PGN" name="pgn"
-                                   value="{{ $article->pgn }}">
+                                   placeholder="PGN" name="pgn">
                         </div>
                     </div>
 
@@ -23,8 +22,7 @@
                         <label for="fritz" class="col-lg-2 control-label">Analysis</label>
                         <div class="col-lg-10">
                             <input type="text" class="form-control" id="fritz"
-                                   placeholder="Analysis" name="fritz"
-                                   value="{{ $article->fritz }}">
+                                   placeholder="Analysis" name="fritz">
                         </div>
                     </div>
 

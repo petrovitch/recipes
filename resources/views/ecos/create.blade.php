@@ -1,5 +1,5 @@
 @extends('master')
-@section('name', 'Create Articles')
+@section('name', 'Create ECO')
 
 @section('content')
     <div class="container col-md-6 col-md-offset-3">
@@ -8,21 +8,29 @@
             <form class="form-horizontal" method="post">
                 {!! csrf_field() !!}
                 <fieldset>
-                    <legend>Create Articles</legend>
+                    <legend>Create ECO</legend>
 
                     <div class="form-group">
-                        <label for="pgn" class="col-lg-2 control-label">PGN</label>
+                        <label for="eco" class="col-lg-2 control-label">ECO</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="pgn"
-                                   placeholder="PGN" name="pgn">
+                            <input type="text" class="form-control" id="eco"
+                                   placeholder="ECO" name="eco">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="fritz" class="col-lg-2 control-label">Analysis</label>
+                        <label for="opening" class="col-lg-2 control-label">Opening</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="fritz"
-                                   placeholder="Analysis" name="fritz">
+                            <input type="text" class="form-control" id="opening"
+                                   placeholder="Opening" name="opening">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="moves" class="col-lg-2 control-label">Moves</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="moves"
+                                   placeholder="Moves" name="moves">
                         </div>
                     </div>
 
