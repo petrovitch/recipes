@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use OwenIt\Auditing\Auditing;
+use Kyslik\ColumnSortable\Sortable;
 
 class Commodity extends Auditing
 {
-    protected $table = 'commodities';
+    use Sortable;
 
+    protected $table = 'commodities';
     protected $guarded = ['id'];
 }

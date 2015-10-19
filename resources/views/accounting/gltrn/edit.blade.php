@@ -41,9 +41,10 @@
                     <div class="form-group">
                         <label for="date" class="col-lg-2 control-label">Date</label>
 
-                        <div class="col-lg-10">
-                            <input type="text" class="form-control" id="date" placeholder="mm/dd/yyyy" name="date"
+                        <div class="col-lg-10" data-date-format="dd-mm-yyyy">
+                            <input type="text" name="date" class="form-control" data-provide="datepicker"
                                    value="{{ date('m/d/Y', strtotime($gltrn->date)) }}">
+                            <span class="add-on"><i class="icon-th"></i></span>
                         </div>
                     </div>
 

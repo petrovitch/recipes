@@ -10,9 +10,9 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center report-headings">Commodity</th>
-                        <th class="text-center report-headings">Abbreviation</th>
-                        <th class="text-center report-headings">Test Weight</th>
+                        <th class="text-center report-headings">@sortablelink ('commodity')</th>
+                        <th class="text-center report-headings">@sortablelink ('Abbr')</th>
+                        <th class="text-center report-headings">@sortablelink ('Test Weight')</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>

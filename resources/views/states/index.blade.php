@@ -10,8 +10,8 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center report-headings">Abr</th>
-                        <th class="text-center report-headings">State</th>
+                        <th class="text-center report-headings">@sortablelink ('Abbr')</th>
+                        <th class="text-center report-headings">@sortablelink ('State')</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>

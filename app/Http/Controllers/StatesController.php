@@ -18,7 +18,8 @@ class StatesController extends Controller
 {
     public function index()
     {
-        $states = State::orderBy('state')->paginate(env('STATE_PAGINATION_MAX'));
+//        $states = State::orderBy('state')->paginate(env('STATE_PAGINATION_MAX'));
+        $states = State::sortable()->paginate(env('STATE_PAGINATION_MAX'));
         return view('states.index')->with('states', $states);
     }
 

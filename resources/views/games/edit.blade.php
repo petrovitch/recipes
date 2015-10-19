@@ -13,18 +13,14 @@
                     <div class="form-group">
                         <label for="pgn" class="col-lg-2 control-label">PGN</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="pgn"
-                                   placeholder="PGN" name="pgn"
-                                   value="{{ $game->pgn }}">
+                            <textarea rows="8" class="form-control" id="pgn" name="pgn">{{ $game->pgn }}"</textarea>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="fritz" class="col-lg-2 control-label">Analysis</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="fritz"
-                                   placeholder="Analysis" name="fritz"
-                                   value="{{ $game->fritz }}">
+                            <textarea rows="8" class="form-control" id="fritz" name="fritz">{{ $game->fritz }}</textarea>
                         </div>
                     </div>
 

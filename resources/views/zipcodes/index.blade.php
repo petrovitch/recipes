@@ -16,14 +16,14 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center report-headings">City</th>
-                        <th class="text-center report-headings">Abr</th>
-                        <th class="text-center report-headings">State</th>
-                        <th class="text-center report-headings">Zipcode</th>
-                        <th class="text-center report-headings">County</th>
-                        <th class="text-center report-headings">Country</th>
-                        <th class="text-center report-headings">Lon</th>
-                        <th class="text-center report-headings">Lat</th>
+                        <th class="text-center report-headings">@sortablelink ('category')</th>
+                        <th class="text-center report-headings">@sortablelink ('abbr')</th>
+                        <th class="text-center report-headings">@sortablelink ('state')</th>
+                        <th class="text-center report-headings">@sortablelink ('zip')</th>
+                        <th class="text-center report-headings">@sortablelink ('county')</th>
+                        <th class="text-center report-headings">@sortablelink ('country')</th>
+                        <th class="text-center report-headings">@sortablelink ('longitude')</th>
+                        <th class="text-center report-headings">@sortablelink ('latitude')</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>

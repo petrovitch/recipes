@@ -18,7 +18,8 @@ class CountiesController extends Controller
 {
     public function index()
     {
-        $counties = County::orderBy('county')->paginate(env('COUNTY_PAGINATION_MAX'));
+//        $counties = County::orderBy('county')->paginate(env('COUNTY_PAGINATION_MAX'));
+        $counties = County::sortable()->paginate(env('COUNTY_PAGINATION_MAX'));
         return view('counties.index')->with('counties', $counties);
     }
 

@@ -23,7 +23,8 @@ class CustomersController extends Controller
      */
     public function index()
     {
-        $customers = Customer::orderBy('customer')->paginate(env('CUSTOMER_PAGINATION_MAX'));
+//        $customers = Customer::orderBy('customer')->paginate(env('CUSTOMER_PAGINATION_MAX'));
+        $customers = Customer::sortable()->paginate(env('CUSTOMER_PAGINATION_MAX'));
         return view('customers.index')->with('customers', $customers);
     }
 

@@ -10,11 +10,11 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center report-headings">Company</th>
-                        <th class="text-center report-headings">Street</th>
-                        <th class="text-center report-headings">City</th>
-                        <th class="text-center report-headings">State</th>
-                        <th class="text-center report-headings">Zip</th>
+                        <th class="text-center report-headings">@sortablelink ('company')</th>
+                        <th class="text-center report-headings">@sortablelink ('street')</th>
+                        <th class="text-center report-headings">@sortablelink ('city')</th>
+                        <th class="text-center report-headings">@sortablelink ('state')</th>
+                        <th class="text-center report-headings">@sortablelink ('zip')</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>

@@ -16,9 +16,9 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center report-headings">ECO</th>
-                        <th class="text-center report-headings">Opening</th>
-                        <th class="text-center report-headings">Moves</th>
+                        <th class="text-center report-headings">@sortablelink ('ECO')</th>
+                        <th class="text-center report-headings">@sortablelink ('Opening')</th>
+                        <th class="text-center report-headings">@sortablelink ('Moves')</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>

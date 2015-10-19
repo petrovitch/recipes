@@ -16,21 +16,25 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center report-headings">Date</th>
-                        <th class="text-center report-headings">Event</th>
-                        <th class="text-center report-headings">Game</th>
-                        <th class="text-center report-headings">ECO</th>
-                        <th class="text-center report-headings">Result</th>
+                        <th class="text-center report-headings">@sortablelink ('id')</th>
+                        <th class="text-center report-headings">@sortablelink ('year')</th>
+                        <th class="text-center report-headings">@sortablelink ('gamedate', 'Date')</th>
+                        <th class="text-center report-headings">@sortablelink ('Event')</th>
+                        <th class="text-center report-headings">@sortablelink ('title', 'Game')</th>
+                        <th class="text-center report-headings">@sortablelink ('ECO')</th>
+                        <th class="text-center report-headings">@sortablelink ('gameresult', 'Result')</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($games as $game)
                         <tr>
-                            <td class="text-center" style="width:100px">{!! date('m/d/Y', strtotime($game->gameDate)) !!}</td>
+                            <td class="text-center" style="width:75px">{!! $game->id !!}</td>
+                            <td class="text-center" style="width:75px">{!! $game->year !!}</td>
+                            <td class="text-center" style="width:100px">{!! $game->gameDate !!}</td>
                             <td class="text-left">{!! $game->event !!}</td>
                             <td class="text-left">{!! $game->title !!}</td>
-                            <td class="text-center" style="width:100px">{!! substr($game->eco,0,3) !!}</td>
+                            <td class="text-center" style="width:100px">{!! $game->eco !!}</td>
                             <td class="text-center" style="width:100px">{!! $game->gameResult !!}</td>
                             <td class="text-center" style="width:75px">
                                 <a href="{!! action('GamesController@show', $game->id) !!}" title="Show" target="_blank"><span class="glyphicon glyphicon-list"></span></a>
@@ -53,6 +57,7 @@
 
         <div class="text-right">
             <a href="{!! action('GamesController@excel') !!}" title="Export to Excel"><span class="glyphicon glyphicon-download-alt"></span> Excel </a> &nbsp;
+            <a href="{!! action('GamesController@html') !!}" title="Export PGN to HTML"><span class="glyphicons glyphicons-imac"></span> PGN </a> &nbsp;
             <span style="float:left">
                 <a href="/game/create" class="btn btn-sm btn-primary btn-raised" role="button">Add</a> &nbsp;
             </span>

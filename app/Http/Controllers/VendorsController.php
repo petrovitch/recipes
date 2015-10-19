@@ -18,7 +18,8 @@ class VendorsController extends Controller
 {
     public function index()
     {
-        $vendors = Vendor::orderBy('vendor')->paginate(env('VENDOR_PAGINATION_MAX'));
+//        $vendors = Vendor::orderBy('vendor')->paginate(env('VENDOR_PAGINATION_MAX'));
+        $vendors = Vendor::sortable()->paginate(env('VENDOR_PAGINATION_MAX'));
         return view('vendors.index')->with('vendors', $vendors);
     }
 

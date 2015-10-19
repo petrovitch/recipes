@@ -8,7 +8,7 @@
 
     <div class="container col-md-6 col-md-offset-3">
         <div class="panel panel-default">
-            <strong>{{ $eco->ECO }}</strong>
+            <strong>{{ $game->title }}</strong>
             <div id="demo-container"></div>
             <div id="demo-moves"></div>
         </div>

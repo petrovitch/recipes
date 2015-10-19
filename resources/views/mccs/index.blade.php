@@ -16,10 +16,10 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center report-headings">Name</th>
-                        <th class="text-center report-headings">Zip</th>
-                        <th class="text-center report-headings">USCF ID</th>
-                        <th class="text-center report-headings">Rating</th>
+                        <th class="text-center report-headings">@sortablelink ('Name')</th>
+                        <th class="text-center report-headings">@sortablelink ('Zip')</th>
+                        <th class="text-center report-headings">@sortablelink ('uscf_id', 'USCF')</th>
+                        <th class="text-center report-headings">@sortablelink ('uscf_rating', 'Rating')</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>

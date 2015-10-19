@@ -16,8 +16,8 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center report-headings">Quote</th>
-                        <th class="text-center report-headings">Author</th>
+                        <th class="text-center report-headings">@sortablelink ('quote')</th>
+                        <th class="text-center report-headings">@sortablelink ('author')</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>

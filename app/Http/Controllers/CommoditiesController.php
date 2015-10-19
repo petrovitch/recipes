@@ -23,7 +23,8 @@ class CommoditiesController extends Controller
      */
     public function index()
     {
-        $commodities = Commodity::orderBy('commodity')->paginate(env('COMMODITIES_PAGINATION_MAX'));
+//        $commodities = Commodity::orderBy('commodity')->paginate(env('COMMODITIES_PAGINATION_MAX'));
+        $commodities = Commodity::sortable()->paginate(env('COMMODITIES_PAGINATION_MAX'));
         return view('commodities.index')->with('commodities', $commodities);
     }
 

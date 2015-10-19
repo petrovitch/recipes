@@ -16,11 +16,9 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
-                        {{--<th class="text-center report-headings">@sortablelink ('category')</th>--}}
-                        <th class="text-center report-headings">Category</th>
-                        <th class="text-center report-headings">Name</th>
-                        <th class="text-center report-headings">Author</th>
-                        {{--<th class="text-center report-headings">Recipe</th>--}}
+                        <th class="text-center report-headings">@sortablelink ('category')</th>
+                        <th class="text-center report-headings">@sortablelink ('name')</th>
+                        <th class="text-center report-headings">@sortablelink ('author')</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>
@@ -30,7 +28,6 @@
                             <td class="text-left" style="width:50px">{!! $recipe->category !!}</td>
                             <td class="text-left" style="width:200px">{!! $recipe->name !!}</td>
                             <td class="text-left" style="width:80px">{!! $recipe->author !!}</td>
-                            {{--<td class="text-left">{!! substr($recipe->recipe, 0, 100) !!}</td>--}}
                             <td class="text-center" style="width:50px">
                                 <a href="{!! action('RecipesController@show', $recipe->id) !!}" title="Show"><span class="glyphicon glyphicon-list"></span></a>
                                 <a href="{!! action('RecipesController@edit', $recipe->id) !!}" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>

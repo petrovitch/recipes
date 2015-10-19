@@ -131,7 +131,7 @@ Route::get('recipes/excel', 'RecipesController@recipesExcel');
 Route::get('recipes/html/{offset}/{limit}', 'RecipesController@recipesHtml');
 Route::get('recipes/pdf/{offset}/{limit}', 'RecipesController@recipesPdf');
 Route::post('recipes/search/', 'RecipesController@search');
-
+Route::post('recipes/fix/', 'RecipesController@fix');
 
 //Counties
 Route::get('counties', 'CountiesController@index');
@@ -258,6 +258,10 @@ Route::post('games/import', 'GamesController@imports');
 Route::post('games/search/', 'GamesController@search');
 Route::get('games/search_form/', 'GamesController@search_form');
 Route::post('games/search_form/', 'GamesController@search');
+Route::get('games/html/', 'GamesController@html');
+//Route::get('games/pgns/', 'GamesController@pgns');
+Route::get('games/fix', 'GamesController@fix');
+Route::get('games/parse', 'GamesController@parse');
 
 //ECO
 Route::get('ecos', 'EcosController@index');

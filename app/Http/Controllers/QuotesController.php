@@ -18,17 +18,18 @@ class QuotesController extends Controller
 {
     public function index()
     {
-        $fix = false;
-        if ($fix) {
-            $quotes = Quote::orderBy('author')->get();
-            foreach ($quotes as $quote) {
-                $quote->quote = trim($quote->quote);
-                $quote->author = trim($quote->author);
-                $quote->save();
-            }
-        }
+//        $fix = false;
+//        if ($fix) {
+//            $quotes = Quote::orderBy('author')->get();
+//            foreach ($quotes as $quote) {
+//                $quote->quote = trim($quote->quote);
+//                $quote->author = trim($quote->author);
+//                $quote->save();
+//            }
+//        }
 
-        $quotes = Quote::orderBy('quote')->paginate(env('QUOTE_PAGINATION_MAX'));
+//        $quotes = Quote::orderBy('quote')->paginate(env('QUOTE_PAGINATION_MAX'));
+        $quotes = Quote::sortable()->paginate(env('QUOTE_PAGINATION_MAX'));
         return view('quotes.index')->with('quotes', $quotes);
     }
 

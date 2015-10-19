@@ -16,11 +16,11 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
-                        <th class="text-center report-headings">County</th>
-                        <th class="text-center report-headings">Label</th>
-                        <th class="text-center report-headings">Locale</th>
-                        <th class="text-center report-headings">State ID</th>
-                        <th class="text-center report-headings">State</th>
+                        <th class="text-center report-headings">@sortablelink ('County')</th>
+                        <th class="text-center report-headings">@sortablelink ('Label')</th>
+                        <th class="text-center report-headings">@sortablelink ('Locale')</th>
+                        <th class="text-center report-headings">@sortablelink ('State ID')</th>
+                        <th class="text-center report-headings">@sortablelink ('State')</th>
                         <th class="text-center report-headings">Action</th>
                     </tr>
                     </thead>

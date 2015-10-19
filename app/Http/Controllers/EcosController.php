@@ -19,7 +19,8 @@ class EcosController extends Controller
 {
     public function index()
     {
-        $ecos = Eco::orderBy('eco')->paginate(env('ECO_PAGINATION_MAX'));
+//        $ecos = Eco::orderBy('eco')->paginate(env('ECO_PAGINATION_MAX'));
+        $ecos = Eco::sortable()->paginate(env('ECO_PAGINATION_MAX'));
         return view('ecos.index')->with('ecos', $ecos);
     }
 

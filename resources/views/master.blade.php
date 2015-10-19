@@ -31,13 +31,9 @@
 <script src="{!! asset('js/ripples.min.js') !!}"></script>
 <script src="{!! asset('js/material.min.js') !!}"></script>
 
+<script src="{!! asset('js/bootstrap-datepicker.js') !!}"></script>
+<script src="{!! asset('js/bootstrap-timepicker.js') !!}"></script>
 <script src="{!! asset('js/toastr.js') !!}"></script>
-
-{{--<script>--}}
-    {{--$(document).ready(function(){--}}
-        {{--$.material.init();--}}
-    {{--});--}}
-{{--</script>--}}
 
 {!! Toastr::render() !!}
 {!! Toastr::clear() !!}

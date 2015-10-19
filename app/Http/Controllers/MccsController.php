@@ -16,6 +16,22 @@ use Toastr;
 
 class MccsController extends Controller
 {
+    public function index()
+    {
+//        $fix = true;
+//        if ($fix) {
+//            $mccs = Mcc::orderBy('name')->get();
+//            foreach ($mccs as $mcc) {
+//                $mcc->name = ucwords(strtolower($mcc->name));
+//                $mcc->save();
+//            }
+//        }
+
+//        $mccs = Mcc::orderBy('name')->paginate(env('MCC_PAGINATION_MAX'));
+        $mccs = Mcc::sortable()->paginate(env('MCC_PAGINATION_MAX'));
+        return view('mccs.index')->with('mccs', $mccs);
+    }
+
     public function create()
     {
         return view('mccs.create');
@@ -68,20 +84,6 @@ class MccsController extends Controller
         $pdf->writeHTML($html);
         $filename = '/report.pdf';
         $pdf->Output($filename, 'I');
-    }
-
-    public function index()
-    {
-        $fix = true;
-        if ($fix) {
-            $mccs = Mcc::orderBy('name')->get();
-            foreach ($mccs as $mcc) {
-                $mcc->name = ucwords(strtolower($mcc->name));
-                $mcc->save();
-            }
-        }
-        $mccs = Mcc::orderBy('name')->paginate(env('MCC_PAGINATION_MAX'));
-        return view('mccs.index')->with('mccs', $mccs);
     }
 
     public function rating($id)

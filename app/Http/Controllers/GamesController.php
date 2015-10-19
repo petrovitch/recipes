@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Requests\GlcoaEditFormRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
@@ -18,11 +20,93 @@ class GamesController extends Controller
 {
     public function index()
     {
-        $games = Game::orderBy('gameDate', 'desc')
-            ->orderBy('white')
-            ->orderBy('black')
-            ->paginate(env('GAME_PAGINATION_MAX'));
+        $games = Game::sortable()->paginate(env('GAME_PAGINATION_MAX'));
         return view('games.index')->with('games', $games);
+    }
+
+    public function fix()
+    {
+        $games = Game::get();
+        foreach ($games as $game) {
+            $game->eco = preg_replace('/([a-zA-Z][0-9][0-9]).*?/i', "$1", $game->eco);
+            $game->save();
+        }
+
+        $games = Game::sortable()->paginate(env('GAME_PAGINATION_MAX'));
+        return view('games.index')->with('games', $games);
+    }
+
+    public function parse()
+    {
+        $games = Game::get();
+        foreach ($games as $game) {
+            if (preg_match('/Event "(.*?)"/', $game->pgn, $match)) {
+                $game->event = $match [1];
+            }
+            if (preg_match('/Site "(.*?)"/', $game->pgn, $match)) {
+                $game->site = $match [1];
+            }
+            if (preg_match('/[^a-zA-Z]Date "(.*?)"/', $game->pgn, $match)) {
+                $game->gameDate = $match [1];
+                if (preg_match('/([0-9]+)/', $game->gameDate, $match2)) {
+                    $game->year = $match2 [1];
+                }
+            }
+            if (preg_match('/Round "(.*?)"/', $game->pgn, $match)) {
+                $game->gameRound = $match [1];
+            }
+            if (preg_match('/White "(.*?)"/', $game->pgn, $match)) {
+                $game->white = $match [1];
+            }
+            if (preg_match('/Black "(.*?)"/', $game->pgn, $match)) {
+                $game->black = $match [1];
+            }
+            if (preg_match('/Result "(.*?)"/', $game->pgn, $match)) {
+                $game->gameResult = $match [1];
+            }
+            if (preg_match('/ECO "(.*?)"/', $game->pgn, $match)) {
+                $game->eco = $match [1];
+            }
+            if (preg_match('/WhiteElo "(.*?)"/', $game->pgn, $match)) {
+                $game->whiteElo = " (" . $match [1] . ")";
+            } else {
+                $game->whiteElo = "";
+            }
+            if (preg_match('/BlackElo "(.*?)"/', $game->pgn, $match)) {
+                $game->blackElo = " (" . $match [1] . ")";
+            } else {
+                $game->blackElo = "";
+            }
+
+            // Compose a title from players information
+            $game->title = $game->white . $game->whiteElo . " - " . $game->black . $game->blackElo;
+
+            // Begin with complete pgn of game
+            $game->moves = $game->pgn;
+            // Strip comments
+            $game->moves = preg_replace('/(\{.*?\})/', '', $game->moves);
+            // Strip pgn tags
+            $game->moves = preg_replace('/\[.*\]/', '', $game->moves);
+            // Convert multiple white space to a single blank char
+            $game->moves = preg_replace("/\s+/", ' ', $game->moves);
+            // Remove alternative lines and variations
+            $game->moves = self::parseMoves($game->moves);
+            // Strip single & double quotes
+            $game->moves = self::strip_slashes($game->moves);
+
+            $game->save();
+        }
+
+        $games = Game::sortable()->paginate(env('GAME_PAGINATION_MAX'));
+        return view('games.index')->with('games', $games);
+    }
+
+    public function html()
+    {
+        $games = Game::orderBy('id', 'desc')
+            ->where('gameDate', '!=', '????-??-??')
+            ->paginate(env(100));
+        return view('games.html')->with('games', $games);
     }
 
     public function search_form()
@@ -35,16 +119,16 @@ class GamesController extends Controller
         $token = $request->get('token');
         $player = $request->get('player');
         $color = $request->get('color');
-        if (strlen($token) > 0){
+        if (strlen($token) > 0) {
             $games = Game::where('pgn', 'LIKE', '%' . $token . '%')
                 ->orderBy('gameDate', 'desc')
                 ->orderBy('gameRound', 'desc')
                 ->orderBy('white')
                 ->orderBy('black')
                 ->paginate(env('RECIPE_PAGINATION_MAX'));
-        } elseif (strlen($player) > 0){
-            if (strlen($color) > 0){
-                if (strtolower($color) == 'white'){
+        } elseif (strlen($player) > 0) {
+            if (strlen($color) > 0) {
+                if (strtolower($color) == 'white') {
                     $games = Game::where('white', 'LIKE', '%' . $player . '%')
                         ->orderBy('gameDate', 'desc')
                         ->orderBy('gameRound', 'desc')
@@ -71,95 +155,8 @@ class GamesController extends Controller
         return view('games.index')->with('games', $games);
     }
 
-    public function create()
-    {
-        return view('games.create');
-    }
-
-    public function import()
-    {
-        return view('games.import');
-    }
-
     public function imports(Request $request)
     {
-        function deldup()
-        {
-            $last_moves = '';
-            $games = Game::orderBy('moves')->get();
-            foreach ($games as $game) {
-                if ($last_moves == $game->moves) {
-                    Toastr::warning('Duplicate removed. ' . $last_moves);
-                    Game::find($game->id)->delete();
-                }
-                $last_moves = $game->moves;
-            }
-        }
-
-        function parseMoves($pgn)
-        {
-            /* Remove newline, carriage-return */
-            $pgn = preg_replace('/(\\\r|\\\n)/', ' ', $pgn);
-
-            /* Remove Chessbase tags */
-            $pgn = preg_replace('/\$[0-9]+/', '', $pgn);
-
-            /* Remove PGN Tags */
-            $out = '';
-            $level = 0;
-            for ($i = 0; $i < strlen($pgn); ++$i) {
-                if ($pgn [$i] == '[') {
-                    ++$level;
-                } elseif ($pgn [$i] == ']') {
-                    --$level;
-                } elseif ($level == 0) {
-                    $out .= $pgn [$i];
-                }
-            }
-            $pgn = $out;
-
-            /* Remove comments */
-            $out = '';
-            $level = 0;
-            for ($i = 0; $i < strlen($pgn); ++$i) {
-                if ($pgn [$i] == '{') {
-                    ++$level;
-                } elseif ($pgn [$i] == '}') {
-                    --$level;
-                } elseif ($level == 0) {
-                    $out .= $pgn [$i];
-                }
-            }
-            $pgn = $out;
-
-            /* Remove variations */
-            $out = '';
-            $level = 0;
-            for ($i = 0; $i < strlen($pgn); ++$i) {
-                if ($pgn [$i] == '(') {
-                    ++$level;
-                } elseif ($pgn [$i] == ')') {
-                    --$level;
-                } elseif ($level == 0) {
-                    $out .= $pgn [$i];
-                }
-            }
-
-            $moves = preg_replace('/(\\\|\[.*?\]|\s+|<br>|{.*?}|\(.*?\)|[0-9]+\.\.\.|\$[0-9]+)/is', ' ', $out);
-
-            /* Replace multiple white-space with single space */
-            $moves = preg_replace("/[\s]+/", ' ', $moves);
-            return trim($moves);
-        }
-
-        function strip_slashes($var)
-        {
-            $var = preg_replace('/\\\r\\\n/', '~~', $var);
-            $var = preg_replace('/[\\\]+/', '', $var);
-            $var = preg_replace('/~~/', '\\\r\\\n', $var);
-            $var = preg_replace('/\'/', '`', $var);
-            return $var;
-        }
 
         /**
          * Main imports
@@ -228,12 +225,12 @@ class GamesController extends Controller
                 // Convert multiple white space to a single blank char
                 $moves = preg_replace("/\s+/", ' ', $moves);
                 // Remove alternative lines and variations
-                $moves = parseMoves($moves);
+                $moves = $this->parseMoves($moves);
                 // Strip single & double quotes
-                $moves = strip_slashes($moves);
+                $moves = $this->strip_slashes($moves);
 
                 // Strip slashes from single and double quotes
-                $pgn = strip_slashes($pgn);
+                $pgn = $this->strip_slashes($pgn);
                 $pgn = trim($pgn);
 
                 // Analysis
@@ -283,8 +280,18 @@ class GamesController extends Controller
                 $game->save();
             }
         }
-        deldup();
+        $this->deldup();
         return redirect('/games');
+    }
+
+    public function create()
+    {
+        return view('games.create');
+    }
+
+    public function import()
+    {
+        return view('games.import');
     }
 
     public function store(Request $request)
@@ -362,5 +369,83 @@ class GamesController extends Controller
         $pdf->writeHTML($html);
         $filename = '/report.pdf';
         $pdf->Output($filename, 'I');
+    }
+
+    public static function deldup()
+    {
+        $last_moves = '';
+        $games = Game::orderBy('moves')->get();
+        foreach ($games as $game) {
+            if ($last_moves == $game->moves) {
+                Toastr::warning('Duplicate removed. ' . $last_moves);
+                Game::find($game->id)->delete();
+            }
+            $last_moves = $game->moves;
+        }
+    }
+
+    public static function parseMoves($pgn)
+    {
+        /* Remove newline, carriage-return */
+        $pgn = preg_replace('/(\\\r|\\\n)/', ' ', $pgn);
+
+        /* Remove Chessbase tags */
+        $pgn = preg_replace('/\$[0-9]+/', '', $pgn);
+
+        /* Remove PGN Tags */
+        $out = '';
+        $level = 0;
+        for ($i = 0; $i < strlen($pgn); ++$i) {
+            if ($pgn [$i] == '[') {
+                ++$level;
+            } elseif ($pgn [$i] == ']') {
+                --$level;
+            } elseif ($level == 0) {
+                $out .= $pgn [$i];
+            }
+        }
+        $pgn = $out;
+
+        /* Remove comments */
+        $out = '';
+        $level = 0;
+        for ($i = 0; $i < strlen($pgn); ++$i) {
+            if ($pgn [$i] == '{') {
+                ++$level;
+            } elseif ($pgn [$i] == '}') {
+                --$level;
+            } elseif ($level == 0) {
+                $out .= $pgn [$i];
+            }
+        }
+        $pgn = $out;
+
+        /* Remove variations */
+        $out = '';
+        $level = 0;
+        for ($i = 0; $i < strlen($pgn); ++$i) {
+            if ($pgn [$i] == '(') {
+                ++$level;
+            } elseif ($pgn [$i] == ')') {
+                --$level;
+            } elseif ($level == 0) {
+                $out .= $pgn [$i];
+            }
+        }
+
+        $moves = preg_replace('/(\\\|\[.*?\]|\s+|<br>|{.*?}|\(.*?\)|[0-9]+\.\.\.|\$[0-9]+)/is', ' ', $out);
+
+        /* Replace multiple white-space with single space */
+        $moves = preg_replace("/[\s]+/", ' ', $moves);
+        return trim($moves);
+    }
+
+    public static function strip_slashes($var)
+    {
+        $var = preg_replace('/\\\r\\\n/', '~~', $var);
+        $var = preg_replace('/[\\\]+/', '', $var);
+        $var = preg_replace('/~~/', '\\\r\\\n', $var);
+        $var = preg_replace('/\'/', '`', $var);
+        return $var;
     }
 }
