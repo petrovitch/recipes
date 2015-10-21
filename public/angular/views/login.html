@@ -1,0 +1,63 @@
+<div class="container col-md-6 col-md-offset-3">
+    <div class="well well bs-component">
+        <h2>Login</h2>
+
+        <div ng-show="error" class="alert alert-danger">{{error}}</div>
+        <form name="form" ng-submit="login()" role="form">
+            <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                <label for="username">Username</label>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Username"
+                       name="username"
+                       id="username"
+                       ng-model="username"
+                       ng-minlength="3"
+                       ng-maxlength="80"
+                       required/>
+                <div class="error" ng-show="form.username.$dirty && form.username.$invalid">
+                    <small class="error" ng-show="form.username.$error.required">
+                        <span class="btn-danger">Username is required.</span>
+                    </small>
+                    <small class="error" ng-show="form.username.$error.minlength">
+                        <span class="btn-danger">Username must be at least 3 characters.</span>
+                    </small>
+                    <small class="error" ng-show="form.username.$error.maxlength">
+                        <span class="btn-danger">Username cannot be longer than 80 characters.</span>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                <label for="password">Password</label>
+                <input type="password"
+                       class="form-control"
+                       placeholder="Password"
+                       name="password"
+                       id="password"
+                       ng-model="password"
+                       ng-minlength="3"
+                       ng-maxlength="80"
+                       required/>
+                <div class="error" ng-show="form.password.$dirty && form.password.$invalid">
+                    <small class="error" ng-show="form.password.$error.required">
+                        <span class="btn-danger">Password is required.</span>
+                    </small>
+                    <small class="error" ng-show="form.password.$error.minlength">
+                        <span class="btn-danger">Password must be at least 3 characters.</span>
+                    </small>
+                    <small class="error" ng-show="form.password.$error.maxlength">
+                        <span class="btn-danger">Password cannot be longer than 80 characters.</span>
+                    </small>
+                </div>
+            </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit"
+                        ng-disabled="form.$invalid || dataLoading"
+                        class="btn btn-primary">Login
+                </button>
+                <a href="/#/register" class="btn btn-link">Register</a>
+            </div>
+        </form>
+    </div>
+</div>

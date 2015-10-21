@@ -16,34 +16,17 @@ use Toastr;
 
 class CustomersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-//        $customers = Customer::orderBy('customer')->paginate(env('CUSTOMER_PAGINATION_MAX'));
         $customers = Customer::sortable()->paginate(env('CUSTOMER_PAGINATION_MAX'));
         return view('customers.index')->with('customers', $customers);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('customers.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $customer = new customer(array(
@@ -58,37 +41,18 @@ class CustomersController extends Controller
         return redirect('/customers');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $customer = Customer::whereId($id)->firstOrFail();
         return view('customers.show')->with('customer', $customer);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $customer = Customer::whereId($id)->firstOrFail();
         return view('customers.edit')->with('customer', $customer);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $customer = Customer::whereId($id)->firstOrFail();
@@ -102,12 +66,6 @@ class CustomersController extends Controller
         return redirect(action('CustomersController@index', $customer->$customer));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Customer::find($id)->delete();

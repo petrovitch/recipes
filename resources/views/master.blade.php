@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('css/toastr.css') !!}">
 <body>
 
-@include('partials.navbar')
+@include('_partials.navbar')
 
 @yield('content')
 

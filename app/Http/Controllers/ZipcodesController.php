@@ -18,7 +18,6 @@ class ZipcodesController extends Controller
 {
     public function index()
     {
-//        $zipcodes = Zipcode::orderBy('zipcode')->paginate(env('ZIPCODE_PAGINATION_MAX'));
         $zipcodes = Zipcode::sortable()->paginate(env('ZIPCODE_PAGINATION_MAX'));
         return view('zipcodes.index')->with('zipcodes', $zipcodes);
     }
@@ -44,7 +43,7 @@ class ZipcodesController extends Controller
 
     public function store(Request $request)
     {
-        $zipcode = new zipcode(array(
+        $zipcode = new Zipcode(array(
             'city' => $request->get('city'),
             'state' => $request->get('state'),
             'state_name' => $request->get('state_name'),

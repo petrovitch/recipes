@@ -18,24 +18,20 @@ class QuotesController extends Controller
 {
     public function index()
     {
-//        $fix = false;
-//        if ($fix) {
-//            $quotes = Quote::orderBy('author')->get();
-//            foreach ($quotes as $quote) {
-//                $quote->quote = trim($quote->quote);
-//                $quote->author = trim($quote->author);
-//                $quote->save();
-//            }
-//        }
-
-//        $quotes = Quote::orderBy('quote')->paginate(env('QUOTE_PAGINATION_MAX'));
         $quotes = Quote::sortable()->paginate(env('QUOTE_PAGINATION_MAX'));
         return view('quotes.index')->with('quotes', $quotes);
     }
 
-    public function create()
+    public function fix()
     {
-        return view('quotes.create');
+        $quotes = Quote::orderBy('author')->get();
+        foreach ($quotes as $quote) {
+            $quote->quote = trim($quote->quote);
+            $quote->author = trim($quote->author);
+            $quote->save();
+        }
+        $quotes = Quote::sortable()->paginate(env('QUOTE_PAGINATION_MAX'));
+        return view('quotes.index')->with('quotes', $quotes);
     }
 
     public function search(Request $request)
@@ -46,6 +42,11 @@ class QuotesController extends Controller
             ->orderBy('author')
             ->paginate(env('RECIPE_PAGINATION_MAX'));
         return view('quotes.index')->with('quotes', $quotes);
+    }
+
+    public function create()
+    {
+        return view('quotes.create');
     }
 
     public function store(Request $request)

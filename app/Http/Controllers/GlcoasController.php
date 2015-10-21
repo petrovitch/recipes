@@ -17,13 +17,6 @@ use Toastr;
 
 class GlcoasController extends Controller
 {
-
-    /**
-     * Are the ledger chart of accounts opening totals in debit/credit balance?
-     * Return the balance.
-     *
-     * @return mixed
-     */
     public function checkLedger()
     {
         $results = DB::select(DB::raw("SELECT SUM(init) AS balance FROM glcoas"));
@@ -34,12 +27,6 @@ class GlcoasController extends Controller
         return $balance;
     }
 
-    /**
-     * Is the journal in debit/credit balance?
-     * Return the balance.
-     *
-     * @return mixed
-     */
     public function checkJournal()
     {
         $results = DB::select(DB::raw("SELECT SUM(amount) AS balance FROM gltrns"));
@@ -50,11 +37,6 @@ class GlcoasController extends Controller
         return $balance;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $balance = SELF::checkJournal();
@@ -64,22 +46,11 @@ class GlcoasController extends Controller
         return view('accounting.glcoa.index')->with(['glcoas' => $glcoas, 'balance' => $balance]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('accounting.glcoa.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(GlcoaEditFormRequest $request)
     {
         $glcoa = new Glcoa(array(
@@ -92,12 +63,6 @@ class GlcoasController extends Controller
         return redirect('/glcoas'); //->with('status', 'Account has been created.');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $balance = SELF::checkJournal();
@@ -108,25 +73,12 @@ class GlcoasController extends Controller
         return view('accounting.glcoa.show')->with(['glcoa' => $glcoa, 'gltrns' => $gltrns]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $glcoa = Glcoa::whereId($id)->firstOrFail();
         return view('accounting.glcoa.edit')->with('glcoa', $glcoa);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update($id, GlcoaEditFormRequest $request)
     {
         $glcoa = Glcoa::whereId($id)->firstOrFail();
@@ -137,12 +89,6 @@ class GlcoasController extends Controller
         return redirect(action('GlcoasController@index', $glcoa->id))->with('status', 'The account has been updated!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Glcoa::find($id)->delete();
@@ -150,11 +96,6 @@ class GlcoasController extends Controller
         return view('accounting.glcoa.index')->with('glcoas', $glcoas);
     }
 
-    /**
-     * Detailed Statement
-     *
-     * @return $this
-     */
     public function detail()
     {
         $balance = SELF::checkJournal();

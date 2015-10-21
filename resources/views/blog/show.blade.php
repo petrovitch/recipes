@@ -7,7 +7,7 @@
             <div class="content">
                 <h2 class="header">{!! $post->title !!}</h2>
 
-                <p> {!! $post->content !!} </p>
+                <p> {!! nl2br($post->content) !!} </p>
             </div>
             <div class="clearfix"></div>
         </div>

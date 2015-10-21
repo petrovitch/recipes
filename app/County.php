@@ -11,7 +11,7 @@ class County extends Auditing
     use Sortable;
 
     protected $table = 'counties';
-    protected $fillable = ['state_id', 'county', 'label', 'locale'];
+    protected $guarded = ['id'];
 
     public function state()
     {

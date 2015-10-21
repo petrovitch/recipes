@@ -16,34 +16,17 @@ use Toastr;
 
 class CommoditiesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-//        $commodities = Commodity::orderBy('commodity')->paginate(env('COMMODITIES_PAGINATION_MAX'));
         $commodities = Commodity::sortable()->paginate(env('COMMODITIES_PAGINATION_MAX'));
         return view('commodities.index')->with('commodities', $commodities);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('commodities.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $commodity = new Commodity(array(
@@ -56,37 +39,18 @@ class CommoditiesController extends Controller
         return redirect('/commodities');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $commodity = Commodity::whereId($id)->firstOrFail();
         return view('commodities.show')->with('commodity', $commodity);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $commodity = Commodity::whereId($id)->firstOrFail();
         return view('commodities.edit')->with('commodity', $commodity);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $commodity = Commodity::whereId($id)->firstOrFail();
@@ -98,12 +62,6 @@ class CommoditiesController extends Controller
         return redirect(action('CommoditiesController@index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Commodity::find($id)->delete();

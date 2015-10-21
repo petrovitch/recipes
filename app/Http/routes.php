@@ -219,6 +219,25 @@ Route::get('inbound/excel', 'InboundsController@excel');
 
 //Dprs
 
+//Farmers
+Route::get('farmers', 'FarmersController@index');
+Route::get('farm/create', 'FarmersController@create');
+Route::post('farm/create', 'FarmersController@store');
+Route::get('farm/{id?}/edit', 'FarmersController@edit');
+Route::post('farm/{id?}/edit', 'FarmersController@update');
+Route::get('farm/{id?}/show', 'FarmersController@show');
+Route::get('farm/{id?}/delete', 'FarmersController@destroy');
+Route::get('farm/excel', 'FarmersController@excel');
+
+//Farms
+Route::get('farms', 'FarmsController@index');
+Route::get('farm/create', 'FarmsController@create');
+Route::post('farm/create', 'FarmsController@store');
+Route::get('farm/{id?}/edit', 'FarmsController@edit');
+Route::post('farm/{id?}/edit', 'FarmsController@update');
+Route::get('farm/{id?}/show', 'FarmsController@show');
+Route::get('farm/{id?}/delete', 'FarmsController@destroy');
+Route::get('farm/excel', 'FarmsController@excel');
 
 //Mccs
 Route::get('mccs', 'MccsController@index');

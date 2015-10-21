@@ -629,16 +629,16 @@
         },
         {
             "name": "kyslik/column-sortable",
-            "version": "3.0.3",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kyslik/column-sortable.git",
-                "reference": "da71081d3fec5875d9466bcd92307e769326f595"
+                "reference": "fe8414c7a7d01a2e0b9e1d6495900f33b118772e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kyslik/column-sortable/zipball/da71081d3fec5875d9466bcd92307e769326f595",
-                "reference": "da71081d3fec5875d9466bcd92307e769326f595",
+                "url": "https://api.github.com/repos/Kyslik/column-sortable/zipball/fe8414c7a7d01a2e0b9e1d6495900f33b118772e",
+                "reference": "fe8414c7a7d01a2e0b9e1d6495900f33b118772e",
                 "shasum": ""
             },
             "require": {
@@ -669,7 +669,7 @@
                 "sortable",
                 "sorting"
             ],
-            "time": "2015-10-17 15:18:26"
+            "time": "2015-10-19 09:03:29"
         },
         {
             "name": "laravel/framework",
@@ -1378,26 +1378,26 @@
         },
         {
             "name": "owen-it/laravel-auditing",
-            "version": "2.0.6",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/owen-it/laravel-auditing.git",
-                "reference": "386ff91ca094d93aba0d47010c35c2b4f428d428"
+                "reference": "f7e1bb464d66de53dfe8dc4bfc15d648159a1387"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/owen-it/laravel-auditing/zipball/386ff91ca094d93aba0d47010c35c2b4f428d428",
-                "reference": "386ff91ca094d93aba0d47010c35c2b4f428d428",
+                "url": "https://api.github.com/repos/owen-it/laravel-auditing/zipball/f7e1bb464d66de53dfe8dc4bfc15d648159a1387",
+                "reference": "f7e1bb464d66de53dfe8dc4bfc15d648159a1387",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "~5.0|~5.1",
-                "php": ">=5.3.0"
+                "php": ">=5.5.9"
             },
             "type": "package",
             "autoload": {
                 "psr-4": {
-                    "OwenIt\\Auditing\\": "src"
+                    "OwenIt\\Auditing\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1410,7 +1410,7 @@
                     "email": "anteriovieira@gmail.com"
                 }
             ],
-            "description": "Keep a change history for your models using laravel version 5.1.",
+            "description": "Keep a change history for your models using laravel version 5.1.*",
             "homepage": "https://github.com/owen-it/laravel-auditing",
             "keywords": [
                 "auditing",
@@ -1419,20 +1419,20 @@
                 "observe",
                 "register"
             ],
-            "time": "2015-10-09 19:44:36"
+            "time": "2015-10-19 15:50:19"
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.0.7",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "df1207683dfbd1399f0fa931a368082a28fed50b"
+                "reference": "7fe2420f8ad46aa08d5b317c92a148611d366d88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/df1207683dfbd1399f0fa931a368082a28fed50b",
-                "reference": "df1207683dfbd1399f0fa931a368082a28fed50b",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/7fe2420f8ad46aa08d5b317c92a148611d366d88",
+                "reference": "7fe2420f8ad46aa08d5b317c92a148611d366d88",
                 "shasum": ""
             },
             "require": {
@@ -1464,7 +1464,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2015-10-16 14:10:15"
+            "time": "2015-10-18 21:39:26"
         },
         {
             "name": "patchwork/utf8",

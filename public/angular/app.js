@@ -1,39 +1,73 @@
-var app = angular.module('APP', ['ngRoute']);
+(function () {
+    'use strict';
 
-app.config(function($routeProvider) {
-    $routeProvider
-        .when('/', {
-            templateUrl : 'angular/templates/main.html',
-            controller  : 'mainController'
-        })
-        .when('/home', {
-            templateUrl : 'angular/templates/main.html',
-            controller  : 'mainController'
-        })
-        .when('/user', {
-            templateUrl : 'angular/templates/user.html',
-            controller  : 'userController'
-        })
-        .when('/comment', {
-            templateUrl : 'angular/templates/comment.html',
-            controller  : 'commentController'
-        })
-        .when('/tag', {
-            templateUrl : 'angular/templates/tag.html',
-            controller  : 'tagController'
-        })
-        .when('/login', {
-            templateUrl : 'angular/templates/login.html',
-            controller  : 'loginController'
-        })
-        .when('/about', {
-            templateUrl : 'angular/pages/about.html',
-            controller  : 'aboutController'
-        })
-        .when('/contact', {
-            templateUrl : 'angular/pages/contact.html',
-            controller  : 'contactController'
-        })
-        .otherwise({redirectTo:'/'});
-});
+    var app = angular
+        .module('APP', ['ngRoute'])
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl: 'angular/views/main.html',
+                    controller: 'MainController'
+                })
 
+                .when('/about', {
+                    templateUrl: 'angular/views/about.html',
+                    controller: 'AboutController'
+                })
+
+                .when('/contacts', {
+                    templateUrl: 'angular/views/contacts.html',
+                    controller: 'ContactsController'
+                })
+
+                .when('/comments', {
+                    templateUrl: 'angular/views/comments.html',
+                    controller: 'CommentsController'
+                })
+
+                .when('/home', {
+                    templateUrl: 'angular/views/home.html',
+                    controller: 'HomeController'
+                })
+
+                .when('/login', {
+                    templateUrl: 'angular/views/login.html',
+                    controller: 'LoginController'
+                })
+
+                .when('/register', {
+                    templateUrl: 'angular/views/register.html',
+                    controller: 'RegisterController'
+                })
+
+                .when('/tags', {
+                    templateUrl: 'angular/views/tags.html',
+                    controller: 'TagsController'
+                })
+
+                .when('/users', {
+                    templateUrl: 'angular/views/users.html',
+                    controller: 'UsersController'
+                })
+
+                .otherwise({redirectTo: '/'});
+        });
+
+    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
+    function run($rootScope, $location, $cookieStore, $http) {
+        // keep user logged in after page refresh
+        $rootScope.globals = $cookieStore.get('globals') || {};
+        if ($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+        }
+
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            // redirect to login page if not logged in and trying to access a restricted page
+            var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
+            var loggedIn = $rootScope.globals.currentUser;
+            if (restrictedPage && !loggedIn) {
+                $location.path('/login');
+            }
+        });
+    }
+}());

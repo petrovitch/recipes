@@ -11,34 +11,17 @@ use Illuminate\Support\Facades\Mail;
 
 class TicketsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-//        $tickets = Ticket::all();
         $tickets = Ticket::paginate(env('PAGINATION_MAX'));
         return view('tickets.index')->with('tickets', $tickets);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('tickets.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(TicketFormRequest $request)
     {
         $slug = uniqid();
@@ -62,12 +45,6 @@ class TicketsController extends Controller
         return redirect('/contact')->with('status', 'Your ticket has been created! Its unique id is: ' . $slug);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($slug)
     {
         $ticket = Ticket::whereSlug($slug)->firstOrFail();
@@ -75,25 +52,12 @@ class TicketsController extends Controller
         return view('tickets.show', compact('ticket', 'comments'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($slug)
     {
         $ticket = Ticket::whereSlug($slug)->firstOrFail();
         return view('tickets.edit', compact('ticket'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param Request $request
-     * @param $slug
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function update(Request $request, $slug)
     {
         $ticket = Ticket::whereSlug($slug)->firstOrFail();
@@ -108,12 +72,6 @@ class TicketsController extends Controller
         return redirect(action('TicketsController@edit', $ticket->slug))->with('status', 'The ticket ' . $slug . ' has been updated!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($slug)
     {
         $ticket = Ticket::whereSlug($slug)->firstOrFail();

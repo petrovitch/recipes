@@ -18,23 +18,89 @@ class MccsController extends Controller
 {
     public function index()
     {
-//        $fix = true;
-//        if ($fix) {
-//            $mccs = Mcc::orderBy('name')->get();
-//            foreach ($mccs as $mcc) {
-//                $mcc->name = ucwords(strtolower($mcc->name));
-//                $mcc->save();
-//            }
-//        }
-
-//        $mccs = Mcc::orderBy('name')->paginate(env('MCC_PAGINATION_MAX'));
         $mccs = Mcc::sortable()->paginate(env('MCC_PAGINATION_MAX'));
+        return view('mccs.index')->with('mccs', $mccs);
+    }
+
+    public function fix()
+    {
+        $mccs = Mcc::orderBy('name')->get();
+        foreach ($mccs as $mcc) {
+            $mcc->name = ucwords(strtolower($mcc->name));
+            $mcc->save();
+        }
+        $mccs = Mcc::sortable()->paginate(env('MCC_PAGINATION_MAX'));
+        return view('mccs.index')->with('mccs', $mccs);
+    }
+
+    public function search(Request $request)
+    {
+        $token = $request->get('token');
+        $mccs = Mcc::where('name', 'LIKE', '%' . $token . '%')
+            ->orderBy('name')
+            ->paginate(env('RECIPE_PAGINATION_MAX'));
         return view('mccs.index')->with('mccs', $mccs);
     }
 
     public function create()
     {
         return view('mccs.create');
+    }
+
+    public function store(Request $request)
+    {
+        $mcc = new Mcc(array(
+            'username' => $request->get('username'),
+            'password' => $request->get('password'),
+            'name' => $request->get('name'),
+            'zip' => $request->get('zip'),
+            'uscf_id' => $request->get('uscf_id'),
+            'uscf_rating' => $request->get('uscf_rating'),
+        ));
+        $mcc->save();
+        Toastr::success('Member created.');
+        return redirect('/mccs');
+    }
+
+    public function show($id)
+    {
+        $mcc = Mcc::whereId($id)->firstOrFail();
+        return view('mccs.show')->with('mcc', $mcc);
+    }
+
+    public function edit($id)
+    {
+        $mcc = Mcc::whereId($id)->firstOrFail();
+        return view('mccs.edit')->with('mcc', $mcc);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $mcc = Mcc::whereId($id)->firstOrFail();
+        $mcc->username = $request->get('username');
+        $mcc->password = $request->get('password');
+        $mcc->name = $request->get('name');
+        $mcc->zip = $request->get('zip');
+        $mcc->uscf_id = $request->get('uscf_id');
+        $mcc->uscf_rating = $request->get('uscf_rating');
+        $mcc->save();
+        Toastr::success('Member updated.');
+        return redirect(action('MccsController@index', $mcc->id));
+    }
+
+    public function destroy($id)
+    {
+        Mcc::find($id)->delete();
+        $mccs = Mcc::orderBy('name')->paginate(env('MCC_PAGINATION_MAX'));
+        return view('mccs.index')->with('mccs', $mccs);
+    }
+
+    public function excel()
+    {
+        $table = with(new Mcc)->getTable();
+        $data = DB::select(DB::raw("SELECT * FROM $table"));
+        $data = json_encode($data);
+        SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
     }
 
     public function data2excel($excel, $sheet, $data)
@@ -50,27 +116,6 @@ class MccsController extends Controller
                 }
             });
         })->export('xlsx');
-    }
-
-    public function destroy($id)
-    {
-        Mcc::find($id)->delete();
-        $mccs = Mcc::orderBy('name')->paginate(env('MCC_PAGINATION_MAX'));
-        return view('mccs.index')->with('mccs', $mccs);
-    }
-
-    public function edit($id)
-    {
-        $mcc = Mcc::whereId($id)->firstOrFail();
-        return view('mccs.edit')->with('mcc', $mcc);
-    }
-
-    public function excel()
-    {
-        $table = with(new Mcc)->getTable();
-        $data = DB::select(DB::raw("SELECT * FROM $table"));
-        $data = json_encode($data);
-        SELF::data2excel('Excel', 'Sheet1', json_decode($data, true));
     }
 
     public function html2pdf($html)
@@ -89,14 +134,14 @@ class MccsController extends Controller
     public function rating($id)
     {
         $mcc = Mcc::whereId($id)->firstOrFail();
-        $buffer = file_get_contents ( 'http://main.uschess.org/assets/msa_joomla/MbrDtlMain.php?' . $mcc->uscf_id );
+        $buffer = file_get_contents('http://main.uschess.org/assets/msa_joomla/MbrDtlMain.php?' . $mcc->uscf_id);
         $start = "Regular";
         $stop = "Current";
-        $start_position = strpos ( $buffer, $start );
-        $stop_position = strpos ( $buffer, $stop ) + strlen ( $stop );
+        $start_position = strpos($buffer, $start);
+        $stop_position = strpos($buffer, $stop) + strlen($stop);
         $length = $stop_position - $start_position;
-        $buffer = substr ( $buffer, $start_position, $length );
-        if (preg_match ( '/.*?([0-9]+).*?/', $buffer, $match )) {
+        $buffer = substr($buffer, $start_position, $length);
+        if (preg_match('/.*?([0-9]+).*?/', $buffer, $match)) {
             $mcc->uscf_rating = $match [1];
             $mcc->save();
         }
@@ -122,49 +167,5 @@ class MccsController extends Controller
         }
         $mccs = Mcc::orderBy('name')->paginate(env('MCC_PAGINATION_MAX'));
         return view('mccs.index')->with('mccs', $mccs);
-    }
-
-    public function search(Request $request)
-    {
-        $token = $request->get('token');
-        $mccs = Mcc::where('name', 'LIKE', '%' . $token . '%')
-            ->orderBy('name')
-            ->paginate(env('RECIPE_PAGINATION_MAX'));
-        return view('mccs.index')->with('mccs', $mccs);
-    }
-
-    public function show($id)
-    {
-        $mcc = Mcc::whereId($id)->firstOrFail();
-        return view('mccs.show')->with('mcc', $mcc);
-    }
-
-    public function store(Request $request)
-    {
-        $mcc = new Mcc(array(
-            'username' => $request->get('username'),
-            'password' => $request->get('password'),
-            'name' => $request->get('name'),
-            'zip' => $request->get('zip'),
-            'uscf_id' => $request->get('uscf_id'),
-            'uscf_rating' => $request->get('uscf_rating'),
-        ));
-        $mcc->save();
-        Toastr::success('Member created.');
-        return redirect('/mccs');
-    }
-
-    public function update(Request $request, $id)
-    {
-        $mcc = Mcc::whereId($id)->firstOrFail();
-        $mcc->username = $request->get('username');
-        $mcc->password = $request->get('password');
-        $mcc->name = $request->get('name');
-        $mcc->zip = $request->get('zip');
-        $mcc->uscf_id = $request->get('uscf_id');
-        $mcc->uscf_rating = $request->get('uscf_rating');
-        $mcc->save();
-        Toastr::success('Member updated.');
-        return redirect(action('MccsController@index', $mcc->id));
     }
 }

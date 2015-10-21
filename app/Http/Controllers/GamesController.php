@@ -8,10 +8,9 @@ use App\Http\Requests;
 use App\Http\Requests\GlcoaEditFormRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use TCPDF;
 use Toastr;
@@ -26,13 +25,16 @@ class GamesController extends Controller
 
     public function fix()
     {
-        $games = Game::get();
+        $games = Game::orderBy('id')->get();
         foreach ($games as $game) {
-            $game->eco = preg_replace('/([a-zA-Z][0-9][0-9]).*?/i', "$1", $game->eco);
-            $game->save();
+            if (strlen($game->eco) > 3){
+                $game->eco = preg_replace('/([a-zA-Z][0-9][0-9]).*?/i', "$1", $game->eco);
+                $game->save();
+                Toastr::success($game->eco);
+            }
         }
 
-        $games = Game::sortable()->paginate(env('GAME_PAGINATION_MAX'));
+        $games = Game::orderBy('id', 'desc')->paginate(env('GAME_PAGINATION_MAX'));
         return view('games.index')->with('games', $games);
     }
 
@@ -301,7 +303,19 @@ class GamesController extends Controller
             'fritz' => $request->get('fritz'),
         ));
         $game->save();
+
+        $data = array(
+            'pgn' => $request->get('pgn'),
+            'fritz' => $request->get('fritz'),
+        );
+
+        Mail::send('emails.import', $data, function ($message){
+            $message->from(env('EMAIL_ADDRESS'), 'Chess Games');
+            $message->to('kennthompson@gmail.com')->subject('PGN Imported');
+        });
+
         Toastr::success('Game created.');
+
         return redirect('/games');
     }
 

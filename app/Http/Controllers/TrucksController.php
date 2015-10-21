@@ -18,7 +18,6 @@ class TrucksController extends Controller
 {
     public function index()
     {
-//        $trucks = Truck::orderBy('company')->paginate(env('TRUCK_PAGINATION_MAX'));
         $trucks = Truck::sortable()->paginate(env('TRUCK_PAGINATION_MAX'));
         return view('trucks.index')->with('trucks', $trucks);
     }

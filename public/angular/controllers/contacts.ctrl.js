@@ -1,0 +1,15 @@
+(function () {
+    'use strict';
+
+    angular
+        .module('APP')
+        .controller('ContactsController', ContactsController);
+
+    ContactsController.$inject = ['$rootScope', '$scope', '$http'];
+
+    function ContactsController($rootScope, $scope, $http) {
+        var vm = this;
+        $scope.message = 'ContactsController';
+    };
+
+}());

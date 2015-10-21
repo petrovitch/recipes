@@ -18,7 +18,7 @@ class PagesController extends Controller
         /**
          * Is user logged-in?
          */
-        if (!Auth::user()){
+        if (!Auth::user()) {
             Toastr::info('Please login.');
         }
 
@@ -59,10 +59,8 @@ class PagesController extends Controller
     public function queries()
     {
         $lines = file('/Applications/MAMP/logs/mysql_queries.log');
-        for ($i = 0; $i < sizeof($lines); $i++)
-        {
-            if (!preg_match('/FROM/i', $lines[$i]))
-            {
+        for ($i = 0; $i < sizeof($lines); $i++) {
+            if (!preg_match('/FROM/i', $lines[$i])) {
                 unset($lines[$i]);
             }
         }
@@ -75,10 +73,8 @@ class PagesController extends Controller
     public function slowQueries()
     {
         $lines = file('/Applications/MAMP/logs/mysql_slow.log');
-        for ($i = 0; $i < sizeof($lines); $i++)
-        {
-            if (!preg_match('/FROM/i', $lines[$i]))
-            {
+        for ($i = 0; $i < sizeof($lines); $i++) {
+            if (!preg_match('/FROM/i', $lines[$i])) {
                 unset($lines[$i]);
             }
         }

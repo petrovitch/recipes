@@ -17,15 +17,8 @@ use Toastr;
 
 class GltrnsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-//        $results = DB::select( DB::raw("SELECT SUM(amount) AS balance FROM gltrns") );
-//        $balance = $results[0]->balance;
         $balance = Gltrn::sum('amount');
         if ($balance != 0){
             Toastr::warning('Your journal is out of balance by $' . number_format($balance,2), 'Validation' );
@@ -35,22 +28,11 @@ class GltrnsController extends Controller
         return view('accounting.gltrn.index')->with('gltrns', $gltrns);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('accounting.gltrn.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(GltrnEditFormRequest $request)
     {
         $gltrn = new Gltrn(array(
@@ -66,24 +48,12 @@ class GltrnsController extends Controller
         return redirect('/gltrns');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $gltrn = Gltrn::whereId($id)->firstOrFail();
         return view('accounting.gltrn.show')->with('gltrn', $gltrn);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $glcoas = Glcoa::orderBy('acct')->get();
@@ -91,13 +61,6 @@ class GltrnsController extends Controller
         return view('accounting.gltrn.edit')->with(['gltrn' => $gltrn, 'glcoas' => $glcoas]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update($id, GltrnEditFormRequest $request)
     {
         $gltrn = Gltrn::whereId($id)->firstOrFail();
@@ -111,12 +74,6 @@ class GltrnsController extends Controller
         return redirect(action('GltrnsController@index', $gltrn->id))->with('status', 'The transaction has been updated!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         Gltrn::find($id)->delete();
