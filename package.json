@@ -17,6 +17,7 @@
   "dependencies": {
     "angular": "^1.4.7",
     "angular-hotkeys": "^1.6.0",
+    "angular-md5": "^0.1.8",
     "angularjs-toaster": "^0.4.15",
     "toastr": "^2.1.2"
   },

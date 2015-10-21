@@ -221,13 +221,13 @@ Route::get('inbound/excel', 'InboundsController@excel');
 
 //Farmers
 Route::get('farmers', 'FarmersController@index');
-Route::get('farm/create', 'FarmersController@create');
-Route::post('farm/create', 'FarmersController@store');
-Route::get('farm/{id?}/edit', 'FarmersController@edit');
-Route::post('farm/{id?}/edit', 'FarmersController@update');
-Route::get('farm/{id?}/show', 'FarmersController@show');
-Route::get('farm/{id?}/delete', 'FarmersController@destroy');
-Route::get('farm/excel', 'FarmersController@excel');
+Route::get('farmer/create', 'FarmersController@create');
+Route::post('farmer/create', 'FarmersController@store');
+Route::get('farmer/{id?}/edit', 'FarmersController@edit');
+Route::post('farmer/{id?}/edit', 'FarmersController@update');
+Route::get('farmer/{id?}/show', 'FarmersController@show');
+Route::get('farmer/{id?}/delete', 'FarmersController@destroy');
+Route::get('farmer/excel', 'FarmersController@excel');
 
 //Farms
 Route::get('farms', 'FarmsController@index');

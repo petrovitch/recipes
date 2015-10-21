@@ -31,7 +31,10 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+          "database"
+        ],
+        "files": [
+          "app/utilities/calculations.php"
         ],
         "psr-4": {
             "App\\": "app/"

@@ -21,7 +21,7 @@
                     <tbody>
                     @foreach($farmers as $farmer)
                         <tr>
-                            <td class="text-left">{!! $farmer->customer !!}</td>
+                            <td class="text-left">{!! $farmer->farmer !!}</td>
                             <td class="text-left">{!! $farmer->street !!}</td>
                             <td class="text-left">{!! $farmer->city !!}</td>
                             <td class="text-center">{!! $farmer->state !!}</td>

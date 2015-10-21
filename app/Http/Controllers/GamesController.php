@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Eco;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\GlcoaEditFormRequest;
@@ -25,12 +26,16 @@ class GamesController extends Controller
 
     public function fix()
     {
-        $games = Game::orderBy('id')->get();
+        $games = Game::orderBy('id', 'desc')->take(100)->get();
         foreach ($games as $game) {
             if (strlen($game->eco) > 3){
-                $game->eco = preg_replace('/([a-zA-Z][0-9][0-9]).*?/i', "$1", $game->eco);
+                $game->eco = preg_replace('/^([a-zA-Z][0-9][0-9]).*?$/i', "$1", $game->eco);
                 $game->save();
-                Toastr::success($game->eco);
+            }
+            if (!$game->ecoCode) {
+                $res = DB::select(DB::raw("SELECT * FROM mcc_ecos WHERE eco LIKE '%$game->eco%' LIMIT 1"));
+                $game->ecoCode = $res[0]->id;
+                $game->save();
             }
         }
 
@@ -95,6 +100,10 @@ class GamesController extends Controller
             $game->moves = self::parseMoves($game->moves);
             // Strip single & double quotes
             $game->moves = self::strip_slashes($game->moves);
+
+            // Find eco code for string opening name and moves
+            $res = DB::select(DB::raw("SELECT * FROM mcc_ecos WHERE eco LIKE '%$game->eco%' LIMIT 1"));
+            $game->ecoCode = $res[0]->id;
 
             $game->save();
         }

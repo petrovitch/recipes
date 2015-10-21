@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\County;
+use App\Farm;
+use App\State;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Http\Requests\GlcoaEditFormRequest;

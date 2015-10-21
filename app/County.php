@@ -17,4 +17,9 @@ class County extends Auditing
     {
         return $this->belongsTo('App\State', 'state_id');
     }
+
+    public function farm()
+    {
+        return $this->belongsToMany('App\County', 'county_id');
+    }
 }

@@ -16,6 +16,7 @@
                 <table class="table table-bordered table-condensed">
                     <thead>
                     <tr>
+                        <th class="text-center report-headings">@sortablelink ('id')</th>
                         <th class="text-center report-headings">@sortablelink ('County')</th>
                         <th class="text-center report-headings">@sortablelink ('Label')</th>
                         <th class="text-center report-headings">@sortablelink ('Locale')</th>
@@ -27,6 +28,7 @@
                     <tbody>
                     @foreach($counties as $county)
                         <tr>
+                            <td class="text-right">{!! $county->id !!}</td>
                             <td class="text-left">{!! $county->county !!}</td>
                             <td class="text-left">{!! $county->label !!}</td>
                             <td class="text-left">{!! $county->locale !!}</td>
