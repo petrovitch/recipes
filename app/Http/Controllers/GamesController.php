@@ -24,6 +24,12 @@ class GamesController extends Controller
         return view('games.index')->with('games', $games);
     }
 
+    public function getgames()
+    {
+        $games = Game::orderBy('id', 'desc')->paginate(env('GAME_PAGINATION_MAX'));
+        return $games;
+    }
+
     public function fix()
     {
         $games = Game::orderBy('id', 'desc')->take(100)->get();

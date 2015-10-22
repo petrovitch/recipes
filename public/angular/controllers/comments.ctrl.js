@@ -8,7 +8,6 @@
     CommentsController.$inject = ['$rootScope', '$scope', '$http'];
 
     function CommentsController($rootScope, $scope, $http) {
-        var vm = this;
         $scope.message = 'CommentsController';
     };
 

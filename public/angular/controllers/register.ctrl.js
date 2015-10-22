@@ -8,7 +8,6 @@
     RegisterController.$inject = ['$rootScope', '$scope', '$http'];
 
     function RegisterController($rootScope, $scope, $http) {
-        var vm = this;
         $scope.message = 'RegisterController';
     };
 

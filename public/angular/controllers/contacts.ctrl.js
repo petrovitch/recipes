@@ -8,7 +8,6 @@
     ContactsController.$inject = ['$rootScope', '$scope', '$http'];
 
     function ContactsController($rootScope, $scope, $http) {
-        var vm = this;
         $scope.message = 'ContactsController';
     };
 

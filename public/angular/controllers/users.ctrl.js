@@ -8,8 +8,13 @@
     UsersController.$inject = ['$rootScope', '$scope', '$http'];
 
     function UsersController($rootScope, $scope, $http) {
-        var vm = this;
         $scope.message = 'UsersController';
+
+        $http.get("http://www.blog-api.local/admin/users")
+            .success(function (response) {
+                $scope.users = response.records;
+                console.log('users', $scope.users);
+            });
     };
 
 }());

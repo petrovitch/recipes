@@ -132,6 +132,7 @@ Route::get('recipes/html/{offset}/{limit}', 'RecipesController@recipesHtml');
 Route::get('recipes/pdf/{offset}/{limit}', 'RecipesController@recipesPdf');
 Route::post('recipes/search/', 'RecipesController@search');
 Route::post('recipes/fix/', 'RecipesController@fix');
+Route::get('api/recipes/get', 'RecipesController@getrecipes');
 
 //Counties
 Route::get('counties', 'CountiesController@index');
@@ -143,6 +144,7 @@ Route::get('county/{id?}/show', 'CountiesController@show');
 Route::get('county/{id?}/delete', 'CountiesController@destroy');
 Route::get('county/excel', 'CountiesController@excel');
 Route::post('counties/search/', 'CountiesController@search');
+//Route::get('api/counties/get', 'CountiesController@getcounties');
 
 //States
 Route::get('states', 'StatesController@index');
@@ -153,6 +155,7 @@ Route::post('state/{id?}/edit', 'StatesController@update');
 Route::get('state/{id?}/show', 'StatesController@show');
 Route::get('state/{id?}/delete', 'StatesController@destroy');
 Route::get('state/excel', 'StatesController@excel');
+//Route::get('api/states/get', 'StatesController@getstates');
 
 //Zipcodes
 Route::get('zipcodes', 'ZipcodesController@index');
@@ -164,6 +167,7 @@ Route::get('zipcode/{id?}/show', 'ZipcodesController@show');
 Route::get('zipcode/{id?}/delete', 'ZipcodesController@destroy');
 Route::get('zipcode/excel', 'ZipcodesController@excel');
 Route::post('zipcodes/search/', 'ZipcodesController@search');
+Route::get('api/zipcodes/getzips', 'ZipcodesController@getzips');
 
 //Vendors
 Route::get('vendors', 'VendorsController@index');
@@ -251,6 +255,7 @@ Route::get('mcc/excel', 'MccsController@excel');
 Route::get('mcc/{id?}/rating', 'MccsController@rating');
 Route::get('mcc/ratings', 'MccsController@ratings');
 Route::post('mccs/search/', 'MccsController@search');
+//Route::get('api/mccs/get', 'MccsController@getmccs');
 
 //Quotes
 Route::get('quotes', 'QuotesController@index');
@@ -262,6 +267,7 @@ Route::get('quote/{id?}/show', 'QuotesController@show');
 Route::get('quote/{id?}/delete', 'QuotesController@destroy');
 Route::get('quote/excel', 'QuotesController@excel');
 Route::post('quotes/search/', 'QuotesController@search');
+//Route::get('api/quotes/get', 'QuotesController@getquotes');
 
 //Articles
 Route::get('games', 'GamesController@index');
@@ -278,9 +284,9 @@ Route::post('games/search/', 'GamesController@search');
 Route::get('games/search_form/', 'GamesController@search_form');
 Route::post('games/search_form/', 'GamesController@search');
 Route::get('games/html/', 'GamesController@html');
-//Route::get('games/pgns/', 'GamesController@pgns');
 Route::get('games/fix', 'GamesController@fix');
 Route::get('games/parse', 'GamesController@parse');
+Route::get('api/games/getgames', 'GamesController@getgames');
 
 //ECO
 Route::get('ecos', 'EcosController@index');

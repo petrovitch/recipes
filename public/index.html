@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/toastr.css">
     <link rel="stylesheet" href="js/ag-grid/angular-grid.css">
     <link rel="stylesheet" href="js/ag-grid/theme-fresh.css">
+    <link rel="stylesheet" href="js/angular-ui-grid/ui-grid.css">
     <!--<link rel="stylesheet" href="js/angular-loading-bar/loading-bar.css">-->
     <!--<link rel="stylesheet" href="js/angular-xeditable/xeditable.css">-->
 </head>
@@ -39,6 +40,8 @@
                 <li><a href="/#/comments"><i class="fa fa-commenting-o"></i> Comments</a></li>
                 <li><a href="/#/contacts"><i class="fa fa-male"></i> Contacts</a></li>
                 <li><a href="/#/tags"><i class="fa fa-tag"></i> Tags</a></li>
+                <li><a href="/#/games"><i class="fa fa-gg"></i> Games</a></li>
+                <li><a href="/#/zips"><i class="fa fa-envelope-o"></i> Zips</a></li>
             </ul>
             <div class="navbar-right">
                 <ul class="nav navbar-nav">
@@ -51,37 +54,33 @@
 </nav>
 <br/><br/><br/><br/>
 
-<div ng-controller="MainController">
-    <div id="main">
         <div ng-view></div>
-    </div>
-</div>
 
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/angular.js"></script>
-<script src="js/angular-route.js"></script>
+<script src="js/jquery/jquery.js"></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/angular/angular.js"></script>
+<script src="js/angular-route/angular-route.js"></script>
 <script src="js/angular-animate/angular-animate.js"></script>
-<script src="js/ag-grid/angular-grid.js"></script>
 <script src="js/angular-hotkeys/hotkeys.min.js"></script>
 <script src="js/angular-loading-bar/loading-bar.js"></script>
 <script src="js/angular-mocks/angular-mocks.js"></script>
 <script src="js/angular-sweetalert/SweetAlert.js"></script>
 <script src="js/angular-tablesort/angular-tablesort.js"></script>
+<script src="js/angular-ui-grid/ui-grid.js"></script>
 <script src="js/angular-ui-router/angular-ui-router.js"></script>
 <script src="js/angular-ui-sortable/sortable.js"></script>
 <script src="js/angular-ui-utils/ui-utils.js"></script>
 <script src="js/angular-xeditable/xeditable.js"></script>
+<script src="js/ag-grid/angular-grid.js"></script>
+<script src="js/cryptojs/rollups/md5.js"></script>
 <script src="js/lodash/lodash.js"></script>
 <script src="js/moment/moment.js"></script>
 <script src="js/pdfmake/pdfmake.js"></script>
 <script src="js/pdfmake/vfs_fonts.js"></script>
 <script src="js/satellizer/satellizer.js"></script>
 <script src="js/sinon/index.js"></script>
-<script src="js/toastr.js"></script>
-<script src="js/typeahead.js"></script>
-<script src="js/cryptojs/rollups/md5.js"></script>
-<!--<script src="js/angular-ui-gravatar.js"></script>-->
+<script src="js/toastr/toastr.js"></script>
+<script src="js/typeahead/typeahead.js"></script>
 
 <script src="angular/app.js"></script>
 <!--<script src="angular/directives/gravatar.directive.js"></script>-->
@@ -89,12 +88,14 @@
 <script src="angular/controllers/about.ctrl.js"></script>
 <script src="angular/controllers/comments.ctrl.js"></script>
 <script src="angular/controllers/contacts.ctrl.js"></script>
+<script src="angular/controllers/games.ctrl.js"></script>
 <script src="angular/controllers/home.ctrl.js"></script>
 <script src="angular/controllers/login.ctrl.js"></script>
 <script src="angular/controllers/register.ctrl.js"></script>
 <script src="angular/controllers/main.ctrl.js"></script>
 <script src="angular/controllers/tags.ctrl.js"></script>
 <script src="angular/controllers/users.ctrl.js"></script>
+<script src="angular/controllers/zips.ctrl.js"></script>
 
 </body>
 </html>

@@ -25,6 +25,11 @@
                     controller: 'CommentsController'
                 })
 
+                .when('/games', {
+                    templateUrl: 'angular/views/games.html',
+                    controller: 'GamesController'
+                })
+
                 .when('/home', {
                     templateUrl: 'angular/views/home.html',
                     controller: 'HomeController'
@@ -48,6 +53,11 @@
                 .when('/users', {
                     templateUrl: 'angular/views/users.html',
                     controller: 'UsersController'
+                })
+
+                .when('/zips', {
+                    templateUrl: 'angular/views/zips.html',
+                    controller: 'ZipsController'
                 })
 
                 .otherwise({redirectTo: '/'});

@@ -21,7 +21,8 @@
         "league/fractal": "^0.12.0",
         "anahkiasen/underscore-php": "^2.0",
         "phpoffice/phpword": "dev-master",
-        "kyslik/column-sortable": "~3.0.0"
+        "kyslik/column-sortable": "~3.0.0",
+        "barryvdh/laravel-cors": "0.7.x"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
