@@ -24,6 +24,12 @@ class FarmsController extends Controller
         return view('farms.index')->with('farms', $farms);
     }
 
+    public function get()
+    {
+        $farms = Farm::sortable()->paginate(env('FARM_PAGINATION_MAX'));
+        return $farms;
+    }
+
     public function create()
     {
         return view('farms.create');

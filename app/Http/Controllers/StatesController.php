@@ -22,6 +22,12 @@ class StatesController extends Controller
         return view('states.index')->with('states', $states);
     }
 
+    public function get()
+    {
+        $states = State::sortable()->paginate(env('STATE_PAGINATION_MAX'));
+        return $states;
+    }
+
     public function create()
     {
         return view('states.create');

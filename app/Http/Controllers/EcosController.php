@@ -23,6 +23,12 @@ class EcosController extends Controller
         return view('ecos.index')->with('ecos', $ecos);
     }
 
+    public function get()
+    {
+        $ecos = Eco::sortable()->paginate(env('ECO_PAGINATION_MAX'));
+        return $ecos;
+    }
+
     public function search(Request $request)
     {
         $token = $request->get('token');

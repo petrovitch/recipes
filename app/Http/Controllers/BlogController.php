@@ -16,6 +16,12 @@ class BlogController extends Controller
         return view('blog.index', compact('posts'));
     }
 
+    public function get()
+    {
+        $posts = Post::paginate(env('PAGINATION_MAX'));
+        return $posts;
+    }
+
     public function create()
     {
         //

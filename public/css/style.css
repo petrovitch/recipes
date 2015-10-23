@@ -3,3 +3,7 @@
     background-color: #009587;
     color: #ffffff;
 }
+
+.table-nonfluid {
+    width: auto !important;
+}

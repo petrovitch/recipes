@@ -22,6 +22,12 @@ class QuotesController extends Controller
         return view('quotes.index')->with('quotes', $quotes);
     }
 
+    public function get()
+    {
+        $quotes = Quote::orderBy('author')->paginate(5000);
+        return $quotes;
+    }
+
     public function fix()
     {
         $quotes = Quote::orderBy('author')->get();

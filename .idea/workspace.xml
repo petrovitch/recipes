@@ -2,50 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc50f0ef-fdd8-47b9-bb1a-a20a1712e82a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/controllers/games.ctrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/views/games.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/controllers/zips.ctrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/views/zips.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/angular-animate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/angular-mocks.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/angular.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/js/bootstrap-datepicker.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/angular-md5.js" afterPath="$PROJECT_DIR$/public/js/angular-md5/angular-md5.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/angular-route.js" afterPath="$PROJECT_DIR$/public/js/angular-route/angular-route.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/angular-ui-gravatar.js" afterPath="$PROJECT_DIR$/public/js/angular-ui-gravatar/angular-ui-gravatar.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/bootstrap-datetimepicker.js" afterPath="$PROJECT_DIR$/public/js/bootstrap-datetimepicker/bootstrap-datetimepicker.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/bootstrap-timepicker.js" afterPath="$PROJECT_DIR$/public/js/bootstrap-timepicker/bootstrap-timepicker.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/bootstrap.js" afterPath="$PROJECT_DIR$/public/js/bootstrap/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/public/js/bootstrap/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/jquery-1.11.3.min.js" afterPath="$PROJECT_DIR$/public/js/jquery/jquery-1.11.3.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/loading-bar.js" afterPath="$PROJECT_DIR$/public/js/loading-bar/loading-bar.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/toastr.js" afterPath="$PROJECT_DIR$/public/js/toastr/toastr.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/js/typeahead.js" afterPath="$PROJECT_DIR$/public/js/typeahead/typeahead.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/chess/ecos.ctrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/chess/ecos.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/chess/mccs.ctrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/chess/mccs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/chess/quotes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/recipes/recipes.ctrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/recipes/recipes.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/states/states.ctrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/states/states.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/less/style.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/zips/zips.ctrl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/angular/_modules/zips/zips.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/about.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/about/about.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/comments.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/comments/comments.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/contacts.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/contacts/contacts.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/games.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/chess/games.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/home.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/home/home.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/login.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/auth/login.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/main.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/main/main.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/register.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/auth/register.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/tags.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/tags/tags.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/users.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/auth/users.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/controllers/zips.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/_modules/counties/counties.ctrl.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/about.html" afterPath="$PROJECT_DIR$/public/angular/_modules/about/about.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/comments.html" afterPath="$PROJECT_DIR$/public/angular/_modules/comments/comments.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/contacts.html" afterPath="$PROJECT_DIR$/public/angular/_modules/contacts/contacts.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/games.html" afterPath="$PROJECT_DIR$/public/angular/_modules/chess/games.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/home.html" afterPath="$PROJECT_DIR$/public/angular/_modules/home/home.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/login.html" afterPath="$PROJECT_DIR$/public/angular/_modules/auth/login.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/main.html" afterPath="$PROJECT_DIR$/public/angular/_modules/main/main.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/register.html" afterPath="$PROJECT_DIR$/public/angular/_modules/auth/register.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/tags.html" afterPath="$PROJECT_DIR$/public/angular/_modules/tags/tags.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/users.html" afterPath="$PROJECT_DIR$/public/angular/_modules/auth/users.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/angular/views/zips.html" afterPath="$PROJECT_DIR$/public/angular/_modules/counties/counties.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CommoditiesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommoditiesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CountiesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CountiesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomersController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EcosController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EcosController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FarmersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FarmersController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FarmsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FarmsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GamesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GamesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GlcoasController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GlcoasController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MccsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MccsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/QuotesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/QuotesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RecipesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecipesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/StatesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/StatesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TicketsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TrucksController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrucksController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/VendorsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/VendorsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ZipcodesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ZipcodesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/views/about.html" afterPath="$PROJECT_DIR$/public/angular/views/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/app.js" afterPath="$PROJECT_DIR$/public/angular/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/controllers/comments.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/controllers/comments.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/controllers/contacts.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/controllers/contacts.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/json/game.pgn" afterPath="$PROJECT_DIR$/public/json/game.pgn" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/controllers/home.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/controllers/home.ctrl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/controllers/login.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/controllers/login.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/views/login.html" afterPath="$PROJECT_DIR$/public/angular/views/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/controllers/main.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/controllers/main.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/controllers/register.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/controllers/register.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/views/register.html" afterPath="$PROJECT_DIR$/public/angular/views/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/_partials/navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/_partials/navbar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/controllers/tags.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/controllers/tags.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/controllers/users.ctrl.js" afterPath="$PROJECT_DIR$/public/angular/controllers/users.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/angular/views/users.html" afterPath="$PROJECT_DIR$/public/angular/views/users.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blog.iws" />
@@ -71,11 +83,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="games.ctrl.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/angular/controllers/games.ctrl.js">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2977099" vertical-offset="0" max-vertical-offset="655">
-              <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3845" max-vertical-offset="4500">
+              <caret line="269" column="50" selection-start-line="269" selection-start-column="50" selection-end-line="269" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2160">
+              <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/angular/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37383178" vertical-offset="630" max-vertical-offset="1785">
+              <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -89,47 +121,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/InboundsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/GltrnsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/GlcoasController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/EcosController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" />
-        <option value="$PROJECT_DIR$/app/Farmer.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/FarmEditFormRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/FarmerEditFormRequest.php" />
-        <option value="$PROJECT_DIR$/resources/views/_partials/navbar.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/farmers/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/farmers/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/farmers/show.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/farmers/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/counties/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/farms/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/farms/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/farms/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/CountiesController.php" />
-        <option value="$PROJECT_DIR$/app/Farm.php" />
-        <option value="$PROJECT_DIR$/app/County.php" />
-        <option value="$PROJECT_DIR$/resources/views/farms/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/utilities/calculations.php" />
-        <option value="$PROJECT_DIR$/public/js/angular-md5.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FarmersController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FarmsController.php" />
-        <option value="$PROJECT_DIR$/public/angular/views/login.html" />
-        <option value="$PROJECT_DIR$/public/angular/views/register.html" />
-        <option value="$PROJECT_DIR$/public/angular/views/users.html" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/public/angular/views/zips.html" />
-        <option value="$PROJECT_DIR$/public/angular/app.js" />
-        <option value="$PROJECT_DIR$/public/angular/controllers/games.ctrl.js" />
-        <option value="$PROJECT_DIR$/public/angular/controllers/zips.ctrl.js" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/public/angular/views/games.html" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GamesController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ZipcodesController.php" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/angular/controllers/about.ctrl.js" />
         <option value="$PROJECT_DIR$/public/angular/views/about.html" />
         <option value="$PROJECT_DIR$/public/angular/controllers/contacts.ctrl.js" />
@@ -140,6 +133,45 @@
         <option value="$PROJECT_DIR$/public/angular/controllers/register.ctrl.js" />
         <option value="$PROJECT_DIR$/public/angular/controllers/tags.ctrl.js" />
         <option value="$PROJECT_DIR$/public/angular/controllers/users.ctrl.js" />
+        <option value="$PROJECT_DIR$/resources/views/_partials/navbar.blade.php" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/cookbook/recipes.ctrl.js" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/cookbook/recipes.html" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/recipes/recipes.ctrl.js" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/recipes/recipes.html" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MccsController.php" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/chess/mccs.ctrl.js" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/chess/mccs.html" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CountiesController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/StatesController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CommoditiesController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/EcosController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/GlcoasController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TrucksController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/VendorsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FarmsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/FarmersController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CustomersController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TicketsController.php" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/counties/counties.html" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/counties/counties.ctrl.js" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/states/states.html" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/states/states.ctrl.js" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/zips/zips.html" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ZipcodesController.php" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/zips/zips.ctrl.js" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/chess/ecos.ctrl.js" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/chess/ecos.html" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/RecipesController.php" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/chess/quotes.ctrl.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/QuotesController.php" />
+        <option value="$PROJECT_DIR$/public/angular/app.js" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/public/css/less/style.less" />
+        <option value="$PROJECT_DIR$/public/css/app.css" />
+        <option value="$PROJECT_DIR$/public/angular/_modules/chess/quotes.html" />
       </list>
     </option>
   </component>
@@ -258,24 +290,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="angular" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -298,51 +312,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="angular" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -457,18 +427,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/css/less" />
+      <recent name="$PROJECT_DIR$/public/angular/_modules/chess" />
+      <recent name="$PROJECT_DIR$/public/angular/_modules/cookbook" />
+      <recent name="$PROJECT_DIR$/public/angular/_modules/locations" />
       <recent name="$PROJECT_DIR$/public/angular/views" />
-      <recent name="$PROJECT_DIR$/public/angular/controllers" />
-      <recent name="$PROJECT_DIR$/resources/views" />
-      <recent name="$PROJECT_DIR$/app/Http/Requests" />
-      <recent name="$PROJECT_DIR$/app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/js/angular-ui-gravatar" />
-      <recent name="$PROJECT_DIR$/public/js/angular-md5" />
-      <recent name="$PROJECT_DIR$/public/js/angular" />
-      <recent name="$PROJECT_DIR$/public/js/loading-bar" />
-      <recent name="$PROJECT_DIR$/public/js/jquery" />
+      <recent name="$PROJECT_DIR$/public/angular/_modules/zips" />
+      <recent name="$PROJECT_DIR$/public/angular/_modules/states" />
+      <recent name="$PROJECT_DIR$/public/angular/_modules/counties" />
+      <recent name="$PROJECT_DIR$/public/angular/_modules/tags" />
+      <recent name="$PROJECT_DIR$/public/angular/_modules/auth" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.AuthController.php">
@@ -481,15 +451,15 @@
       <TestRunner />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="MongoRunConfiguration" factoryName="Mongo">
@@ -510,6 +480,9 @@
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -517,9 +490,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="1">
@@ -566,7 +536,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -576,7 +546,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25444266" sideWeight="0.49891067" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25444266" sideWeight="0.49891067" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34329563" sideWeight="0.50108933" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -607,12 +577,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32892805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24555735" sideWeight="0.49891067" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32892805" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -639,270 +609,41 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Comment.php">
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/comments/comments.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/County.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.22900763" vertical-offset="0" max-vertical-offset="655">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/chess/games.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/counties/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042056076" vertical-offset="423" max-vertical-offset="1065">
-          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../mcc/admin/fms_functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.093457945" vertical-offset="0" max-vertical-offset="31590">
-          <caret line="4" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="2100" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/utilities/calculations.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15285" max-vertical-offset="20340">
-          <caret line="397" column="0" selection-start-line="397" selection-start-column="0" selection-end-line="397" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#40#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/farms/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6775701" vertical-offset="45" max-vertical-offset="870">
-          <caret line="32" column="18" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/angular-md5/angular-md5.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/_partials/navbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9735203" vertical-offset="2450" max-vertical-offset="3165">
-          <caret line="205" column="0" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FarmersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.870229" vertical-offset="0" max-vertical-offset="1905">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.25233644" vertical-offset="648" max-vertical-offset="1350">
+          <caret line="54" column="101" selection-start-line="54" selection-start-column="101" selection-end-line="54" selection-end-column="101" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/constants.js">
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/about/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FarmsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5496183" vertical-offset="120" max-vertical-offset="2055">
-          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-          <folding>
-            <element signature="e#40#53#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/directives/gravatar.directive.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/comments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/contacts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/tags.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93457943" vertical-offset="0" max-vertical-offset="690">
-          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5572519" vertical-offset="0" max-vertical-offset="1125">
-          <caret line="68" column="6" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2445">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77862597" vertical-offset="1800" max-vertical-offset="3285">
-          <caret line="154" column="40" selection-start-line="154" selection-start-column="40" selection-end-line="154" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7557252" vertical-offset="105" max-vertical-offset="1140">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Manager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48091602" vertical-offset="0" max-vertical-offset="655">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34351146" vertical-offset="0" max-vertical-offset="655">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/zipcodes/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="1125">
-          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27480915" vertical-offset="0" max-vertical-offset="655">
-          <caret line="12" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/zips.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="1335">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/games/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.864486" vertical-offset="0" max-vertical-offset="1110">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/games.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="585">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GamesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7110">
+        <state vertical-scroll-proportion="0.023364486" vertical-offset="225" max-vertical-offset="7110">
           <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding>
             <marker date="1445548339000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..mcc_ecos..." />
@@ -912,113 +653,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ZipcodesController.php">
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/recipes/recipes.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3821656" vertical-offset="0" max-vertical-offset="1995">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-          <folding>
-            <marker date="1445548339000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3755" max-vertical-offset="4485">
-          <caret line="288" column="23" selection-start-line="288" selection-start-column="0" selection-end-line="289" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/views/about.html">
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/recipes/recipes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7099237" vertical-offset="0" max-vertical-offset="655">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.30373833" vertical-offset="0" max-vertical-offset="642">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="830" max-vertical-offset="1590">
-          <caret line="64" column="61" selection-start-line="64" selection-start-column="61" selection-end-line="64" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/home.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/sample.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1860">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/zips.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22900763" vertical-offset="0" max-vertical-offset="655">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/users.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34351146" vertical-offset="0" max-vertical-offset="655">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/tags.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22900763" vertical-offset="0" max-vertical-offset="655">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/register.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22900763" vertical-offset="0" max-vertical-offset="655">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/main.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22900763" vertical-offset="0" max-vertical-offset="655">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/login.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22900763" vertical-offset="0" max-vertical-offset="655">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/contacts.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22900763" vertical-offset="0" max-vertical-offset="655">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/about.ctrl.js">
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/about/about.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3271028" vertical-offset="45" max-vertical-offset="810">
           <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
@@ -1026,18 +677,378 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/comments.ctrl.js">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MccsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22900763" vertical-offset="0" max-vertical-offset="655">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2977099" vertical-offset="0" max-vertical-offset="2595">
+          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+          <folding>
+            <marker date="1445608497000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/recipes/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/angular/controllers/games.ctrl.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/mccs/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/chess/mccs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3271028" vertical-offset="0" max-vertical-offset="642">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/chess/mccs.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2977099" vertical-offset="0" max-vertical-offset="655">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CountiesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="1800">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding>
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StatesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="1605">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommoditiesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="1620">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding>
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..commodities..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EcosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41221374" vertical-offset="0" max-vertical-offset="1800">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding>
+            <marker date="1445609866000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GlcoasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.817757" vertical-offset="75" max-vertical-offset="2295">
+          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+          <folding>
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT SUM(i..glcoas..." />
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT SUM(a..gltrns..." />
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TrucksController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="1695">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/VendorsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="1695">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <folding>
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/GltrnsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1185">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FarmsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="1965">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding>
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/FarmersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="1995">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding>
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="870">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CustomersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38931298" vertical-offset="0" max-vertical-offset="1695">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <folding>
+            <marker date="1445609867000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TicketsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39719626" vertical-offset="0" max-vertical-offset="1320">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/counties/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30373833" vertical-offset="0" max-vertical-offset="1065">
+          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/counties/counties.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/counties/counties.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <caret line="0" column="38" selection-start-line="0" selection-start-column="20" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/states/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/states/states.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/states/states.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22900763" vertical-offset="0" max-vertical-offset="655">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ZipcodesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
+          <caret line="26" column="36" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="36" />
+          <folding>
+            <marker date="1445610811000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/zips/zips.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/zips/zips.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/ecos/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/chess/ecos.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="13" column="47" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/chess/ecos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14018692" vertical-offset="0" max-vertical-offset="642">
+          <caret line="6" column="57" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecipesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36641222" vertical-offset="0" max-vertical-offset="3465">
+          <caret line="26" column="75" selection-start-line="26" selection-start-column="75" selection-end-line="26" selection-end-column="75" />
+          <folding>
+            <marker date="1445612650000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1445612650000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1445612650000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/QuotesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36641222" vertical-offset="0" max-vertical-offset="1935">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+          <folding>
+            <marker date="1445613162000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3845" max-vertical-offset="4500">
+          <caret line="269" column="50" selection-start-line="269" selection-start-column="50" selection-end-line="269" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.616822" vertical-offset="8100" max-vertical-offset="22320">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/less/styles.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.771028" vertical-offset="0" max-vertical-offset="7185">
+          <caret line="461" column="27" selection-start-line="461" selection-start-column="27" selection-end-line="461" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="655">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/less/style.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21428572" vertical-offset="0" max-vertical-offset="630">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73170733" vertical-offset="100170" max-vertical-offset="100785">
+          <caret line="6708" column="0" selection-start-line="6708" selection-start-column="0" selection-end-line="6708" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2160">
+          <caret line="126" column="42" selection-start-line="126" selection-start-column="42" selection-end-line="126" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/chess/quotes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.046728972" vertical-offset="0" max-vertical-offset="642">
+          <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/_modules/chess/quotes.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2977099" vertical-offset="0" max-vertical-offset="655">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/angular/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37383178" vertical-offset="630" max-vertical-offset="1785">
+          <caret line="58" column="56" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
           <folding />
         </state>
       </provider>

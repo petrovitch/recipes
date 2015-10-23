@@ -22,6 +22,12 @@ class VendorsController extends Controller
         return view('vendors.index')->with('vendors', $vendors);
     }
 
+    public function get()
+    {
+        $vendors = Vendor::sortable()->paginate(env('VENDOR_PAGINATION_MAX'));
+        return $vendors;
+    }
+
     public function create()
     {
         return view('vendors.create');

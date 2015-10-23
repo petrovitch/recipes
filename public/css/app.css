@@ -6706,5 +6706,8 @@ label,
     background-color: #009587;
     color: #ffffff;
 }
+.table-nonfluid {
+    width: auto !important;
+}
 /*# sourceMappingURL=app.css.map */
 

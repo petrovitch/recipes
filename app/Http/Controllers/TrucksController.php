@@ -22,6 +22,12 @@ class TrucksController extends Controller
         return view('trucks.index')->with('trucks', $trucks);
     }
 
+    public function get()
+    {
+        $trucks = Truck::sortable()->paginate(env('TRUCK_PAGINATION_MAX'));
+        return $trucks;
+    }
+
     public function create()
     {
         return view('trucks.create');

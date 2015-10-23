@@ -17,6 +17,12 @@ class TicketsController extends Controller
         return view('tickets.index')->with('tickets', $tickets);
     }
 
+    public function get()
+    {
+        $tickets = Ticket::paginate(env('PAGINATION_MAX'));
+        return $tickets;
+    }
+
     public function create()
     {
         return view('tickets.create');

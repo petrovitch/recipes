@@ -22,6 +22,12 @@ class RecipesController extends Controller
         return view('recipes.index')->with('recipes', $recipes);
     }
 
+    public function get()
+    {
+        $recipes = Recipe::orderBy('category')->orderBy('name')->paginate(5000);
+        return $recipes;
+    }
+
     public function fix()
     {
         $recipes = Recipe::orderBy('category')->get();

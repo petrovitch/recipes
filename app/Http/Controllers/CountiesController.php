@@ -24,6 +24,12 @@ class CountiesController extends Controller
         return view('counties.index')->with('counties', $counties);
     }
 
+    public function get()
+    {
+        $counties = County::sortable()->paginate(env('COUNTY_PAGINATION_MAX'));
+        return $counties;
+    }
+
     public function search(Request $request)
     {
         $token = $request->get('token');

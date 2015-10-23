@@ -22,6 +22,12 @@ class MccsController extends Controller
         return view('mccs.index')->with('mccs', $mccs);
     }
 
+    public function get()
+    {
+        $mccs = Mcc::sortable()->paginate(env('MCC_PAGINATION_MAX'));
+        return $mccs;
+    }
+
     public function fix()
     {
         $mccs = Mcc::orderBy('name')->get();

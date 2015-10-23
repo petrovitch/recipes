@@ -1,0 +1,25 @@
+<div ng-controller="EcosController">
+    <table class="table table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th class="text-center report-headings">ECO</th>
+            <th class="text-center report-headings">Opening</th>
+            <th class="text-center report-headings">Moves</th>
+            <!--<th class="text-center report-headings">Action</th>-->
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="eco in ecos">
+                <td class="text-left">{{ eco.eco }}</td>
+                <td class="text-left">{{ eco.opening }}</td>
+                <td class="text-left">{{ eco.moves }}</td>
+                <!--<td class="text-center">-->
+                    <!--<a href="{!! action('gamecodesController@show', $gamecode->id) !!}" title="Show"><span class="glyphicon glyphicon-list"></span></a>-->
+                    <!--<a href="{!! action('gamecodesController@edit', $gamecode->id) !!}" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>-->
+                    <!--<a href="{!! action('gamecodesController@destroy', $gamecode->id) !!}" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>-->
+                <!--</td>-->
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--<pre>{{ ecos | json }}</pre>-->

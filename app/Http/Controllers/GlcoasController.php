@@ -46,6 +46,12 @@ class GlcoasController extends Controller
         return view('accounting.glcoa.index')->with(['glcoas' => $glcoas, 'balance' => $balance]);
     }
 
+    public function get()
+    {
+        $glcoas = Glcoa::orderBy('acct')->paginate(env('PAGINATION_MAX'));
+        return $glcoas;
+    }
+
     public function create()
     {
         return view('accounting.glcoa.create');

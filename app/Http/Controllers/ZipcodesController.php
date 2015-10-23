@@ -22,7 +22,7 @@ class ZipcodesController extends Controller
         return view('zipcodes.index')->with('zipcodes', $zipcodes);
     }
 
-    public function getzips()
+    public function get()
     {
         $zipcodes = Zipcode::orderBy('id', 'desc')->paginate(env('ZIPCODE_PAGINATION_MAX'));
         return $zipcodes;

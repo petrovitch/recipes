@@ -52,7 +52,7 @@
 <div class="container">
     <div class="content">
         <a href="/" title="Home"><span class="glyphicon glyphicon-home"></span></a> &nbsp;
-        <a href="/about" title="About"><span style=color:{{Session::get('about')}} class="glyphicon glyphicon glyphicon-info-sign"></span></a> &nbsp;
+        <a href="/about" title="About"><span style="color:{{Session::get('about')}}" class="glyphicon glyphicon-info-sign"></span></a> &nbsp;
         <a href="/glcoas" title="General Ledger Trial Balance"><span class="glyphicon  glyphicon-th-list"></span></a> &nbsp;
         <a href="/gltrns" title="General Ledger"><span class="glyphicon glyphicon-th-large"></span></a> &nbsp;
         <a href="/glcoa/detail" title="General Ledger Detailed Statement"><span class="glyphicon  glyphicon-th"></span></a> &nbsp;

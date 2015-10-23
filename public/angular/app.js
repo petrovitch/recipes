@@ -6,57 +6,87 @@
         .config(function ($routeProvider) {
             $routeProvider
                 .when('/', {
-                    templateUrl: 'angular/views/main.html',
+                    templateUrl: 'angular/_modules/main/main.html',
                     controller: 'MainController'
                 })
 
                 .when('/about', {
-                    templateUrl: 'angular/views/about.html',
+                    templateUrl: 'angular/_modules/about/about.html',
                     controller: 'AboutController'
                 })
 
                 .when('/contacts', {
-                    templateUrl: 'angular/views/contacts.html',
+                    templateUrl: 'angular/_modules/contacts/contacts.html',
                     controller: 'ContactsController'
                 })
 
                 .when('/comments', {
-                    templateUrl: 'angular/views/comments.html',
+                    templateUrl: 'angular/_modules/comments/comments.html',
                     controller: 'CommentsController'
                 })
 
+                .when('/counties', {
+                    templateUrl: 'angular/_modules/counties/counties.html',
+                    controller: 'CountiesController'
+                })
+
+                .when('/ecos', {
+                    templateUrl: 'angular/_modules/chess/ecos.html',
+                    controller: 'EcosController'
+                })
+
                 .when('/games', {
-                    templateUrl: 'angular/views/games.html',
+                    templateUrl: 'angular/_modules/chess/games.html',
                     controller: 'GamesController'
                 })
 
                 .when('/home', {
-                    templateUrl: 'angular/views/home.html',
+                    templateUrl: 'angular/_modules/home/home.html',
                     controller: 'HomeController'
                 })
 
+                .when('/mccs', {
+                    templateUrl: 'angular/_modules/chess/mccs.html',
+                    controller: 'MccsController'
+                })
+
                 .when('/login', {
-                    templateUrl: 'angular/views/login.html',
+                    templateUrl: 'angular/_modules/auth/login.html',
                     controller: 'LoginController'
                 })
 
+                .when('/quotes', {
+                    templateUrl: 'angular/_modules/chess/quotes.html',
+                    controller: 'QuotesController'
+                })
+
+                .when('/recipes', {
+                    templateUrl: 'angular/_modules/recipes/recipes.html',
+                    controller: 'RecipesController'
+                })
+
                 .when('/register', {
-                    templateUrl: 'angular/views/register.html',
+                    templateUrl: 'angular/_modules/auth/register.html',
                     controller: 'RegisterController'
                 })
 
+                .when('/states', {
+                    templateUrl: 'angular/_modules/states/states.html',
+                    controller: 'StatesController'
+                })
+
                 .when('/tags', {
-                    templateUrl: 'angular/views/tags.html',
+                    templateUrl: 'angular/_modules/tags/tags.html',
                     controller: 'TagsController'
                 })
 
                 .when('/users', {
-                    templateUrl: 'angular/views/users.html',
+                    templateUrl: 'angular/_modules/users/users.html',
                     controller: 'UsersController'
                 })
 
                 .when('/zips', {
-                    templateUrl: 'angular/views/zips.html',
+                    templateUrl: 'angular/_modules/zips/zips.html',
                     controller: 'ZipsController'
                 })
 

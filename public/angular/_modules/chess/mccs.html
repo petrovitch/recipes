@@ -1,0 +1,27 @@
+<div ng-controller="MccsController">
+    <table class="table table-bordered table-condensed">
+        <thead>
+        <tr>
+            <th class="text-center report-headings">Name</th>
+            <th class="text-center report-headings">Zip</th>
+            <th class="text-center report-headings">USCF</th>
+            <th class="text-center report-headings">Rating</th>
+            <!--<th class="text-center report-headings">Action</th>-->
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="mcc in mccs">
+                <td class="text-left">{{ mcc.name }}</td>
+                <td class="text-center">{{ mcc.zip }}</td>
+                <td class="text-center">{{ mcc.uscf_id }}</td>
+                <td class="text-center">{{ mcc.uscf_rating }}</td>
+                <!--<td class="text-center">-->
+                    <!--<a href="{!! action('gamecodesController@show', $gamecode->id) !!}" title="Show"><span class="glyphicon glyphicon-list"></span></a>-->
+                    <!--<a href="{!! action('gamecodesController@edit', $gamecode->id) !!}" title="Edit"><span class="glyphicon glyphicon-pencil"></span></a>-->
+                    <!--<a href="{!! action('gamecodesController@destroy', $gamecode->id) !!}" title="Delete"><span class="glyphicon glyphicon-trash"></span></a>-->
+                <!--</td>-->
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--<pre>{{ mccs | json }}</pre>-->

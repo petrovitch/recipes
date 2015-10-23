@@ -22,6 +22,12 @@ class CommoditiesController extends Controller
         return view('commodities.index')->with('commodities', $commodities);
     }
 
+    public function get()
+    {
+        $commodities = Commodity::sortable()->paginate(env('COMMODITIES_PAGINATION_MAX'));
+        return $commodities;
+    }
+
     public function create()
     {
         return view('commodities.create');

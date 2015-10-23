@@ -22,6 +22,12 @@ class CustomersController extends Controller
         return view('customers.index')->with('customers', $customers);
     }
 
+    public function get()
+    {
+        $customers = Customer::sortable()->paginate(env('CUSTOMER_PAGINATION_MAX'));
+        return $customers;
+    }
+
     public function create()
     {
         return view('customers.create');
