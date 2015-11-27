@@ -5,7 +5,7 @@
     <div class="container col-md-6 col-md-offset-3">
         <div class="well well bs-component">
 
-            <form class="form-horizontal" method="post" action="/users/login">
+            <form class="form-horizontal" method="post" action="/login">
 
                 @foreach ($errors->all() as $error)
                     <p class="alert alert-danger">{{ $error }}</p>

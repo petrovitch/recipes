@@ -37,30 +37,6 @@
                     <div class="list-group-separator"></div>
                     <div class="list-group-item">
                         <div class="row-action-primary">
-                            <i class="mdi-editor-border-color"></i>
-                        </div>
-                        <div class="row-content">
-                            <div class="action-secondary"><i class="mdi-material-info"></i></div>
-                            <h4 class="list-group-item-heading">Manage Posts</h4>
-                            <a href="/admin/posts" class="btn btn-default btn-raised">All Posts</a>
-                            <a href="/admin/posts/create" class="btn btn-primary btn-raised">Create A Post</a>
-                        </div>
-                    </div>
-                    <div class="list-group-separator"></div>
-                    <div class="list-group-item">
-                        <div class="row-action-primary">
-                            <i class="mdi-file-folder"></i>
-                        </div>
-                        <div class="row-content">
-                            <div class="action-secondary"><i class="mdi-material-info"></i></div>
-                            <h4 class="list-group-item-heading">Manage Categories</h4>
-                            <a href="/admin/categories" class="btn btn-default btn-raised">All Categories</a>
-                            <a href="/admin/categories/create" class="btn btn-primary btn-raised">New Category</a>
-                        </div>
-                    </div>
-                    <div class="list-group-separator"></div>
-                    <div class="list-group-item">
-                        <div class="row-action-primary">
                             <i class="mdi-av-my-library-books"></i>
                         </div>
                         <div class="row-content">
@@ -68,8 +44,6 @@
                             <h4 class="list-group-item-heading">View Logs</h4>
                             <a href="/logs" class="btn btn-warning btn-raised btn-lg" target="_blank">Errors & Warnings</a>
                             <a href="/audits" class="btn btn-info btn-raised btn-lg" target="_blank">Audit Trail</a>
-                            <a href="/queries" class="btn btn-success btn-raised btn-lg" target="_blank">All Queries</a>
-                            <a href="/slowQueries" class="btn btn-danger btn-raised btn-lg" target="_blank">Slow Queries</a>
                         </div>
                     </div>
                     <div class="list-group-separator"></div>

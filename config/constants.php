@@ -2,6 +2,6 @@
 // Config::get('constants.site.title')
 return [
     'site' => [
-        'title' => 'Laravel',
+        'title' => "Maw Maw's Recipes",
     ]
 ];

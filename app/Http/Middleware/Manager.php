@@ -10,7 +10,7 @@ class Manager
     public function handle($request, Closure $next)
     {
         if(!Auth::check()) {
-            return redirect('users/login');
+            return redirect('login');
         } else {
             $user = Auth::user();
             if($user->hasRole('admin'))

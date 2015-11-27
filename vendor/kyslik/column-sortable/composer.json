@@ -1,0 +1,22 @@
+{
+    "name": "kyslik/column-sortable",
+    "description": "Package for handling column sorting in Laravel 5.",
+    "keywords": ["sortable", "sorting", "column", "laravel", "laravel5"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Kiesel",
+            "email": "martinkiesel@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "laravel/framework": "5.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Kyslik\\ColumnSortable": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
