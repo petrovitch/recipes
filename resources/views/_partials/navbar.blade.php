@@ -25,7 +25,7 @@
                 <li><a href="/admin"><i class="fa fa-adn"></i> Admin</a></li>
                 @endif
                 @if(!Auth::user())
-                <li><a href="/register"><i class="fa fa-registered"></i> Register</a></li>
+                {{--<li><a href="/register"><i class="fa fa-registered"></i> Register</a></li>--}}
                 @endif
                 @if(!Auth::user())
                 <li><a href="/login"><i class="fa fa-user"></i> Login</a></li>
@@ -47,8 +47,10 @@
     <div class="content">
         <a href="/" title="Home"><span class="glyphicon glyphicon-home"></span></a> &nbsp;
         <a href="/about" title="About"><span style="color:{{Session::get('about')}}" class="glyphicon glyphicon-info-sign"></span></a> &nbsp;
+        @if(Auth::user())
         <a href="/recipes" title="Recipes"><span class="glyphicons glyphicons-cutlery"></span></a> &nbsp;
         <a href="/logs" title="Logs"><span class="glyphicon glyphicon-book"></span></a> &nbsp;
+        @endif
         &nbsp;
     </div>
 </div>

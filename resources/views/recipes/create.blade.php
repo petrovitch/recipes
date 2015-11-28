@@ -9,7 +9,6 @@
                 {!! csrf_field() !!}
                 <fieldset>
                     <legend>Create Recipe</legend>
-
                     <div class="form-group">
                         <label for="category" class="col-lg-2 control-label">Category</label>
                         <div class="col-lg-10">
