@@ -43,7 +43,7 @@
         <div class="text-center">{!! $recipes->render() !!}</div>
 
         <div class="text-right">
-            <a href="{!! action('RecipesController@recipesExcel') !!}" title="Export to Excel"><span class="glyphicon glyphicon-download-alt"></span> Excel </a> &nbsp;
+            <a href="{!! action('RecipesController@toExcel') !!}" title="Export to Excel"><span class="glyphicon glyphicon-download-alt"></span> Excel </a> &nbsp;
             <a href="{!! action('RecipesController@recipesPdf', ['offset' => 0, 'limit' => 3]) !!}" title="Export to PDF"><span class="glyphicon glyphicon-th"></span> PDF </a> &nbsp;
             <a href="{!! action('RecipesController@recipesHtml', ['offset' => 0, 'limit' => 500]) !!}" title="Export to HTML"><span class="glyphicon glyphicon-list-alt"></span> HTML </a> &nbsp;
             <a href="{!! action('RecipesController@menu', ['offset' => 0, 'limit' => 500]) !!}" title="Export to HTML"><span class="glyphicons glyphicons-notes-2"></span> Menu </a> &nbsp;

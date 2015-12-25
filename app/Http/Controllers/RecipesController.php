@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
 use TCPDF;
 use Toastr;
+use League\Csv\Reader;
+use League\Csv\Writer;
+use Illuminate\Database\Schema\Builder as Schema;
 
 class RecipesController extends Controller
 {
@@ -188,7 +191,7 @@ class RecipesController extends Controller
         SELF::html2pdf($contents);
     }
 
-    public function recipesPdf($offset = 0, $limit = 1)
+    public function recipesPdf($offset = 0, $limit = 0)
     {
         $table = with(new Recipe)->getTable();
         $recipes = DB::select(DB::raw("SELECT * FROM $table ORDER BY category, name LIMIT $offset, $limit"));
@@ -230,6 +233,113 @@ class RecipesController extends Controller
         $pdf->writeHTML($html);
         $filename = '/report.pdf';
         $pdf->Output($filename, 'I');
+    }
+
+    /**
+     * Export results of database query to excel xls, xlsx, csv or pdf.
+     * An array of data may also be passed.
+     *
+     * @param string $tableName
+     * @param string $target
+     * @param string $orientation
+     * @param null $data
+     */
+    public function toExcel($tableName = null, $target = 'xlsx', $offset = 0, $limit = 99999, $orientation = 'landscape', $data = null)
+    {
+        // portrait, landscape
+        $this->orientation = $orientation;
+
+        // Was an array of data passed?
+        if (is_null($data)) {
+            $data = DB::select(DB::raw("SELECT * FROM $tableName LIMIT $offset, $limit"));
+            $data = json_encode($data);
+            $this->data = json_decode($data, true);  // Assoc
+        } else {
+            $this->data = $data;
+        }
+
+        // Create page
+        Excel::create('Excel', function ($excel) {
+            $excel->sheet('Sheet1', function ($sheet) {
+                // Set page orientation
+                $sheet->setOrientation($this->orientation);
+
+                // Fill sheet with data
+                $sheet->appendRow(array_keys($this->data[0])); // column names
+                foreach ($this->data as $field) {
+                    $sheet->appendRow($field);
+                }
+            });
+        })->export($target); // download
+    }
+
+    /**
+     * Name: Title defaults to function name if null, or blank.
+     *
+     * @param int $id
+     * @param string $tableName
+     * @param string $view
+     * @param int $fontSize
+     * @param string $author
+     * @param string $title
+     * @param string $subject
+     */
+    public function viewToPdf($id = null, $tableName = null, $view = null, $fontSize = '8', $author = 'UAM', $title = 'UAM', $subject = 'UAM')
+    {
+        $vm = DB::table($tableName)->whereId($id)->get();
+        $vm = $vm[0];
+        $view = view($view, compact('vm'));
+        $html = $view->render();
+
+        // create new PDF document
+        $pdf = new TCPDF();
+
+        // Set document information
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor($author);
+        $pdf->SetTitle($title);
+        $pdf->SetSubject($subject);
+        $pdf->SetKeywords('TCPDF, PDF');
+
+        // Set auto page breaks
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+        // Without header & footer
+        $pdf->SetPrintHeader(false);
+        $pdf->SetPrintFooter(false);
+
+        // Set font
+        $pdf->SetFont('times', '', $fontSize, '', 'default', true);
+
+        // Add a page
+        $pdf->AddPage("L");
+
+        // Print text to page
+        $pdf->writeHTML($html);
+
+        // Close and output PDF document (I = Inline, F = File, D = Download)
+        $pdf->Output('view.pdf', 'I');
+    }
+
+    /**
+     * "league/csv": "^8.0"
+     *
+     * use League\Csv\Reader;
+     * use League\Csv\Writer;
+     * use Illuminate\Database\Schema\Builder as Schema;
+     *
+     * @param null $tableName
+     */
+    public function toCsv($tableName = null)
+    {
+        $data = DB::table($tableName)->get();
+        $csv = \League\Csv\Writer::createFromFileObject(new \SplTempFileObject());
+        $csv->insertOne(DB::getSchemaBuilder()->getColumnListing($tableName));
+        foreach ($data as $datum) {
+            $datum = json_encode($datum);
+            $csv->insertOne($datum);
+        }
+        $csv->output('out.csv');
     }
 
 }

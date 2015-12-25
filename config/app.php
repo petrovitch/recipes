@@ -145,15 +145,17 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        'Zizaco\Entrust\EntrustServiceProvider',
-        'Maatwebsite\Excel\ExcelServiceProvider',
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         OwenIt\Auditing\AuditingServiceProvider::class,
-        'nilsenj\Toastr\ToastrServiceProvider',
-        'Creativeorange\Gravatar\GravatarServiceProvider',
+        nilsenj\Toastr\ToastrServiceProvider::class,
+        Creativeorange\Gravatar\GravatarServiceProvider::class,
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
-        'Barryvdh\Cors\ServiceProvider',
-
+        Barryvdh\Cors\ServiceProvider::class,
+        GeneaLabs\LaravelCaffeine\LaravelCaffeineServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Laravelista\Ekko\EkkoServiceProvider::class,
     ],
 
     /*
@@ -207,7 +209,10 @@ return [
         'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
         'Excel'     => 'Maatwebsite\Excel\Facades\Excel',
         'Toastr'    => 'nilsenj\Toastr\Facades\Toastr',
-        'Gravatar' => 'Creativeorange\Gravatar\Facades\Gravatar',
+        'Gravatar'  => 'Creativeorange\Gravatar\Facades\Gravatar',
+        'Image'     => 'Intervention\Image\Facades\Image',
+        'Ekko'      => 'Laravelista\Ekko\Facades\Ekko',
+
     ],
 
 ];

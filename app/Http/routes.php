@@ -61,8 +61,12 @@ Route::post('recipe/{id?}/edit', 'RecipesController@update');
 Route::get('recipe/{id?}/delete', 'RecipesController@destroy');
 Route::get('recipe/{id?}/pdf', 'RecipesController@recipePdf');
 Route::get('recipe/{id?}/show', 'RecipesController@show');
-Route::get('recipes/excel', 'RecipesController@recipesExcel');
+Route::get('recipes/toExcel', 'RecipesController@toExcel');
+Route::get('recipe/{id}/viewToPdf', 'RecipesController@viewToPdf');
+//Route::get('recipes/excel', 'RecipesController@recipesExcel');
 Route::get('recipes/html/{offset}/{limit}', 'RecipesController@recipesHtml');
 Route::get('recipes/pdf/{offset}/{limit}', 'RecipesController@recipesPdf');
 Route::post('recipes/search/', 'RecipesController@search');
 Route::post('recipes/fix/', 'RecipesController@fix');
+
+Route::get('toCsv', 'RecipesController@toCsv');
